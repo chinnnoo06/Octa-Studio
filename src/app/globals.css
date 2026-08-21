@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   DESIGN TOKENS — CONGELADOS
+   Extraídos de las variables CSS y de la hoja de estilos real de
+   https://livinor.webflow.io/ (livinor.webflow.shared.css, 245 KB).
+   Solo el orchestrator edita este bloque. Espejo en src/lib/design-tokens.ts:
+   si cambia un valor aquí, cambia el MISMO valor allí. Nunca uno solo.
+   ========================================================================== */
+
+/* ── Breakpoints del original ────────────────────────────────────────────────
+   Webflow usa max-width 991 / 767 / 479, que NO coinciden con los min-width
+   por defecto de Tailwind (640/768/1024). Se declaran como variantes propias
+   para poder escribir `tab:`, `land:` y `mob:` igual que el sitio original. */
+@custom-variant tab (@media (max-width: 991px));
+@custom-variant land (@media (max-width: 767px));
+@custom-variant mob (@media (max-width: 479px));
+
+/* ── Escala tipográfica: el original la reescala redefiniendo las variables
+   dentro de cada media query, no con clases por breakpoint. Se replica igual:
+   una sola clase (`text-h2`) que cambia de valor sola. ───────────────────── */
+:root {
+  --fs-big: 300px;
+  --fs-hero: 130px;
+  --fs-display: 124px;
+  --fs-h1: 96px;
+  --fs-h2: 72px;
+  --fs-h3: 56px;
+  --fs-h4: 40px;
+  --fs-h5: 32px;
+  --fs-h6: 24px;
+  --fs-body: 16px;
+  --fs-mail: 76px; /* one-off: el email gigante del footer */
+  --lh-mail: 1.18;
+  --rotator-h: 85px; /* ventana del rotador de títulos (.h2-counter-wrap) */
+
+  /* Gaps del original (--_gap---*). Se reescalan por breakpoint igual que
+     la tipografía: el sitio los redefine sobre `body` en cada media query. */
+  --gap-bigsection: 150px;
+  --gap-section: 100px;
+  --gap-layout: 80px;
+  --gap-container: 60px;
+}
+
+@media (max-width: 991px) {
+  :root {
+    --fs-big: 180px;
+    --fs-hero: 52px;
+    --fs-display: 52px;
+    --fs-h1: 42px;
+    --fs-h2: 32px;
+    --fs-h3: 28px;
+    --fs-h4: 24px;
+    --fs-h5: 22px;
+    --fs-h6: 20px;
+    --fs-mail: var(--fs-display);
+    --lh-mail: 1.12;
+    --rotator-h: 36px;
+    --gap-bigsection: 80px;
+    --gap-section: 80px;
+    --gap-layout: 60px;
+    --gap-container: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --fs-big: 100px;
+    --fs-hero: 42px;
+    --fs-display: 42px;
+    --fs-h1: 32px;
+    --fs-h2: 28px;
+    --fs-h3: 24px;
+    --fs-h4: 22px;
+    --fs-h5: 20px;
+    --fs-h6: 18px;
+    --rotator-h: 30px;
+    --gap-bigsection: 60px;
+    --gap-section: 60px;
+    --gap-layout: 40px;
+    --gap-container: 30px;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --fs-big: 75px;
+    --fs-hero: 38px;
+    --fs-display: 38px;
+    --fs-h1: 28px;
+    --fs-h2: 26px;
+    --fs-h3: 24px;
+    --fs-h4: 22px;
+    --fs-h5: 20px;
+    --fs-h6: 18px;
+    --rotator-h: 28px;
+    --gap-bigsection: 40px;
+    --gap-section: 40px;
+    --gap-layout: 30px;
+    --gap-container: 20px;
+  }
+}
+
+@theme inline {
+  /* --- Paleta (hex literales del sitio original) --- */
+  --color-page: #fef8f0; /* --page-color   fondo de página */
+  --color-card: #fae9ce; /* --card-color   fondo de tarjeta */
+  --color-beige: #f1dfc2; /* --beige-color  span crema de los titulares */
+  --color-yellow: #ffd900; /* --yellow       acento */
+  --color-ink: #000000; /* --black */
+  --color-paper: #ffffff; /* --white */
+  --color-paragraph: #575757; /* --paragraph-color */
+  --color-muted: #8e8e8e; /* --span-color / --gray */
+  --color-dark: #191919; /* panel oscuro (quick links del footer) */
+  --color-faint: #d7d7d7; /* texto secundario sobre fondo oscuro */
+
+  /* --- Familias --- */
+  --font-heading: var(--font-sora), Sora, ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+
+  /* --- Escala. line-height y weight viajan con el tamaño ---
+     Ratios del original: big 110% · semi-big 112% · medium 114% · tiny 118%
+     small 120% · semi-small 125% · mini 130% · extra-small 150% */
+  --text-hero: var(--fs-hero);
+  --text-hero--line-height: 1.1;
+  --text-hero--font-weight: 700; /* el único Sora 700 del sitio: el h1 del hero */
+
+  --text-display: var(--fs-display);
+  --text-display--line-height: 1.1;
+  --text-display--font-weight: 600;
+
+  --text-big: var(--fs-big);
+  --text-big--line-height: 1.1;
+
+  --text-mail: var(--fs-mail);
+  --text-mail--line-height: var(--lh-mail);
+  --text-mail--font-weight: 600;
+
+  --text-h1: var(--fs-h1);
+  --text-h1--line-height: 1.12;
+  --text-h1--font-weight: 600;
+
+  --text-h2: var(--fs-h2);
+  --text-h2--line-height: 1.14;
+  --text-h2--font-weight: 600;
+
+  --text-h3: var(--fs-h3);
+  --text-h3--line-height: 1.18;
+  --text-h3--font-weight: 600;
+
+  --text-h4: var(--fs-h4);
+  --text-h4--line-height: 1.2;
+  --text-h4--font-weight: 600;
+
+  --text-h5: var(--fs-h5);
+  --text-h5--line-height: 1.25;
+  --text-h5--font-weight: 600;
+
+  --text-h6: var(--fs-h6);
+  --text-h6--line-height: 1.3;
+  --text-h6--font-weight: 600;
+
+  --text-body: var(--fs-body);
+  --text-body--line-height: 1.5;
+  --text-body--font-weight: 400;
+
+  --text-caption: 14px;
+  --text-caption--line-height: 1.4286;
+
+  --text-badge: 11px;
+  --text-badge--line-height: 1.6364;
+  --text-badge--font-weight: 700;
+
+  /* --- Spacing con nombre (--_gap---* del original) ---
+     Apuntan a las vars de arriba, así `py-section` cambia solo por breakpoint. */
+  --spacing-bigsection: var(--gap-bigsection);
+  --spacing-section: var(--gap-section);
+  --spacing-layout: var(--gap-layout);
+  --spacing-container: var(--gap-container);
+
+  /* --- Radios observados --- */
+  --radius-card: 12px;
+  --radius-tile: 10px;
+  --radius-pill: 50px;
+
+  /* --- Easing --- */
+  --ease-brand: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Contenedor del original (.container): max-width 1820px + padding lateral
+   igual al gap `container`. A 1440 de viewport eso da los 1320px de contenido
+   que se miden en el screenshot — pero por encima de 1440 sigue creciendo,
+   así que NO se puede hardcodear 1320. */
+@utility container-livinor {
+  width: 100%;
+  max-width: 1820px;
+  margin-inline: auto;
+  padding-inline: var(--gap-container);
+}
+
+/* ============================================================================
+   BASE
+   ========================================================================== */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-page);
+    color: var(--color-paragraph);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-ink);
+    text-transform: uppercase;
+  }
+
+  ::selection {
+    background-color: var(--color-yellow);
+    color: var(--color-ink);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   MARQUEES — loops infinitos en CSS (más baratos que JS y no bloquean el hilo)
+   El contenido se duplica en el DOM; cada mitad mide 50% del track.
+   ========================================================================== */
+@keyframes marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-left var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-track[data-direction="right"] {
+  animation-name: marquee-right;
+}
+
+.marquee-root:hover .marquee-track[data-pause-on-hover="true"] {
+  animation-play-state: paused;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow var(--spin-duration, 20s) linear infinite;
+}
+
+/* ============================================================================
+   ACCESIBILIDAD — respeta prefers-reduced-motion en todo el sitio
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track,
+  .spin-slow {
+    animation: none !important;
+  }
+}
