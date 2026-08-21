@@ -102,7 +102,6 @@ src/lib/home-data.ts        TODO el copy y los datos, ya tipados. Importa de aqu
 src/lib/motion.ts           fadeUp, fadeUpSmall, fadeIn, fadeLeft, fadeRight, scaleIn,
                             clipReveal, staggerParent(), EASE_BRAND, viewportOnce
 src/lib/utils.ts            cn()
-src/lib/design-tokens.ts    espejo TS de los tokens (para framer-motion)
 
 src/components/ui/Button.tsx        botón de 2 estados (amarillo → blanco + flecha)
                                     props: href, variant 'yellow'|'black'|'outline-white', arrowTone

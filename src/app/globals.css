@@ -1,11 +1,20 @@
 @import "tailwindcss";
 
 /* ============================================================================
-   DESIGN TOKENS — CONGELADOS
+   DESIGN TOKENS — FUENTE ÚNICA DE VERDAD
    Extraídos de las variables CSS y de la hoja de estilos real de
    https://livinor.webflow.io/ (livinor.webflow.shared.css, 245 KB).
-   Solo el orchestrator edita este bloque. Espejo en src/lib/design-tokens.ts:
-   si cambia un valor aquí, cambia el MISMO valor allí. Nunca uno solo.
+
+   Este bloque es el ÚNICO sitio donde viven los colores, la escala tipográfica
+   y el spacing. No hay copia en TypeScript que mantener sincronizada.
+
+   Cambiar un valor de aquí mueve toda la web a la vez: hazlo cuando quieras
+   rediseñar la marca, no para corregir una sección concreta (si un color no
+   cuadra en un sitio, el error casi siempre está en esa sección).
+
+   Si alguna vez necesitas uno de estos valores desde JavaScript, léelo del CSS
+   en vez de duplicarlo:
+     getComputedStyle(document.documentElement).getPropertyValue('--color-yellow')
    ========================================================================== */
 
 /* ── Breakpoints del original ────────────────────────────────────────────────

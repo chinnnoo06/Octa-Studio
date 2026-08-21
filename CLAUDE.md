@@ -65,7 +65,6 @@ src/
   lib/
     data/<seccion>.ts    el copy y los datos, un archivo por sección
     home-data.ts         barril que reexporta lib/data (no edites aquí)
-    design-tokens.ts     espejo TS del bloque @theme
     motion.ts            variantes de animación
 ```
 

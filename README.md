@@ -36,7 +36,6 @@ src/
     home/                 una carpeta por sección de la home
   lib/
     home-data.ts          todo el copy y los datos, tipados
-    design-tokens.ts      espejo TS del bloque @theme
     motion.ts             variantes de animación
     page-registry.ts      manifiesto de páginas replicadas
 

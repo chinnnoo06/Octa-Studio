@@ -61,7 +61,8 @@ src/
 │       │   └── TestimonialSlider.tsx  # 'use client' (embla)
 │       └── Blogs.tsx                  # server
 └── lib/
-    ├── design-tokens.ts
+    ├── design-tokens.ts   (ELIMINADO despues: no lo usaba nadie; los tokens
+    │                       viven solo en el @theme de globals.css)
     ├── page-registry.ts
     └── home-data.ts                   # todos los arrays de §6
 ```
