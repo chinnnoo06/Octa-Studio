@@ -10,6 +10,28 @@ Tu trabajo aquí es iterar sobre lo que existe: ajustar una sección, cambiar
 textos, afinar animaciones. **No la regeneres desde cero ni vuelvas a crawlear
 el sitio original** salvo que te lo pidan explícitamente.
 
+## ⛔ Regla de equipo: nunca hagas git push por tu cuenta
+
+Este repositorio lo trabajan **dos personas a la vez**. Un push cambia lo que
+ve el otro y despliega a producción, así que no es una acción reversible sin
+coste.
+
+**Antes de `git push`, de `git merge` a `main`, o de abrir/fusionar un PR:
+PÁRATE y pregunta.** Aunque te lo hayan pedido de forma genérica ("sube esto",
+"ya déjalo listo"), confirma explícitamente qué se va a subir y a qué rama.
+
+Presenta antes:
+- qué archivos entran en el commit
+- a qué rama va
+- si eso dispara despliegue a producción (todo push a `main` lo hace)
+
+Commitear en local está bien sin preguntar. **Publicar, no.**
+
+Lo mismo aplica a: crear ramas remotas, `push --force`, borrar ramas, cambiar
+ajustes de Vercel y tocar variables de entorno.
+
+---
+
 ## Antes de tocar nada
 
 `analysis/` es la fuente de verdad de por qué cada cosa está como está. Todo se
