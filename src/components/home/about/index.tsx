@@ -1,25 +1,11 @@
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
 import Eyebrow from '@/components/ui/Eyebrow';
 import { ABOUT, STATS } from '@/lib/home-data';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import Odometer from './Odometer';
 import WipeHeading from './WipeHeading';
+import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 
-/**
- * About (`section.more`, y 1072–2172).
- *
- * Grid de 2 columnas de 630px con gap 60. La derecha es un bento 2×2 **pegado**
- * (sin gap) separado por hairlines de 1px `#bfbfbf`, con radios asimétricos que
- * redondean hacia el interior del bloque — verificado con zoom de píxeles: la
- * esquina superior-izquierda de la primera caja es recta.
- *
- * En ≤991 el bento se separa (gap 20) y **las 4 cajas pasan a fondo blanco**.
- * En ≤767 desaparecen los párrafos de las stats. En ≤479 el bento se convierte
- * en un carrusel horizontal.
- */
-
-/** Fondo, hairlines y radios de cada celda del bento (medidos uno a uno). */
 const BOX_VARIANT = {
   one: 'bg-paper rounded-br-tile tab:bg-paper',
   two: 'bg-transparent border-l border-[#bfbfbf] rounded-tr-tile tab:bg-paper',
@@ -44,7 +30,7 @@ export default function About() {
               </div>
 
               <div className="flex max-w-[480px] items-center gap-10">
-                <Button href={ABOUT.cta.href}>{ABOUT.cta.label}</Button>
+                <PrimaryButton href={ABOUT.cta.href}>{ABOUT.cta.label}</PrimaryButton>
                 <p className="text-paragraph font-body text-body flex items-center gap-2.5">
                   <span
                     aria-hidden="true"

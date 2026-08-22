@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 
 /**
  * Loop infinito en CSS (keyframes en globals.css).

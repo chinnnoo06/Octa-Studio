@@ -1,16 +1,4 @@
-/**
- * Estrella de "Attention to details" en el bento de advantages.
- *
- * Extraída del SVG del propio original (viewBox 0 0 43 43), no redibujada: la
- * anterior era una estrella de 4 puntas dibujada a mano y no coincidía.
- *
- * En el original gira en bucle. La rotación no está en el SVG sino en su
- * contenedor (`.right-corner-icon`), y va a **~60°/s → una vuelta cada 6s**
- * (medido: 73° por cada 1,2s). Aquí la aplica `.spin-slow` con
- * `--spin-duration: 6s`.
- *
- * Tamaño en el original: 43×43 del viewBox, renderizado a ~59px.
- */
+
 export default function DetailStar({
   className,
   style,

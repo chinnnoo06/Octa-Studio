@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 
 /**
  * Contenedor de contenido del original: 1320px sobre viewport de 1440

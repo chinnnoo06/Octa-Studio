@@ -1,26 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
+import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import Eyebrow from '@/components/ui/Eyebrow';
 import WipeHeading from '@/components/home/about/WipeHeading';
 import { SERVICES, SERVICES_HEADING } from '@/lib/home-data';
 import ServicesMarquee from './ServicesMarquee';
 
-/**
- * Services (`section.overflow`, y 5772–7318).
- *
- * Tres bloques: la cabecera partida por una línea vertical, las 3 tarjetas y el
- * marquee de dos filas.
- *
- * Las 3 tarjetas son **idénticas** (420×546) y arrancan a la misma altura: lo
- * que parece un escalonado en el screenshot es que el bloque de texto está
- * pegado abajo (`justify-between`) y el título ocupa 1 o 2 líneas según el
- * servicio.
- *
- * El titular grande usa el mismo wipe por líneas que `about` (8 franjas grises
- * con `mix-blend-mode: lighten`, solo ≥992px). En ≤767 el original directamente
- * **oculta** ese titular.
- */
 export default function Services() {
   return (
     <section data-section="services" className="overflow-hidden pt-bigsection pb-section">
@@ -43,7 +28,7 @@ export default function Services() {
               </div>
               {/* Botón que el original solo muestra en ≤767 (`.button-hide`) */}
               <div className="hidden land:block">
-                <Button href="/services">All Services</Button>
+                <PrimaryButton href="/services">All Services</PrimaryButton>
               </div>
             </div>
 
@@ -54,7 +39,7 @@ export default function Services() {
                   className="text-ink font-heading text-h4 uppercase"
                 />
                 <div className="land:hidden">
-                  <Button href="/services">View All Services</Button>
+                  <PrimaryButton href="/services">View All Services</PrimaryButton>
                 </div>
               </div>
             </div>

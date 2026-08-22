@@ -1,25 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
+import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import Eyebrow from '@/components/ui/Eyebrow';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { PRODUCTS } from '@/lib/home-data';
 
-/**
- * Products (`section.white.products`, y 9818–11134). Fondo blanco.
- *
- * Tarjeta de 420×665: la imagen va centrada (`object-fit: contain`, 380×400)
- * sobre un fondo `#fef8f0`, y encima un bloque **absoluto** a inset 0 con
- * `justify-between` que sostiene el badge de categoría arriba y el pie abajo.
- *
- * En la referencia la primera tarjeta aparece en **estado hover** (el pie
- * envuelto en dos líneas). El reposo correcto es el de las tarjetas 2 y 3:
- * precio y nombre a la izquierda, chip "Cart" a la derecha en la misma fila.
- *
- * Hover: el fondo pasa de `#fef8f0` a `#fae9ce`, el chip "Cart" a negro con
- * texto e icono blancos (cross-fade entre los dos PNG de carrito) y la imagen
- * hace zoom.
- */
 export default function Products() {
   return (
     <section data-section="products" className="bg-paper py-bigsection">
@@ -88,7 +73,7 @@ export default function Products() {
             </div>
 
             <div className="flex justify-center">
-              <Button href="/shop">View More</Button>
+              <PrimaryButton href="/shop">View More</PrimaryButton>
             </div>
           </div>
         </div>

@@ -7,19 +7,6 @@ import BrandBadge from './BrandBadge';
 import DetailStar from './DetailStar';
 import { ADVANTAGES, ADVANTAGES_CORNER_IMAGES } from '@/lib/home-data';
 
-/**
- * Advantages (`section.choice`, y 8494–9818). Bento de 3 columnas.
- *
- * La altura de la fila (857px) la manda la columna izquierda: 287 + 20 + 550.
- * Las otras dos suman 850 y dejan 7px de aire abajo, así que las columnas se
- * alinean arriba y no se estiran.
- *
- * Los 287px de la caja del badge incluyen su `border: 1px solid #dbdbdb`
- * (40 + 205 + 40 + 2).
- *
- * En ≤991 las 3 columnas se apilan pero cada una se convierte en un grid de 2;
- * en ≤767 todo pasa a scroller horizontal.
- */
 export default function Advantages() {
   return (
     <section data-section="advantages" className="pt-section pb-bigsection">

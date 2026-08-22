@@ -6,21 +6,6 @@ import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import type { Project } from '@/lib/home-data';
 
-/**
- * Tarjeta de proyecto (`a.project-card`, 645×800 en desktop).
- *
- * Anatomía:
- *   .projects-info-box     90px de ancho, bg #fae9ce, radius 12 0 0 12
- *     └ nombre y año como `h3.h6` con `transform: rotate(90deg)` y nowrap
- *       (la clase `rotate` del original no anima nada: es texto vertical)
- *   .cover-image-wrap      555×800, radius 0 12 12 0, con un overlay
- *                          rgba(0,0,0,.3) que desaparece en ≤991
- *
- * Hover (medido con ratón real): la imagen hace zoom, el riel lateral pasa a
- * negro con texto blanco, y aparece un círculo amarillo de 95px que sigue al
- * cursor. El círculo usa motion values + spring para no re-renderizar en cada
- * `mousemove`.
- */
 export default function ProjectCard({ project }: { project: Project }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const mx = useMotionValue(0);

@@ -10,12 +10,6 @@ import Products from '@/components/home/products';
 import Testimonials from '@/components/home/testimonials';
 import Blogs from '@/components/home/blogs';
 
-export const metadata: Metadata = {
-  title: 'Livinor - Webflow Ecommerce Website Template',
-  description:
-    'Discover Livinor — a modern Webflow Ecommerce Website Template designed for stylish furniture and decor brands. Showcase elegant pieces, elevate everyday spaces.',
-};
-
 export default function HomePage() {
   return (
     <main>

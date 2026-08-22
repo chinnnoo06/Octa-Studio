@@ -3,23 +3,11 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Button from '@/components/ui/Button';
 import { DESIGN_CTA } from '@/lib/home-data';
+import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 
 export { default as Offers } from './Offers';
 
-/**
- * Design CTA (`section.design`, y 7418–8303).
- *
- * **Siempre es full-bleed 1440×885** (`min-height: 880`, `background-size: cover`).
- * Lo que en el screenshot de referencia parece "una imagen con márgenes arriba
- * que se vuelve full-bleed abajo" es un artefacto: el original escala la
- * sección entera con el scroll (`scale 0.5 → 1`, `transform-origin: center`) y
- * la captura por tiles la pilló a media animación (0.87 arriba, 1.0 abajo, con
- * costura). El estado de reposo/final es `scale: 1`.
- *
- * El zoom por scroll solo existe en ≥992px.
- */
 export default function DesignCta() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -67,7 +55,7 @@ export default function DesignCta() {
               </h2>
             </div>
 
-            <Button href={DESIGN_CTA.cta.href}>{DESIGN_CTA.cta.label}</Button>
+            <PrimaryButton href={DESIGN_CTA.cta.href}>{DESIGN_CTA.cta.label}</PrimaryButton>
           </div>
         </div>
       </div>

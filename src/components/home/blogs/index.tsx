@@ -1,25 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
 import Eyebrow from '@/components/ui/Eyebrow';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { BLOG_POSTS, type BlogPost } from '@/lib/home-data';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
+import { SecondaryButton } from '@/components/ui/buttons/SecondaryButton';
 
-/**
- * Blogs (`section.blogs`, y 12066–13613).
- *
- * Dos filas en espejo separadas por el gap de layout (80px): la primera lleva
- * el post grande a la izquierda y la ficha de autor a la derecha; la segunda
- * las intercambia (el dato trae su propio `layout`).
- *
- * El post grande es `flex: 1` (888px = 1320 − 30 − 402) con el título y la
- * fecha en un bloque **absoluto** a `inset: auto 40px 40px`. Sus dos imágenes
- * son las únicas de la página que llevan el gradiente
- * `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.8))`.
- *
- * En ≤767 el original oculta las fichas de autor.
- */
 function CalendarIcon() {
   return (
     <svg
@@ -76,9 +62,9 @@ function MiniBox({ post }: { post: BlogPost }) {
           />
           <p className="text-paragraph font-body text-body">{post.author}</p>
         </div>
-        <Button href={post.href} variant="black">
+        <SecondaryButton href={post.href}>
           Read More
-        </Button>
+        </SecondaryButton>
       </div>
     </div>
   );

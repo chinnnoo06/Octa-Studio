@@ -1,5 +1,5 @@
 import EyebrowIcon from './EyebrowIcon';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 
 /**
  * El "sub-text" del original: la marca de Livinor + una etiqueta corta.

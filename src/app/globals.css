@@ -86,26 +86,32 @@
 }
 
 @theme inline {
-  /* --- Paleta (hex literales del sitio original) --- */
-  --color-page: #fef8f0; /* --page-color   fondo de página */
-  --color-card: #fae9ce; /* --card-color   fondo de tarjeta */
-  --color-beige: #f1dfc2; /* --beige-color  span crema de los titulares */
-  --color-yellow: #ffd900; /* --yellow       acento */
-  --color-ink: #000000; /* --black */
-  --color-paper: #ffffff; /* --white */
-  --color-paragraph: #575757; /* --paragraph-color */
-  --color-muted: #8e8e8e; /* --span-color / --gray */
-  --color-dark: #191919; /* panel oscuro (quick links del footer) */
-  --color-faint: #d7d7d7; /* texto secundario sobre fondo oscuro */
+  --color-page: #fef8f0; 
+  --color-card: #fae9ce;
+  --color-beige: #f1dfc2; 
+  --color-yellow: #ffd900; 
+  --color-ink: #000000;
+  --color-paragraph: #575757;
+  --color-muted: #8e8e8e;
+  --color-dark: #191919;
+  --color-faint: #d7d7d7; 
+  --color-paper: #ffffff; 
+  --color-primary: #ffffff; /* --white */
+  --color-secondary: #18608C; /* --Blue */
+  --color-thrird: #7FA8C4;
+
 
   /* --- Familias --- */
   --font-heading: var(--font-sora), Sora, ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
 
-  /* --- Escala. line-height y weight viajan con el tamaño ---
-     Ratios del original: big 110% · semi-big 112% · medium 114% · tiny 118%
-     small 120% · semi-small 125% · mini 130% · extra-small 150% */
+
+  /* Fuentes propias: `font-display` para títulos, `font-text` para el resto. */
+  --font-display: var(--font-hirondelles), ui-serif, Georgia, serif;
+  --font-text: var(--font-poppins), Poppins, ui-sans-serif, system-ui, sans-serif;
+
+
   --text-hero: var(--fs-hero);
   --text-hero--line-height: 1.1;
   --text-hero--font-weight: 700; /* el único Sora 700 del sitio: el h1 del hero */
@@ -200,22 +206,6 @@
     line-height: 1.5;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    color: var(--color-ink);
-    text-transform: uppercase;
-  }
-
-  ::selection {
-    background-color: var(--color-yellow);
-    color: var(--color-ink);
-  }
 
   .no-scrollbar {
     scrollbar-width: none;

@@ -3,17 +3,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-/**
- * Contador tipo odómetro de las 4 stats (`.counter-div`).
- *
- * El original apila 10 números en orden descendente dentro de una ventana de
- * 66px con `overflow: hidden`, y desplaza el track `y: -90% → 0` en 3s al
- * entrar en viewport. Con 10 ítems, -90% del track = 9 ítems arriba, o sea la
- * última cifra de la lista; al llegar a 0 queda la primera, que es el valor
- * final. Por eso `odometer[0]` es el número que se ve al terminar.
- *
- * La ventana baja a 30px en ≤991 y a 25px en ≤767.
- */
 export default function Odometer({
   values,
   suffix,

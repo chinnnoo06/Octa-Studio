@@ -1,22 +1,9 @@
-import Button from '@/components/ui/Button';
+import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import Eyebrow from '@/components/ui/Eyebrow';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { PROJECTS, PROJECTS_INTRO } from '@/lib/home-data';
 import ProjectCard from './ProjectCard';
 
-/**
- * Projects (`section.white.more-top`, y 2172–4565). Fondo blanco, no el cream
- * de la página.
- *
- * El grid es de 2 columnas de 645px con gap 30, y la columna derecha va
- * desplazada **246px** hacia abajo. Ese desfase no es arbitrario: sale de la
- * altura del bloque de intro de la derecha (`right-heading-wrap`, 166px) más el
- * `gap: 80px` de su wrapper. La columna izquierda deja esos mismos 246px de
- * aire al final.
- *
- * En ≤767 el grid pasa a una sola columna con las 4 tarjetas seguidas y
- * desaparece el bloque de intro (párrafo + botón).
- */
 export default function Projects() {
   const [left, right] = [PROJECTS.slice(0, 2), PROJECTS.slice(2)];
 
@@ -44,7 +31,7 @@ export default function Projects() {
             <div className="flex flex-col gap-layout land:contents">
               <div className="ml-auto flex min-h-[166px] max-w-[445px] flex-col justify-center gap-10 land:hidden">
                 <p className="text-paragraph font-body text-body">{PROJECTS_INTRO}</p>
-                <Button href="/projects">View All Projects</Button>
+                <PrimaryButton href="/projects">View All Projects</PrimaryButton>
               </div>
               <div className="flex flex-col gap-[30px] land:contents">
                 {right.map((p) => (

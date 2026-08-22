@@ -1,17 +1,22 @@
 /**
- * Contenido de la sección Hero.
+ * Contenido de la sección Hero — Octa Building Studio.
+ * Mismas imágenes que la plantilla base; solo cambia el copy.
  */
 
 export const HERO = {
-  titleFirst: 'Mood Begins at ',
-  titleSpan: 'home',
-  points: ['1. Interior Styling', '2. Space Planning', '3. Mood Lighting'],
-  taglineFirst: 'Designing Modern Homes ',
-  taglineSpan: 'Since 2014',
-  cta: { label: 'Contact Now ', href: '/contact' },
+  titleFirst: 'Diseñamos y montamos ',
+  titleSpan: 'experiencias',
+  points: [
+    '1. Stands y ferias',
+    '2. Shows y eventos masivos',
+    '3. Congresos y convenciones',
+  ],
+  taglineFirst: 'Diseño y montaje ',
+  taglineSpan: 'a nivel nacional e internacional',
+  cta: { label: 'Agenda tu proyecto', href: '/contacto' },
   slides: [
-    { src: '/images/pages/home/hero-slide-1.webp', alt: 'Smart Home ' },
-    { src: '/images/pages/home/hero-slide-2.webp', alt: 'Smart Home ' },
-    { src: '/images/pages/home/hero-slide-3.webp', alt: 'Smart Home ' },
+    { src: '/images/pages/home/hero-slide-1.webp', alt: 'Montaje de stand' },
+    { src: '/images/pages/home/hero-slide-2.webp', alt: 'Montaje de stand' },
+    { src: '/images/pages/home/hero-slide-3.webp', alt: 'Montaje de stand' },
   ],
 } as const;

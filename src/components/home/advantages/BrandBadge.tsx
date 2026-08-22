@@ -4,35 +4,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ADVANTAGES_BADGE_TEXTS } from '@/lib/home-data';
 
-/**
- * Badge de marca del bento (`.choice-left-top`).
- *
- * En el screenshot parece "texto en círculo", pero no lo es. Son dos cosas
- * superpuestas:
- *   1. Un anillo SVG de puntos que rota 360° cada 10s (clase `.spin-slow`).
- *   2. Un slot machine vertical con las 5 etiquetas, en bucle continuo.
- *
- * ── Cómo se consigue que el bucle no deje hueco ──────────────────────────────
- *
- * El track lleva **6 hijos**: las 5 etiquetas más una copia de la primera al
- * final. La animación desplaza `y` de 0 a **-83.3333%**, que es exactamente
- * 5 alturas de ítem sobre un track de 6 (5/6). Al terminar, quien llena la
- * ventana es la copia —idéntica a la primera—, así que el salto de vuelta a 0
- * es invisible y **nunca se ve el hueco**.
- *
- * El fallo anterior era usar `-400%`: en framer-motion ese porcentaje se
- * resuelve contra la altura del **propio track** (5 ítems = 312px), no contra
- * la de un ítem, así que desplazaba 1248px —cuatro veces más allá de todo el
- * contenido— y la ventana pasaba la mayor parte del ciclo vacía.
- *
- * Ritmo: medido en vivo sobre el original, el track avanza a **~27 px/s** y
- * recorre unos 250px (4 ítems) antes de reiniciar de golpe. Aquí se recorren
- * los 5 ítems (312px) a esa misma velocidad → 11,6s por vuelta, o sea 2,32s
- * por etiqueta. Mismo ritmo visual, pero sin el salto del original.
- *
- * La ventana y los ítems comparten la misma altura para que la etiqueta en
- * reposo quede siempre encuadrada entera.
- */
 const DURACION_POR_ETIQUETA = 2.32; // 312px / 27px/s / 5 etiquetas
 
 export default function BrandBadge() {

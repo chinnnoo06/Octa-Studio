@@ -3,7 +3,7 @@ import Eyebrow from '@/components/ui/Eyebrow';
 import Reveal from '@/components/ui/Reveal';
 import { fadeUp } from '@/lib/motion';
 import { PROCESS_STEPS } from '@/lib/home-data';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 
 /**
  * Process (`section.image.process`, y 4565–5772). Sección oscura.

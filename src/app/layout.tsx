@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Sora, Inter } from 'next/font/google';
+import { Sora, Inter, Poppins } from 'next/font/google';
+import localFont from 'next/font/local';
 import Footer from '@/components/ui/footer/Footer';
 import './globals.css';
 import { Header } from '@/components/ui/header/Header';
@@ -18,14 +19,30 @@ const inter = Inter({
   display: 'swap',
 });
 
+
+/* Cuerpo de texto de Octa. */
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
+
+const hirondelles = localFont({
+  src: '../assets/fonts/Hirondelles des Alpes.ttf',
+  weight: '400',
+  style: 'normal',
+  variable: '--font-hirondelles',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  // Réplica de un template comercial: no debe indexarse (ver src/app/robots.ts)
   robots: { index: false, follow: false, nocache: true },
-  title: 'Livinor - Webflow Ecommerce Website Template',
+  title: 'Octa Studio - Organizador de eventos, Compras y ventas minoristas',
   description:
     'Discover Livinor — a modern Webflow Ecommerce Website Template designed for stylish furniture and decor brands. Showcase elegant pieces, elevate everyday spaces.',
   openGraph: {
-    title: 'Livinor - Webflow Ecommerce Website Template',
+    title: 'Octa Studio - Organizador de eventos, Compras y ventas minoristas',
     description:
       'Discover Livinor — a modern Webflow Ecommerce Website Template designed for stylish furniture and decor brands. Showcase elegant pieces, elevate everyday spaces.',
     type: 'website',
@@ -33,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Livinor - Webflow Ecommerce Website Template',
+    title: 'Octa Studio - Organizador de eventos, Compras y ventas minoristas',
   },
 };
 
@@ -41,7 +58,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${sora.variable} ${inter.variable} ${hirondelles.variable} ${poppins.variable}`}
+    >
       <body className="bg-page text-paragraph font-body antialiased">
         <Header />
         {children}
