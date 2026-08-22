@@ -20,3 +20,14 @@ export const ADVANTAGES = {
   rightTopTitle: 'Client-Focused Approach',
   rightBottomTitle: 'Attention to details',
 } as const;
+
+/**
+ * Las 3 fotos que entran escalonadas en "Proven Work and Trusted Reputation".
+ * En el original son `.cover-image-wrap.corner-one/two/three`, apiladas dentro
+ * de un wrap rotado -20°, con un bucle de entrada de 4s.
+ */
+export const ADVANTAGES_CORNER_IMAGES = [
+  { src: '/images/pages/home/adv-corner-1.webp', alt: 'Modern Home' },
+  { src: '/images/pages/home/adv-corner-2.webp', alt: 'Modern Home' },
+  { src: '/images/pages/home/adv-corner-3.webp', alt: 'Modern Home' },
+] as const;

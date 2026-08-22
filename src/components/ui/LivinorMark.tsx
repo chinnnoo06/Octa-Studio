@@ -6,8 +6,9 @@
  * colores distintos —eyebrows sobre fondo claro y oscuro, navbar, footer— y
  * así hereda el color del contexto con `currentColor` sin peticiones extra.
  *
- * En el original este icono es un .lottie, pero su animación tiene 50 frames
- * sin ningún cambio (ni transforms ni paths animados): es estático de facto.
+ * Es la marca de la empresa, NO el icono de los eyebrows: ese es otro dibujo
+ * (dos rombos en trazo) y vive en `EyebrowIcon`. Esta marca se usa quieta, en
+ * el marquee de servicios, la franja de ofertas y el bento de advantages.
  */
 export default function LivinorMark({
   className,

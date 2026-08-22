@@ -4,7 +4,8 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import LivinorMark from '@/components/ui/LivinorMark';
 import Odometer from '@/components/home/about/Odometer';
 import BrandBadge from './BrandBadge';
-import { ADVANTAGES } from '@/lib/home-data';
+import DetailStar from './DetailStar';
+import { ADVANTAGES, ADVANTAGES_CORNER_IMAGES } from '@/lib/home-data';
 
 /**
  * Advantages (`section.choice`, y 8494–9818). Bento de 3 columnas.
@@ -30,15 +31,15 @@ export default function Advantages() {
             <SectionTitle align="center" lead="Why choose" rotating="us" className="text-h2" />
           </div>
 
-          <div className="grid grid-cols-3 items-start gap-5 tab:grid-cols-1 land:flex land:overflow-x-auto land:pb-5">
+          <div className="grid grid-cols-3 items-start gap-5 tab:grid-cols-1 land:flex land:gap-5 land:overflow-x-auto land:overflow-y-hidden land:pb-2">
             {/* ── Columna izquierda ────────────────────────────────────── */}
-            <div className="flex flex-col gap-5 tab:grid tab:grid-cols-2 land:flex land:max-h-[300px] mob:max-h-[250px]">
-              <div className="rounded-tile bg-paper flex h-[287px] items-center justify-center border border-[#dbdbdb] px-5 py-10 land:min-w-[250px] mob:min-w-[280px]">
+            <div className="flex flex-col gap-5 tab:grid tab:grid-cols-2 land:flex land:h-[250px] land:w-auto land:shrink-0 land:flex-row land:gap-5">
+              <div className="rounded-tile bg-paper flex h-[287px] items-center justify-center border border-[#dbdbdb] px-5 py-10 land:h-[250px] land:w-[280px] land:shrink-0">
                 <BrandBadge />
               </div>
 
               <div
-                className="rounded-tile relative h-[550px] overflow-hidden bg-cover bg-center tab:h-[400px] land:min-w-[250px] mob:h-[250px] mob:min-w-[280px]"
+                className="rounded-tile relative h-[550px] overflow-hidden bg-cover bg-center tab:h-[400px] land:h-[250px] land:w-[280px] land:shrink-0"
                 style={{ backgroundImage: 'url(/images/pages/home/adv-sofa.webp)' }}
               >
                 {/* Único gradiente de la sección: 3deg, transparente → 60% negro */}
@@ -53,20 +54,66 @@ export default function Advantages() {
             </div>
 
             {/* ── Columna central ──────────────────────────────────────── */}
-            <div className="flex flex-col gap-5 tab:grid tab:grid-cols-2 tab:h-[400px] land:flex land:max-h-[300px] mob:max-h-[250px]">
-              <div className="rounded-tile bg-card relative min-h-[270px] overflow-hidden pt-[30px] pr-0 pb-[30px] pl-[30px] land:min-w-[250px] land:p-5 mob:min-h-[250px]">
-                {/* Fotos que asoman rotadas por la derecha y se recortan */}
-                <div className="absolute inset-[auto_0%_5%_60%] max-w-[350px] rotate-[-20deg]">
-                  <Image
-                    src="/images/pages/home/adv-corner-1.webp"
-                    alt="Modern Home"
-                    width={350}
-                    height={200}
-                    className="rounded-tile w-full object-cover"
-                  />
-                </div>
+            <div className="flex flex-col gap-5 tab:grid tab:grid-cols-2 tab:h-[400px] land:flex land:h-[250px] land:w-auto land:shrink-0 land:flex-row land:gap-5">
+              <div className="rounded-tile bg-card relative min-h-[270px] overflow-hidden pt-[30px] pr-0 pb-[30px] pl-[30px] land:min-h-0 land:h-[250px] land:w-[250px] land:shrink-0 land:p-5">
+                {/* Las 3 fotos van escalonadas en diagonal —no apiladas— dentro de un
+              wrap rotado -20°, y se salen por la derecha (la tarjeta recorta).
+              Geometría medida sobre el original en reposo:
+
+                wrap    350×192  absolute top 64.5  left 256  rotate(-20deg)
+                caja    140×192  relative y CENTRADA en el wrap (mx-auto):
+                        pegada a la izquierda desplaza las fotos 98px
+                  foto1 140×192  absolute top 48  left -152.6
+                  foto2 140×192  absolute top 65  left -14   z-index 1
+                  foto3 140×178  en flujo y SIN margen: cae pegada al borde
+                        izquierdo de la caja (offsetLeft 0 medido en vivo). Un
+                        ml- aquí la empuja fuera de vista: la caja ya va
+                        centrada por mx-auto, no hay que compensar dos veces
+                cada una: border 8px #fff · radius 12 · imagen 124×162
+                (la foto no llena el alto del marco: deja más blanco abajo,
+                 como una polaroid)
+
+              En <=767 las fotos NO cambian de tamaño: lo único que se mueve es
+              el wrap, que encoge a 250 de ancho y se recoloca (top 93 left 150;
+              top 45.5 ya en <=479). Con el left de escritorio dentro de una
+              caja de 250 el bloque entero cae fuera y no se ve ni una foto.
+              El título del recuadro se oculta ahí (medido: block a 991, none a 767).
+
+              Entran escalonadas desde la derecha en bucle de 3,6s
+              (`.corner-cycle` en globals.css). */}
+          <div className="absolute top-[64.5px] left-[256px] h-[192px] w-[350px] rotate-[-20deg] land:top-[93px] land:left-[150px] land:w-[250px] mob:top-[45.5px]">
+            <div className="corner-cycle relative mx-auto h-[192px] w-[140px]">
+              <div className="border-paper absolute top-[48px] left-[-152.594px] h-[192px] w-[140px] overflow-hidden rounded-[12px] border-8">
+                <Image
+                  src={ADVANTAGES_CORNER_IMAGES[0].src}
+                  alt={ADVANTAGES_CORNER_IMAGES[0].alt}
+                  width={124}
+                  height={162}
+                  className="h-[162px] w-full object-cover"
+                />
+              </div>
+              <div className="border-paper absolute top-[65px] left-[-14px] z-[1] h-[192px] w-[140px] overflow-hidden rounded-[12px] border-8">
+                <Image
+                  src={ADVANTAGES_CORNER_IMAGES[1].src}
+                  alt={ADVANTAGES_CORNER_IMAGES[1].alt}
+                  width={124}
+                  height={162}
+                  className="h-[162px] w-full object-cover"
+                />
+              </div>
+              <div className="border-paper h-[178px] w-[140px] overflow-hidden rounded-[12px] border-8">
+                <Image
+                  src={ADVANTAGES_CORNER_IMAGES[2].src}
+                  alt={ADVANTAGES_CORNER_IMAGES[2].alt}
+                  width={124}
+                  height={162}
+                  className="h-[162px] w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
                 <div className="relative z-10 flex max-w-[295px] flex-col gap-10">
-                  <h3 className="text-ink font-heading text-h6 uppercase">
+                  <h3 className="text-ink font-heading text-h6 uppercase land:hidden">
                     {ADVANTAGES.centerTitle}
                   </h3>
                   <div className="flex flex-col gap-2.5">
@@ -74,7 +121,7 @@ export default function Advantages() {
                       values={ADVANTAGES.centerCounter.odometer}
                       suffix={ADVANTAGES.centerCounter.suffix}
                     />
-                    <p className="text-paragraph font-body text-body">
+                    <p className="text-ink font-body text-body">
                       {ADVANTAGES.centerCounterLabel}
                     </p>
                   </div>
@@ -106,9 +153,9 @@ export default function Advantages() {
             </div>
 
             {/* ── Columna derecha ──────────────────────────────────────── */}
-            <div className="flex flex-col gap-5 tab:grid tab:grid-cols-2 land:flex land:max-h-[300px] mob:max-h-[250px]">
+            <div className="flex flex-col gap-5 tab:grid tab:grid-cols-2 land:flex land:h-[250px] land:w-auto land:shrink-0 land:flex-row land:gap-5">
               <div
-                className="rounded-tile relative flex min-h-[560px] flex-col justify-center overflow-hidden bg-cover bg-center px-5 py-[50px] tab:h-[400px] tab:min-h-0 tab:py-[30px] land:h-[300px] land:min-w-[250px] mob:h-[250px] mob:p-3"
+                className="rounded-tile relative flex min-h-[560px] flex-col justify-center overflow-hidden bg-cover bg-center px-5 py-[50px] tab:h-[400px] tab:min-h-0 tab:py-[30px] land:h-[250px] land:w-[250px] land:shrink-0 land:p-3"
                 style={{ backgroundImage: 'url(/images/pages/home/adv-girl-bg.webp)' }}
               >
                 <span aria-hidden="true" className="absolute inset-0 bg-black/40" />
@@ -129,23 +176,15 @@ export default function Advantages() {
               </div>
 
               <div
-                className="rounded-tile relative flex min-h-[270px] items-center overflow-hidden bg-cover bg-center land:min-w-[250px] mob:min-h-[250px]"
+                className="rounded-tile relative flex min-h-[270px] items-center overflow-hidden bg-cover bg-center land:min-h-0 land:h-[250px] land:w-[250px] land:shrink-0"
                 style={{ backgroundImage: 'url(/images/pages/home/adv-lamp.webp)' }}
               >
                 <span aria-hidden="true" className="absolute inset-0 bg-black/40" />
                 <div className="relative z-[1] ml-10 flex max-w-[230px] flex-col gap-[30px]">
-                  <svg
-                    width="51"
-                    height="51"
-                    viewBox="0 0 51 51"
-                    aria-hidden="true"
-                    className="text-paper size-[51px]"
-                  >
-                    <path
-                      d="M25.5 0c1.4 13.6 11.9 24.1 25.5 25.5C37.4 26.9 26.9 37.4 25.5 51 24.1 37.4 13.6 26.9 0 25.5 13.6 24.1 24.1 13.6 25.5 0Z"
-                      fill="currentColor"
-                    />
-                  </svg>
+                  <DetailStar
+                    className="text-paper spin-slow size-[59px]"
+                    style={{ ['--spin-duration' as string]: '6s' }}
+                  />
                   <h3 className="text-paper font-heading text-h6 uppercase">
                     {ADVANTAGES.rightBottomTitle}
                   </h3>
