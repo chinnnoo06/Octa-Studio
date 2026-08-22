@@ -3,25 +3,6 @@ import Button from '@/components/ui/Button';
 import { HERO } from '@/lib/home-data';
 import HeroSlider from './HeroSlider';
 
-/**
- * Hero (`section.hero`, 1440×972 en desktop).
- *
- * Estructura del original:
- *   section.hero [bg Hero_Banner.webp cover 50%/50%, min-h 950, mb 100]
- *   └ .hero-navbar-wrap [70px]         ← la Navbar va absolute desde el layout;
- *                                        aquí solo se reserva su altura.
- *   └ .hero-content-box [mt 80, flex col, justify-between, gap 100, h 822]
- *     ├ .hero-top    [h 300 @y150]  h1 a la izquierda + caja informativa a la derecha
- *     └ .hero-bottom [h 422 @y550]  bloque de texto + tira de imágenes
- *
- * El fondo se verificó píxel a píxel: `cover` centrado reproduce la referencia
- * con ratio 1.000 en todos los puntos medidos. **No lleva overlay** — la banda
- * oscura de arriba es de la propia navbar, no del hero.
- *
- * El bloque `.left-text-wrap.dex-hide` del original está oculto en desktop y
- * aparece en ≤767: es la variante móvil del tagline + CTA, con el layout
- * reordenado. No es un stack del desktop.
- */
 export default function Hero() {
   const tagline = (
     <h2 className="text-paper font-heading text-h6 uppercase">
@@ -33,8 +14,7 @@ export default function Hero() {
   const cta = <Button href={HERO.cta.href}>{HERO.cta.label}</Button>;
 
   return (
-    <section
-      data-section="hero"
+    <section data-section="hero"
       className="relative mb-section min-h-[950px] w-full bg-cover bg-center bg-no-repeat tab:min-h-[600px] land:min-h-[400px] mob:min-h-[520px]"
       style={{ backgroundImage: 'url(/images/pages/home/hero-banner.webp)' }}
     >

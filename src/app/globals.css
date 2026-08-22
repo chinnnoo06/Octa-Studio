@@ -1,33 +1,10 @@
 @import "tailwindcss";
 
-/* ============================================================================
-   DESIGN TOKENS — FUENTE ÚNICA DE VERDAD
-   Extraídos de las variables CSS y de la hoja de estilos real de
-   https://livinor.webflow.io/ (livinor.webflow.shared.css, 245 KB).
 
-   Este bloque es el ÚNICO sitio donde viven los colores, la escala tipográfica
-   y el spacing. No hay copia en TypeScript que mantener sincronizada.
-
-   Cambiar un valor de aquí mueve toda la web a la vez: hazlo cuando quieras
-   rediseñar la marca, no para corregir una sección concreta (si un color no
-   cuadra en un sitio, el error casi siempre está en esa sección).
-
-   Si alguna vez necesitas uno de estos valores desde JavaScript, léelo del CSS
-   en vez de duplicarlo:
-     getComputedStyle(document.documentElement).getPropertyValue('--color-yellow')
-   ========================================================================== */
-
-/* ── Breakpoints del original ────────────────────────────────────────────────
-   Webflow usa max-width 991 / 767 / 479, que NO coinciden con los min-width
-   por defecto de Tailwind (640/768/1024). Se declaran como variantes propias
-   para poder escribir `tab:`, `land:` y `mob:` igual que el sitio original. */
 @custom-variant tab (@media (max-width: 991px));
 @custom-variant land (@media (max-width: 767px));
 @custom-variant mob (@media (max-width: 479px));
 
-/* ── Escala tipográfica: el original la reescala redefiniendo las variables
-   dentro de cada media query, no con clases por breakpoint. Se replica igual:
-   una sola clase (`text-h2`) que cambia de valor sola. ───────────────────── */
 :root {
   --fs-big: 300px;
   --fs-hero: 130px;
@@ -43,8 +20,6 @@
   --lh-mail: 1.18;
   --rotator-h: 85px; /* ventana del rotador de títulos (.h2-counter-wrap) */
 
-  /* Gaps del original (--_gap---*). Se reescalan por breakpoint igual que
-     la tipografía: el sitio los redefine sobre `body` en cada media query. */
   --gap-bigsection: 150px;
   --gap-section: 100px;
   --gap-layout: 80px;

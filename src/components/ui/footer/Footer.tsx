@@ -6,28 +6,6 @@ import Image from 'next/image';
 import { SocialIcon } from '@/components/ui/SocialIcon';
 import { FOOTER, FOOTER_LINKS, SOCIAL_LINKS } from '@/lib/home-data';
 
-/**
- * Footer del original (`section.foter`).
- *
- * Estructura y medidas sacadas de la hoja original:
- *   section.foter        pt 100 · pb 20 · bg `contain` con `background-position: 0%`
- *                        (se repite en mosaico: de ahí la textura de paneles
- *                        verticales) sobre #090909. No lleva overlay — la
- *                        oscuridad es la propia foto.
- *   .footer-layout       flex col · justify-between · gap 40 · min-h 550
- *   .footer-top          flex · justify-between · items-**end** · gap 40
- *   .footer-left         max-w 635 · flex col · justify-between · gap 40 · min-h 360
- *   .footer-right        max-w 850 · flex col · gap 50
- *   .footer-content-wrap #191919 · radius 10 · padding 50px 20px
- *   .footer-social-box   75×75 · border 1px #fff · radius 100% (50 en ≤991, 40 en ≤767)
- *   .footer-bottom       flex col · gap 45
- *
- * El botón "Submit Now" va DENTRO del input de 635px, no al lado.
- *
- * Nota de fidelidad: en el original el 3.er glifo es LinkedIn pero enlaza a
- * instagram.com y el 4.º es Instagram enlazando a linkedin.com. Se replica el
- * cruce tal cual porque esto es un clon visual (ver `SOCIAL_LINKS`).
- */
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
