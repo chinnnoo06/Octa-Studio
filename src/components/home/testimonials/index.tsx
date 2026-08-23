@@ -1,5 +1,5 @@
-import Eyebrow from '@/components/ui/Eyebrow';
-import TestimonialCarousel from './TestimonialCarousel';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { TestimonialCarousel } from './TestimonialCarousel';
 
 /**
  * Testimonials (`section.testimonials`, y 11134–12065). Sección oscura.
@@ -9,7 +9,7 @@ import TestimonialCarousel from './TestimonialCarousel';
  *
  * El título es de un solo tono: aquí no hay rotador.
  */
-export default function Testimonials() {
+export const Testimonials = () => {
   return (
     <section
       data-section="testimonials"

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { SocialIcon } from '@/components/ui/SocialIcon';
 import { FOOTER, FOOTER_LINKS, SOCIAL_LINKS } from '@/lib/home-data';
 
-export default function Footer() {
+export const Footer = () => {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
 

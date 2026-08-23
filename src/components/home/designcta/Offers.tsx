@@ -1,5 +1,5 @@
-import Marquee from '@/components/ui/Marquee';
-import PlusIcon from '@/components/ui/PlusIcon';
+import { Marquee } from '@/components/ui/Marquee';
+import { PlusIcon } from '@/components/ui/PlusIcon';
 import { OFFERS } from '@/lib/home-data';
 
 /**
@@ -12,7 +12,7 @@ import { OFFERS } from '@/lib/home-data';
  * Dirección **derecha**, velocidad medida 69.1 px/s sobre un set de 1178px
  * → 1178 / 69.1 ≈ 17.0s por vuelta.
  */
-export default function Offers() {
+export const Offers = () => {
   return (
     <section
       data-section="offers"

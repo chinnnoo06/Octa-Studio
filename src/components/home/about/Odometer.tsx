@@ -3,13 +3,13 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-export default function Odometer({
+export const Odometer = ({
   values,
   suffix,
 }: {
   values: readonly string[];
   suffix?: string;
-}) {
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });
 
@@ -26,7 +26,7 @@ export default function Odometer({
             <span
               key={`${v}-${i}`}
               aria-hidden={i > 0}
-              className="text-ink font-heading text-h4 block h-[66px] leading-[66px] tab:h-[30px] tab:leading-[30px] land:h-[25px] land:leading-[25px]"
+              className="text-secondary font-text text-h4 block h-[66px] leading-[66px] tab:h-[30px] tab:leading-[30px] land:h-[25px] land:leading-[25px]"
             >
               {v}
             </span>
@@ -34,7 +34,7 @@ export default function Odometer({
         </motion.div>
       </div>
       {suffix ? (
-        <span className="text-ink font-heading text-h4 leading-[66px] tab:leading-[30px] land:leading-[25px]">
+        <span className="text-secondary font-heading text-h4 leading-[66px] tab:leading-[30px] land:leading-[25px]">
           {suffix}
         </span>
       ) : null}

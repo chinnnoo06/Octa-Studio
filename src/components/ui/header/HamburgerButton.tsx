@@ -12,7 +12,7 @@ export const HamburgerButton = ({ open, toggleMenu, ref }: HamburgerButtonProps)
       aria-label="Toggle menu"
       className="relative flex items-center justify-center cursor-pointer
                  w-7.5 h-7.5
-                 text-secondary hover:text-thrird
+                 text-primary/75 hover:text-primary
                  transition-all duration-300"
     >
       <span

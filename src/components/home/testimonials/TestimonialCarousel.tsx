@@ -19,7 +19,7 @@ import { TESTIMONIALS } from '@/lib/home-data';
  *    Responsive: 50×50 (≤991) · 40×40 con top 20% (≤767) · 30×30 con radius 6
  *    y `top: 100%` (≤479), es decir **debajo** del slider.
  */
-function Chevron({ dir }: { dir: 'left' | 'right' }) {
+const Chevron = ({ dir }: { dir: 'left' | 'right' }) => {
   return (
     <svg width="25" height="30" viewBox="0 0 25 30" fill="none" aria-hidden="true">
       <path
@@ -33,7 +33,7 @@ function Chevron({ dir }: { dir: 'left' | 'right' }) {
   );
 }
 
-export default function TestimonialCarousel() {
+export const TestimonialCarousel = () => {
   const [emblaRef, embla] = useEmblaCarousel({
     loop: true,
     align: 'start',

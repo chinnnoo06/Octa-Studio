@@ -22,7 +22,7 @@ import { fadeUp, viewportOnce } from '@/lib/motion';
  * `motion.*` con sus propias variantes heredan el estado y el stagger funciona
  * igual que antes.
  */
-export default function Reveal({
+export const Reveal = ({
   children,
   variants = fadeUp,
   className,
@@ -40,7 +40,7 @@ export default function Reveal({
   amount?: number | 'some' | 'all';
   once?: boolean;
   transition?: Transition;
-}) {
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once, amount });
   // `motion[as]` es una unión de componentes por etiqueta y TypeScript

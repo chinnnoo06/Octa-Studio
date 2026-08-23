@@ -1,5 +1,5 @@
-import Marquee from '@/components/ui/Marquee';
-import LivinorMark from '@/components/ui/LivinorMark';
+import { Marquee } from '@/components/ui/Marquee';
+import { LivinorMark } from '@/components/ui/LivinorMark';
 import { SERVICES_MARQUEE } from '@/lib/home-data';
 
 /**
@@ -15,7 +15,7 @@ import { SERVICES_MARQUEE } from '@/lib/home-data';
  * En el original el bucle no es seamless (Webflow resetea con `duration: 0` y
  * se ve un salto); aquí sí lo es, manteniendo la misma velocidad.
  */
-function Row({ direction, duration }: { direction: 'left' | 'right'; duration: number }) {
+const Row = ({ direction, duration }: { direction: 'left' | 'right'; duration: number }) => {
   return (
     <Marquee duration={duration} direction={direction} gap={30} pauseOnHover={false}>
       {SERVICES_MARQUEE.map((word) => (
@@ -30,7 +30,7 @@ function Row({ direction, duration }: { direction: 'left' | 'right'; duration: n
   );
 }
 
-export default function ServicesMarquee() {
+export const ServicesMarquee = () => {
   return (
     <div className="flex flex-col gap-3 tab:gap-2.5">
       <Row direction="left" duration={24.1} />

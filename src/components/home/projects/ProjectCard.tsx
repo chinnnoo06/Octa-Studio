@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import type { Project } from '@/lib/home-data';
 
-export default function ProjectCard({ project }: { project: Project }) {
+export const ProjectCard = ({ project }: { project: Project }) => {
   const ref = useRef<HTMLAnchorElement>(null);
   const mx = useMotionValue(0);
   const my = useMotionValue(0);

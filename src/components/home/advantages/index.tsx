@@ -1,13 +1,13 @@
 import Image from 'next/image';
-import Eyebrow from '@/components/ui/Eyebrow';
-import SectionTitle from '@/components/ui/SectionTitle';
-import LivinorMark from '@/components/ui/LivinorMark';
-import Odometer from '@/components/home/about/Odometer';
-import BrandBadge from './BrandBadge';
-import DetailStar from './DetailStar';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { SectionTitle } from '@/components/ui/SectionTitle';
+import { LivinorMark } from '@/components/ui/LivinorMark';
+import { Odometer } from '@/components/home/about/Odometer';
+import { BrandBadge } from './BrandBadge';
+import { DetailStar } from './DetailStar';
 import { ADVANTAGES, ADVANTAGES_CORNER_IMAGES } from '@/lib/home-data';
 
-export default function Advantages() {
+export const Advantages = () => {
   return (
     <section data-section="advantages" className="pt-section pb-bigsection">
       <div className="container-livinor">

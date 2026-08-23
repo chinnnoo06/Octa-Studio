@@ -96,9 +96,15 @@
   --color-dark: #191919;
   --color-faint: #d7d7d7; 
   --color-paper: #ffffff; 
+
+  /*REALES*/
   --color-primary: #ffffff; /* --white */
   --color-secondary: #18608C; /* --Blue */
-  --color-thrird: #7FA8C4;
+  --color-thrird: #f2f2f2;
+  /* Texto largo. Es el azul de marca llevado casi al negro: en pantalla lee
+     como negro pero pertenece a la familia, y da ~15:1 sobre blanco sin el
+     halo duro del #000. El azul marca la estructura, este carga la lectura. */
+  --color-fourth: #12222C;
 
 
   /* --- Familias --- */
@@ -111,10 +117,6 @@
   --font-display: var(--font-hirondelles), ui-serif, Georgia, serif;
   --font-text: var(--font-poppins), Poppins, ui-sans-serif, system-ui, sans-serif;
 
-
-  --text-hero: var(--fs-hero);
-  --text-hero--line-height: 1.1;
-  --text-hero--font-weight: 700; /* el único Sora 700 del sitio: el h1 del hero */
 
   --text-display: var(--fs-display);
   --text-display--line-height: 1.1;
@@ -178,10 +180,6 @@
   --ease-brand: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* Contenedor del original (.container): max-width 1820px + padding lateral
-   igual al gap `container`. A 1440 de viewport eso da los 1320px de contenido
-   que se miden en el screenshot — pero por encima de 1440 sigue creciendo,
-   así que NO se puede hardcodear 1320. */
 @utility container-livinor {
   width: 100%;
   max-width: 1820px;
@@ -216,26 +214,6 @@
   }
 }
 
-/* ============================================================================
-   MARQUEES — loops infinitos en CSS (más baratos que JS y no bloquean el hilo)
-   El contenido se duplica en el DOM; cada mitad mide 50% del track.
-   ========================================================================== */
-/* ============================================================================
-   MARCA ANIMADA DE LOS EYEBROWS
-   Réplica del .lottie "Livnor Icon" del original (32×32, 50 frames @60fps =
-   0,833s, loop). Sus keyframes reales, extraídos del archivo:
-
-     forma 1 (anillos):  t 0 → 0,167s   escala 0→100 · opacidad 0→100
-     forma 2 (rombo):    t 0,167→0,333s escala 0→100 · opacidad 0→100
-     resto del ciclo:    ambas quietas hasta reiniciar en 0,833s
-
-   Se reproduce en CSS en lugar de cargar un runtime de Lottie: son 8 iconos de
-   20px por página y el reproductor pesa más que toda la animación.
-
-   El estado BASE de los paths es visible (escala 1, opacidad 1). La animación
-   solo añade la entrada, así que si el navegador la desactiva por
-   prefers-reduced-motion el icono se queda visible en vez de desaparecer.
-   ========================================================================== */
 @keyframes mark-pop-a {
   0% {
     transform: scale(0);
@@ -278,23 +256,6 @@
   animation-name: mark-pop-b;
 }
 
-/* ============================================================================
-   BENTO DE ADVANTAGES
-   ========================================================================== */
-
-/* Entrada escalonada de las 3 fotos de "Proven Work and Trusted Reputation".
-   Medido en el original a 150ms de resolución: ciclo de **3,6s**, cada foto
-   tarda **0,75s** en entrar y arranca **0,75s** después de la anterior — un
-   escalonado perfectamente parejo. Orden de entrada: segunda → primera →
-   tercera. Luego las tres se quedan quietas el 38% restante del ciclo.
-
-     foto 2:  0%  → 21%      (0 → 0,75s)
-     foto 1:  21% → 42%      (0,75 → 1,5s)
-     foto 3:  42% → 62%      (1,5 → 2,25s)
-     reposo:  62% → 100%     (2,25 → 3,6s)
-
-   Cada una tiene su propio keyframe porque el escalonado va dentro del mismo
-   ciclo: `animation-delay` solo afectaría a la primera vuelta de un bucle. */
 @keyframes corner-in-1 {
   0%,
   21% {

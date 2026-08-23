@@ -6,9 +6,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { DESIGN_CTA } from '@/lib/home-data';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 
-export { default as Offers } from './Offers';
+export { Offers } from './Offers';
 
-export default function DesignCta() {
+export const DesignCta = () => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,

@@ -6,7 +6,7 @@ import { ADVANTAGES_BADGE_TEXTS } from '@/lib/home-data';
 
 const DURACION_POR_ETIQUETA = 2.32; // 312px / 27px/s / 5 etiquetas
 
-export default function BrandBadge() {
+export const BrandBadge = () => {
   const etiquetas = [...ADVANTAGES_BADGE_TEXTS, ADVANTAGES_BADGE_TEXTS[0]];
   const duracion = ADVANTAGES_BADGE_TEXTS.length * DURACION_POR_ETIQUETA;
 

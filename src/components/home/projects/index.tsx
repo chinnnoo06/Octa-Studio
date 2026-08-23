@@ -1,10 +1,10 @@
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
-import Eyebrow from '@/components/ui/Eyebrow';
-import SectionTitle from '@/components/ui/SectionTitle';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 import { PROJECTS, PROJECTS_INTRO } from '@/lib/home-data';
-import ProjectCard from './ProjectCard';
+import { ProjectCard } from './ProjectCard';
 
-export default function Projects() {
+export const Projects = () => {
   const [left, right] = [PROJECTS.slice(0, 2), PROJECTS.slice(2)];
 
   return (

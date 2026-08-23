@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Eyebrow from '@/components/ui/Eyebrow';
-import SectionTitle from '@/components/ui/SectionTitle';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 import { BLOG_POSTS, type BlogPost } from '@/lib/home-data';
 import { cn } from '@/utils/cn';
 import { SecondaryButton } from '@/components/ui/buttons/SecondaryButton';
 
-function CalendarIcon() {
+const CalendarIcon = () => {
   return (
     <svg
       width="18"
@@ -22,7 +22,7 @@ function CalendarIcon() {
   );
 }
 
-function BigBox({ post }: { post: BlogPost }) {
+const BigBox = ({ post }: { post: BlogPost }) => {
   return (
     <Link href={post.href} className="group rounded-card relative flex-1 overflow-hidden">
       <Image
@@ -47,7 +47,7 @@ function BigBox({ post }: { post: BlogPost }) {
   );
 }
 
-function MiniBox({ post }: { post: BlogPost }) {
+const MiniBox = ({ post }: { post: BlogPost }) => {
   return (
     <div className="bg-card rounded-card min-w-[402px] p-10 tab:min-w-[280px] tab:p-6 land:hidden">
       <div className="flex h-full max-w-[205px] flex-col justify-between gap-10">
@@ -70,7 +70,7 @@ function MiniBox({ post }: { post: BlogPost }) {
   );
 }
 
-export default function Blogs() {
+export const Blogs = () => {
   return (
     <section data-section="blogs" className="pt-bigsection pb-section">
       <div className="container-livinor">

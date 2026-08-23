@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Eyebrow from '@/components/ui/Eyebrow';
-import Reveal from '@/components/ui/Reveal';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { Reveal } from '@/components/ui/Reveal';
 import { fadeUp } from '@/lib/motion';
 import { PROCESS_STEPS } from '@/lib/home-data';
 import { cn } from '@/utils/cn';
@@ -21,7 +21,7 @@ import { cn } from '@/utils/cn';
  */
 
 /** Codo con punta de flecha que une un paso con el siguiente (100×100). */
-function StepArrow() {
+const StepArrow = () => {
   return (
     <svg
       width="100"
@@ -37,7 +37,7 @@ function StepArrow() {
   );
 }
 
-function Step({ step, className }: { step: (typeof PROCESS_STEPS)[number]; className?: string }) {
+const Step = ({ step, className }: { step: (typeof PROCESS_STEPS)[number]; className?: string }) => {
   return (
     <Reveal
       variants={fadeUp}
@@ -88,7 +88,7 @@ function Step({ step, className }: { step: (typeof PROCESS_STEPS)[number]; class
   );
 }
 
-export default function Process() {
+export const Process = () => {
   const [s1, s2, s3, s4, s5] = PROCESS_STEPS;
 
   return (

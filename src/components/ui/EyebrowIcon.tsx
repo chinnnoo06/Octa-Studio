@@ -1,33 +1,12 @@
-/**
- * Icono de los eyebrows ("About Us", "Our Services", "Advantages"…).
- *
- * En el original es un `.lottie` de 32×32 (50 frames a 60fps = 0,833s, en
- * bucle). Sus formas están extraídas de ese archivo, no redibujadas: son dos
- * rombos superpuestos en trazo, de los que el de detrás solo asoma por la
- * izquierda.
- *
- *   · rombo:  dos contornos en un mismo path con `fill-rule: evenodd`, que es
- *             lo que lo deja hueco en el centro
- *   · arco:   la parte visible del segundo rombo, por detrás del primero
- *
- * La animación (clase `.mark-animated` en globals.css) reproduce los keyframes
- * reales del lottie: cada forma entra escalando desde el centro con fundido,
- * escalonadas 0→0,167s y 0,167→0,333s, y el ciclo repite cada 0,833s. Se hace
- * en CSS en lugar de cargar un reproductor de Lottie, que pesaría más que la
- * animación entera.
- *
- * OJO: esto NO es la marca de Livinor (dos círculos con un rombo relleno). Esa
- * es `LivinorMark` y se usa en el marquee de servicios, en ofertas y en el
- * bento. Son iconos distintos.
- */
-export default function EyebrowIcon({
+
+export const EyebrowIcon = ({
   className,
   animated = true,
 }: {
   className?: string;
   /** `false` deja el icono quieto en su estado final. */
   animated?: boolean;
-}) {
+}) => {
   return (
     <svg
       viewBox="0 0 32 32"

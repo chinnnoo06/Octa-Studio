@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion
 
 const STRIPES = 8;
 
-function Stripe({ index, progress }: { index: number; progress: MotionValue<number> }) {
+const Stripe = ({ index, progress }: { index: number; progress: MotionValue<number> }) => {
   const start = 0.2 + index * 0.05;
   const x = useTransform(progress, [start, start + 0.05], ['0%', '100%']);
   return (
@@ -16,13 +16,13 @@ function Stripe({ index, progress }: { index: number; progress: MotionValue<numb
   );
 }
 
-export default function WipeHeading({
+export const WipeHeading = ({
   text,
   className,
 }: {
   text: string;
   className?: string;
-}) {
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,

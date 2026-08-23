@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
-import Eyebrow from '@/components/ui/Eyebrow';
-import SectionTitle from '@/components/ui/SectionTitle';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 import { PRODUCTS } from '@/lib/home-data';
 
-export default function Products() {
+export const Products = () => {
   return (
     <section data-section="products" className="bg-paper py-bigsection">
       <div className="container-livinor">

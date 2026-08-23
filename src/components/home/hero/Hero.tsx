@@ -1,4 +1,4 @@
-import HeroSlider from './HeroSlider';
+import { HeroSlider } from './HeroSlider';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { TickLine } from '@/components/ui/TickLine';
 
@@ -103,14 +103,14 @@ export const Hero = () => {
                   <span className="text-primary font-text text-7xl leading-none">
                     20
                   </span>
-                  <span className="text-primary font-text text-sm font-medium tracking-[0.15em] uppercase">
+                  <span className="text-primary font-text text-sm tracking-[0.15em] uppercase">
                     años de montajes
                     <br />
                     nacional e internacional
                   </span>
                 </p>
 
-                <h2 className="text-primary font-text text-lg font-medium uppercase">
+                <h2 className="text-primary font-text text-lg uppercase">
                   Todo desde cero{' '}
                   <span className="text-primary/75">de la idea al desmontaje.</span>
                 </h2>

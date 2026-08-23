@@ -1,18 +1,6 @@
 import { cn } from '@/utils/cn';
 
-/**
- * Loop infinito en CSS (keyframes en globals.css).
- *
- * Geometría del bucle: el track no lleva gap propio; cada mitad es un flex con
- * `gap` y un `padding-inline-end` del mismo valor. Así el ancho de cada mitad
- * incluye su separación final y el `translate3d(-50%)` cae exactamente sobre
- * el primer item de la segunda copia — sin salto ni deriva acumulada.
- *
- * Se usa en 3 sitios del original: la tira de imágenes del hero, el marquee de
- * texto gigante de services (2 filas en direcciones opuestas) y el marquee de
- * ofertas bajo la sección designcta.
- */
-export default function Marquee({
+export const Marquee = ({
   children,
   duration = 40,
   direction = 'left',
@@ -28,7 +16,7 @@ export default function Marquee({
   className?: string;
   /** Separación entre items, en píxeles. */
   gap?: number;
-}) {
+}) => {
   const half = (
     <div
       className="flex shrink-0 items-center"

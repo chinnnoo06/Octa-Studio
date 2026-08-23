@@ -1,11 +1,11 @@
 
-export default function DetailStar({
+export const DetailStar = ({
   className,
   style,
 }: {
   className?: string;
   style?: React.CSSProperties;
-}) {
+}) => {
   return (
     <svg
       viewBox="0 0 43 43"

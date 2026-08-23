@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
-import Eyebrow from '@/components/ui/Eyebrow';
-import WipeHeading from '@/components/home/about/WipeHeading';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { WipeHeading } from '@/components/ui/WipeHeading';
 import { SERVICES, SERVICES_HEADING } from '@/lib/home-data';
-import ServicesMarquee from './ServicesMarquee';
+import { ServicesMarquee } from './ServicesMarquee';
 
-export default function Services() {
+export const Services = () => {
   return (
     <section data-section="services" className="overflow-hidden pt-bigsection pb-section">
       <div className="container-livinor">

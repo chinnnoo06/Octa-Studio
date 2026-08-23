@@ -9,8 +9,10 @@ import { HamburgerButton } from './HamburgerButton';
 import { useHeader } from '@/hooks/ui/useHeader';
 import { MobileNav } from './MobileNav';
 import { isActiveHref } from '@/utils/isActiveHref';
+import { PHONE_DISPLAY, PHONE_HREF } from '@/utils/data/contact';
+import { HiOutlinePhone } from 'react-icons/hi2';
 
-function NavLink({
+const NavLink = ({
   href,
   label,
   active,
@@ -18,7 +20,7 @@ function NavLink({
   href: string;
   label: string;
   active?: boolean;
-}) {
+}) => {
   return (
     <Link
       href={href}
@@ -48,7 +50,12 @@ export const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-100 h-18 bg-ink/30 backdrop-blur-md border-b border-primary/25">
+      <header
+        className={cn(
+          'fixed top-0 inset-x-0 z-100 h-18 bg-secondary backdrop-blur-md border-b transition-colors duration-300',
+          menuVisible ? 'border-transparent' : 'border-primary/25',
+        )}
+      >
 
         <div className="relative max-w-[1700px] mx-auto flex justify-between items-center w-full px-5 h-18 gap-10">
 
@@ -60,9 +67,9 @@ export const Header = () => {
             </div>
           </div>
 
-          <div className='hidden lg:flex grow justify-end'>
+          <div className='hidden lg:flex grow justify-center'>
             <nav aria-label="Navegación principal">
-              <ul role="list" className="flex items-center gap-15 xl:gap-20">
+              <ul role="list" className="flex items-center gap-10 xl:gap-15">
                 {NAV_LINKS.map((link) => {
                   return (
                     <li key={link.href}>
@@ -76,6 +83,19 @@ export const Header = () => {
                 })}
               </ul>
             </nav>
+          </div>
+
+          {/* Tercera columna: el teléfono como dato, sin píldora ni fondo, para
+              que no compita con la navegación ni haga de CTA — de eso ya se
+              encarga el botón flotante de WhatsApp. */}
+          <div className="hidden shrink-0 items-center justify-end lg:flex">
+            <a
+              href={PHONE_HREF}
+              className="text-primary hover:text-primary/70 font-text inline-flex items-center gap-2.5 text-sm leading-none whitespace-nowrap transition-colors duration-300 xl:text-base"
+            >
+              <HiOutlinePhone className="size-3.5 shrink-0 xl:size-4" />
+              {PHONE_DISPLAY}
+            </a>
           </div>
 
           <div className="flex items-center justify-end shrink-0 lg:hidden">

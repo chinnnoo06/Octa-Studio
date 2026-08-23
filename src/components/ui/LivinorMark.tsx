@@ -1,22 +1,11 @@
-/**
- * Marca de Livinor: dos anillos entrelazados con un rombo en la intersección.
- * Extraída del SVG original del sitio (viewBox 0 0 197 197).
- *
- * Va inline (no <Image>) porque aparece 10+ veces por página en tamaños y
- * colores distintos —eyebrows sobre fondo claro y oscuro, navbar, footer— y
- * así hereda el color del contexto con `currentColor` sin peticiones extra.
- *
- * Es la marca de la empresa, NO el icono de los eyebrows: ese es otro dibujo
- * (dos rombos en trazo) y vive en `EyebrowIcon`. Esta marca se usa quieta, en
- * el marquee de servicios, la franja de ofertas y el bento de advantages.
- */
-export default function LivinorMark({
+
+export const LivinorMark = ({
   className,
   title,
 }: {
   className?: string;
   title?: string;
-}) {
+}) => {
   return (
     <svg
       viewBox="0 0 197 197"

@@ -19,7 +19,7 @@ import { cn } from '@/utils/cn';
  * La ventana (`.h2-counter-wrap`) mide 85px en desktop y baja a 36/30/28px en
  * los breakpoints del original; se controla con `--rotator-h` en globals.css.
  */
-export default function SectionTitle({
+export const SectionTitle = ({
   lead,
   rotating,
   className,
@@ -40,7 +40,7 @@ export default function SectionTitle({
   /** `false` para los títulos de un solo tono (process, testimonials). */
   rotate?: boolean;
   rotatingClassName?: string;
-}) {
+}) => {
   const ref = useRef<HTMLHeadingElement>(null);
   const inView = useInView(ref, { once: true, amount: 0 });
   const MotionTag = motion[Tag];

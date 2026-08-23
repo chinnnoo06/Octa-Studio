@@ -1,72 +1,59 @@
 import Image from 'next/image';
-import Eyebrow from '@/components/ui/Eyebrow';
+import { Eyebrow } from '@/components/ui/Eyebrow';
 import { ABOUT, STATS } from '@/lib/home-data';
-import { cn } from '@/utils/cn';
-import Odometer from './Odometer';
-import WipeHeading from './WipeHeading';
+import { Odometer } from './Odometer';
+import { WipeHeading } from '../../ui/WipeHeading';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 
 const BOX_VARIANT = {
-  one: 'bg-paper rounded-br-tile tab:bg-paper',
-  two: 'bg-transparent border-l border-[#bfbfbf] rounded-tr-tile tab:bg-paper',
-  three: 'bg-transparent border-t border-[#bfbfbf] rounded-b-tile tab:bg-paper',
-  four: 'bg-card border-t border-l border-[#bfbfbf] rounded-br-tile tab:bg-paper',
+  one:   'bg-primary max-lg:rounded-xl max-lg:border lg:rounded-tl-xl lg:border-b lg:border-r border-fourth/50',
+  two:   'bg-transparent rounded-xl border lg:border-none border-fourth/50',
+  three: 'bg-transparent rounded-xl border lg:border-none border-fourth/50',
+  four:  'bg-secondary/15 max-lg:rounded-xl max-lg:border lg:rounded-br-xl lg:border-t lg:border-l border-fourth/50',
 } as const;
 
-export default function About() {
+export const About = () => {
   return (
-    <section data-section="about" className="pt-section pb-bigsection">
-      <div className="container-livinor">
-        <div className="mx-auto grid max-w-[1700px] grid-cols-2 gap-[60px] tab:grid-cols-1 tab:gap-10 mob:gap-[30px]">
-          {/* ── Columna izquierda ───────────────────────────────────────── */}
-          <div className="flex min-h-[850px] flex-col justify-between gap-10 tab:min-h-0 mob:gap-[30px]">
+    <section data-section="about" className="py-20 lg:py-25 bg-thrird">
+        <div className="mx-auto max-w-[1700px] px-5 flex flex-col lg:flex-row gap-20">
+          <div className="flex w-full lg:w-1/2 flex-col justify-between gap-10">
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-5">
-                <Eyebrow>{ABOUT.eyebrow}</Eyebrow>
+                <Eyebrow>Sobre Octa Studio</Eyebrow>
                 <WipeHeading
-                  text={ABOUT.heading}
-                  className="text-ink font-heading text-h4 uppercase"
+                  text="Más de 20 años convirtiendo marcas en experiencias"
+                  className="text-secondary font-text text-3xl lg:text-4xl"
                 />
               </div>
 
-              <div className="flex max-w-[480px] items-center gap-10">
-                <PrimaryButton href={ABOUT.cta.href}>{ABOUT.cta.label}</PrimaryButton>
-                <p className="text-paragraph font-body text-body flex items-center gap-2.5">
-                  <span
-                    aria-hidden="true"
-                    className="size-2.5 shrink-0 rounded-full bg-[#00c853]"
-                  />
-                  {ABOUT.slotText}
+              <div className='flex flex-col gap-5'>
+                <p className="text-fourth/75 font-text text-base lg:text-lg ">
+                  Somos una empresa dedicada al diseño y montaje de stands, shows, eventos masivos, congresos y convenciones
+                  a nivel nacional e internacional. Acompañamos cada proyecto desde la primera idea hasta el desmontaje.
                 </p>
+                <PrimaryButton href='/nosotros'>Conocer Más</PrimaryButton>
               </div>
             </div>
 
-            <div className="rounded-card overflow-hidden">
+            <div className="rounded-xl overflow-hidden">
               <Image
                 src={ABOUT.image.src}
                 alt={ABOUT.image.alt}
                 width={630}
                 height={425}
-                className="h-[425px] w-full object-cover tab:h-[400px] land:h-[300px] mob:h-[250px]"
+                className="h-110 w-full object-cover"
               />
             </div>
           </div>
 
-          {/* ── Bento 2×2 de stats ──────────────────────────────────────── */}
-          <div className="grid grid-cols-2 gap-0 tab:gap-5 land:gap-x-2.5 mob:flex mob:overflow-x-auto mob:pb-2.5">
+          <div className=" w-full lg:w-1/2 grid grid-cols-2 gap-5 lg:gap-0">
             {STATS.map((s) => (
-              <div
-                key={s.label}
-                className={cn(
-                  'flex flex-col items-end justify-end p-10 mob:min-w-[220px] mob:shrink-0',
-                  BOX_VARIANT[s.variant],
-                )}
-              >
-                <div className="flex max-w-[330px] flex-col items-end justify-between gap-10 land:max-w-none land:items-start land:gap-5 mob:flex-wrap">
+              <div key={s.label} className={`flex flex-col items-end justify-end p-10 hrink-0 ${BOX_VARIANT[s.variant]}`}  >
+                <div className="flex flex-col items-end justify-between gap-5">
                   <Odometer values={s.odometer} suffix={s.suffix} />
-                  <div className="flex flex-col items-end gap-2.5 text-right land:items-start land:text-left">
-                    <p className="text-ink font-heading text-h6 uppercase">{s.label}</p>
-                    <p className="text-paragraph font-body text-body land:hidden">
+                  <div className="flex flex-col items-end gap-2.5 text-right lg:items-end lg:text-right">
+                    <p className="text-secondary font-text text-xl lg:text-2xl uppercase">{s.label}</p>
+                    <p className="text-fourth/75 font-text text-sm lg:text-base hidden sm:block">
                       {s.description}
                     </p>
                   </div>
@@ -75,7 +62,6 @@ export default function About() {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 }
