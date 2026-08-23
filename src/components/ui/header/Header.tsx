@@ -26,7 +26,7 @@ function NavLink({
       className="group relative inline-block py-1"
     >
       <span
-        className="font-text text-sm xl:text-base leading-none transition-colors duration-300 text-secondary"
+        className="font-text text-sm xl:text-base leading-none transition-colors duration-300 text-primary"
       >
         {label}
       </span>
@@ -34,8 +34,8 @@ function NavLink({
         className={cn(
           'absolute inset-x-0 bottom-0 h-[1.5px] origin-left',
           active
-            ? 'bg-secondary scale-x-100'
-            : 'bg-secondary scale-x-0 transition-transform duration-300 ease-brand group-hover:scale-x-100',
+            ? 'bg-primary scale-x-100'
+            : 'bg-primary scale-x-0 transition-transform duration-300 ease-brand group-hover:scale-x-100',
         )}
       />
     </Link>
@@ -48,7 +48,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-100 h-18 bg-primary border-b border-secondary/25">
+      <header className="fixed top-0 inset-x-0 z-100 h-18 bg-ink/30 backdrop-blur-md border-b border-primary/25">
 
         <div className="relative max-w-[1700px] mx-auto flex justify-between items-center w-full px-5 h-18 gap-10">
 
