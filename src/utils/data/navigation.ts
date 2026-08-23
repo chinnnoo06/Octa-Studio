@@ -6,7 +6,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Servicios', href: '/servicios' },
   { label: 'Proyectos', href: '/proyectos' },
   { label: 'Contacto',  href: '/contacto' },
-  { label: 'Blogs',     href: '/blogs' },
+  { label: 'Blog',     href: '/blogs' },
 ];
 
 export const FOOTER_LINKS: NavLink[] = [
@@ -15,7 +15,7 @@ export const FOOTER_LINKS: NavLink[] = [
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Shop',     href: '/shop' },
-  { label: 'Blogs',    href: '/blogs' },
+  { label: 'Blog',    href: '/blog' },
   { label: 'Licenses', href: '/utility-pages/licenses' },
 ];
 

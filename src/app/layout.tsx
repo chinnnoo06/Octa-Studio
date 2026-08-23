@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import Footer from '@/components/ui/footer/Footer';
 import './globals.css';
 import { Header } from '@/components/ui/header/Header';
+import { WhatsAppButton } from '@/components/ui/buttons/WhatsAppButton';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -62,10 +63,11 @@ export default function RootLayout({
       lang="en"
       className={`${sora.variable} ${inter.variable} ${hirondelles.variable} ${poppins.variable}`}
     >
-      <body className="bg-page text-paragraph font-body antialiased">
+      <body className="bg-primary text-ink font-body antialiased">
         <Header />
         {children}
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

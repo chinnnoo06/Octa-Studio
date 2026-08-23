@@ -1,5 +1,4 @@
-import type { Metadata } from 'next';
-import Hero from '@/components/home/hero';
+import { Hero } from '@/components/home/hero/Hero';
 import About from '@/components/home/about';
 import Projects from '@/components/home/projects';
 import Process from '@/components/home/process';

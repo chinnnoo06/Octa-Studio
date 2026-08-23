@@ -1,9 +1,10 @@
 import Image from "next/image"
+import Img from "@/assets/media/logo.png"
 
 export const Logo = () => {
     return (
         <Image
-            src="/images/shared/logo-navbar.svg"
+            src={Img}
             alt="Logo Octa Studio"
             width={170}
             height={55}
