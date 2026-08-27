@@ -1,17 +1,15 @@
 import Image from 'next/image';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { Odometer } from '@/components/home/about/Odometer';
 import { BrandBadge } from './BrandBadge';
 import { DetailStar } from './DetailStar';
 import { ADVANTAGES, ADVANTAGES_CORNER_IMAGES } from '@/utils/data/advantages';
 import type { StaticImageData } from 'next/image';
-import ImgMarca from '@/assets/media/Logo-Icons.webp';
-import ImgMontaje from '@/assets/media/Img12.webp';
-import ImgRender from '@/assets/media/Img9.webp';
-import ImgTrato from '@/assets/media/Img2.webp';
+import ImgMarca from "@/assets/media/brand/ImgLogo.webp"
+import ImgMontaje from '@/assets/media/stands/ImgStand8.webp';
+import ImgRender from '@/assets/media/renders/ImgRender2.webp';
+import ImgTrato from '@/assets/media/stands/ImgStand2.webp';
 
-/** Cada foto de fondo se recorta a un cuarto de fila como mucho. */
 const TILE_SIZES = '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw';
 
 const TILE = 'w-75 shrink-0 snap-start sm:w-auto sm:shrink';
@@ -35,7 +33,7 @@ const PhotoTile = ({
       <div aria-hidden="true" className="bg-fourth/50 absolute inset-0" />
       <div className="relative z-10 flex flex-col gap-5">
         {children}
-        <h3 className="text-primary max-w-70 text-lg font-medium uppercase lg:text-xl">
+        <h3 className="text-primary max-w-70 text-lg font-semibold uppercase lg:text-xl">
           {title}
         </h3>
       </div>
@@ -45,7 +43,7 @@ const PhotoTile = ({
 
 export const Advantages = () => {
   return (
-    <section data-section="advantages" className="bg-thrird py-20 lg:py-25">
+    <section data-section="advantages" className="bg-primary py-20 lg:py-25">
       <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
 
         <div className="flex flex-col items-center gap-5">
@@ -69,15 +67,17 @@ export const Advantages = () => {
           </div>
 
           <div className={`border-fourth/30 bg-secondary/15 flex min-h-70 flex-col justify-between gap-5 rounded-xl border p-5 sm:col-span-2 ${TILE}`}>
-            <h3 className="text-secondary max-w-90 text-lg font-medium uppercase lg:text-xl">
+            <h3 className="text-secondary max-w-90 text-lg lg:text-xl font-semibold uppercase ">
               {ADVANTAGES.centerTitle}
             </h3>
 
             <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-end sm:justify-between">
-              <div className="flex flex-col gap-2.5">
-                <Odometer values={ADVANTAGES.centerCounter.odometer} />
+              <div className="flex max-w-90 flex-col gap-2.5">
+                <p className="text-secondary text-3xl leading-none font-bold uppercase lg:text-4xl">
+                  {ADVANTAGES.centerClaim}
+                </p>
                 <p className="text-fourth/75 text-sm lg:text-base">
-                  {ADVANTAGES.centerCounterLabel}
+                  {ADVANTAGES.centerClaimDetail}
                 </p>
               </div>
 

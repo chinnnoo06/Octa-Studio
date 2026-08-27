@@ -15,6 +15,7 @@ export const ABOUT = {
 export const STATS: Stat[] = [
   {
     odometer: ['20', '19', '18', '17', '16', '15', '14', '13', '12', '11'],
+    suffix: '+',
     label: 'Años de experiencia',
     description: 'Dos décadas diseñando y montando en todo México',
     variant: 'one',

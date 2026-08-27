@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { TestimonialCarousel } from './TestimonialCarousel';
-import Img from '@/assets/media/Img13.webp';
+import Img from '@/assets/media/backgrounds/ImgBackground3.webp';
 
 export const Testimonials = () => {
   const ref = useRef<HTMLElement>(null);
@@ -21,7 +21,7 @@ export const Testimonials = () => {
       ref={ref}
       data-section="testimonials"
       style={{ scale }}
-      className="relative flex min-h-[80vh] lg:min-h-screen items-center justify-center overflow-hidden py-20 lg:py-25 bg-white"
+      className="relative flex min-h-[60vh] lg:min-h-screen items-center justify-center overflow-hidden py-20 lg:py-25 bg-white"
     >
       <Image
         src={Img}

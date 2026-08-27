@@ -1,6 +1,6 @@
-import ImgObra1 from '@/assets/media/Img2.webp';
-import ImgObra2 from '@/assets/media/Img3.webp';
-import ImgObra3 from '@/assets/media/Img4.webp';
+import ImgObra1 from '@/assets/media/stands/ImgStand2.webp';
+import ImgObra2 from '@/assets/media/stands/ImgStand3.webp';
+import ImgObra3 from '@/assets/media/stands/ImgStand4.webp';
 
 export const ADVANTAGES_BADGE_TEXTS = [
   'Stands',
@@ -13,8 +13,11 @@ export const ADVANTAGES_BADGE_TEXTS = [
 export const ADVANTAGES = {
   leftBottomTitle: 'Montaje y desmontaje con equipo propio',
   centerTitle: 'Cobertura en todo México y parte de Estados Unidos',
-  centerCounter: { odometer: ['0', '9', '8', '7', '6', '5', '4', '3', '2', '1'] },
-  centerCounterLabel: 'Viáticos dentro de México',
+  /** El diferenciador concreto del brief. Antes iba en un odómetro que
+   *  contaba hasta 0: el número obligaba a leer la etiqueta para entenderlo. */
+  centerClaim: 'Sin viáticos',
+  centerClaimDetail:
+    'Traslados, hospedaje y dietas del equipo de montaje, incluidos en cualquier ciudad del país.',
   rightTopTitle: 'Cada stand, diseñado desde cero',
   rightBottomTitle: 'Trato directo, sin intermediarios',
 } as const;

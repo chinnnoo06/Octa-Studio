@@ -1,13 +1,13 @@
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { NewsletterForm } from '@/components/home/blogs/NewsletterForm';
 import { Reveal } from '@/components/ui/Reveal';
 import { BlogCard } from './BlogCard';
-import { BLOG_POSTS, BLOG_NEWSLETTER } from '@/utils/data/blogs';
+import { BLOG_POSTS } from '@/utils/data/blogs';
+import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 
 export const Blogs = () => {
   return (
-    <section data-section="blogs" className="bg-thrird py-20 lg:py-25">
+    <section data-section="blogs" className="bg-primary py-20 lg:py-25">
       <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
 
         <div className="flex flex-col gap-5">
@@ -28,19 +28,7 @@ export const Blogs = () => {
           ))}
         </div>
 
-        {/* Cierre de sección: el bloque azul que engancha al boletín. */}
-        <div className="bg-secondary flex flex-col gap-5 rounded-xl p-5 lg:p-10 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-col gap-2.5">
-            <h3 className="text-primary text-2xl font-bold uppercase lg:text-3xl">
-              {BLOG_NEWSLETTER.title}
-            </h3>
-            <p className="text-primary/75 max-w-xl text-base lg:text-lg">
-              {BLOG_NEWSLETTER.description}
-            </p>
-          </div>
-
-          <NewsletterForm className="w-full lg:max-w-125" />
-        </div>
+        <PrimaryButton href="/blogs">Ver más blogs</PrimaryButton>
       </div>
     </section>
   );

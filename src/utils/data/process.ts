@@ -1,9 +1,9 @@
 import type { ProcessStep } from './types';
-import ImgStep1 from "@/assets/media/Img5.webp"
-import ImgStep2 from "@/assets/media/Img6.webp"
-import ImgStep3 from "@/assets/media/Img7.webp"
-import ImgStep4 from "@/assets/media/Img8.webp"
-import ImgStep5 from "@/assets/media/Img9.webp"
+import ImgStep1 from "@/assets/media/stock/ImgStock1.webp"
+import ImgStep2 from "@/assets/media/renders/ImgRender1.webp"
+import ImgStep3 from "@/assets/media/stands/ImgStand5.webp"
+import ImgStep4 from "@/assets/media/stands/ImgStand6.webp"
+import ImgStep5 from "@/assets/media/renders/ImgRender2.webp"
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {

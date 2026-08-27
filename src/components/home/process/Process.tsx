@@ -1,28 +1,16 @@
-import Image from 'next/image';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { Reveal } from '@/components/ui/Reveal';
 import { fadeUp } from '@/utils/motion';
 import { Step } from './Step';
 import { PROCESS_STEPS } from '@/utils/data/process';
-import Img from '@/assets/media/Img14.webp';
 import { SecondaryButton } from '@/components/ui/buttons/SecondaryButton';
 
 export const Process = () => {
   return (
-    <section data-section="process" className="relative overflow-x-clip py-20 lg:py-25">
-      <Image
-        src={Img}
-        alt=""
-        fill
-        sizes="100vw"
-        placeholder="blur"
-        className="object-cover"
-      />
+    <section data-section="process" className="bg-secondary overflow-x-clip py-20 lg:py-25">
 
-      <div aria-hidden="true" className="bg-fourth/25 absolute inset-0" />
-
-      <div className="relative z-10 mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
+      <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
 
         <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-start">
           <Eyebrow tone="light">Nuestro Proceso</Eyebrow>

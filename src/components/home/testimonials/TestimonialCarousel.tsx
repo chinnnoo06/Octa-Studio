@@ -62,11 +62,9 @@ export const TestimonialCarousel = () => {
               aria-label={`${i + 1} de ${TESTIMONIALS.length}`}
               aria-hidden={selected !== i}
             >
-              {/* Sin `px-*`: el margen lateral ya lo pone el contenedor de la
-                  sección. Si se repite aquí, el testimonio queda 20px más
-                  adentro que el eyebrow y el título que tiene encima. */}
+       
               <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 text-center">
-                <FaQuoteLeft aria-hidden="true" className="text-primary/40 size-8 lg:size-10" />
+                <FaQuoteLeft aria-hidden="true" className="text-primary/75 size-8 lg:size-10" />
 
                 <p className="text-primary text-base text-balance lg:text-lg">
                   {t.quote}

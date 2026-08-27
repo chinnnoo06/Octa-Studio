@@ -1,7 +1,7 @@
 import type { BlogPost } from './types';
-import Img1 from '@/assets/media/Img6.webp';
-import Img2 from '@/assets/media/Img7.webp';
-import Img3 from '@/assets/media/Img8.webp';
+import Img1 from '@/assets/media/renders/ImgRender1.webp';
+import Img2 from '@/assets/media/stands/ImgStand5.webp';
+import Img3 from '@/assets/media/stands/ImgStand6.webp';
 
 export const BLOG_POSTS: BlogPost[] = [
   {

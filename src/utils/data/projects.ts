@@ -1,20 +1,8 @@
-/**
- * Proyectos destacados en la home.
- *
- * Los cuatro son stands reales de Octa y el nombre sale del propio stand, no de
- * una lista aparte. En lugar del año va el SECTOR: el cliente no nos dio fechas
- * y un año inventado en la sección que sirve de portafolio es justo lo que no
- * conviene.
- *
- * Todos apuntan a `/proyectos` porque no hay ficha individual: el cliente no la
- * pidió, y las rutas `/projects/<slug>` que traía la plantilla daban 404.
- */
-
 import type { Project } from './types';
-import ImgAgrokorita from '@/assets/media/Img15.webp';
-import ImgTemisa from '@/assets/media/Img16.webp';
-import ImgToyoKasei from '@/assets/media/Img4.webp';
-import ImgPcp from '@/assets/media/Img12.webp';
+import ImgAgrokorita from '@/assets/media/stands/ImgStand9.webp';
+import ImgTemisa from '@/assets/media/stands/ImgStand10.webp';
+import ImgToyoKasei from '@/assets/media/stands/ImgStand4.webp';
+import ImgPcp from '@/assets/media/stands/ImgStand8.webp';
 
 export const PROJECTS: Project[] = [
   {

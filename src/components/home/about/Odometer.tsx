@@ -14,7 +14,7 @@ export const Odometer = ({ values, suffix }:TOdometerProps) => {
 
   return (
     <div ref={ref} className="flex items-end">
-      <div data-odometer className="h-10 lg:h-12 overflow-hidden">
+      <div data-odometer className="h-11 lg:h-13.5 overflow-hidden">
         <motion.div
           className="flex flex-col"
           initial={{ y: '-90%' }}
@@ -25,7 +25,7 @@ export const Odometer = ({ values, suffix }:TOdometerProps) => {
             <span
               key={`${v}-${i}`}
               aria-hidden={i > 0}
-              className="text-secondary font-medium text-4xl lg:text-5xl block"
+              className="text-secondary font-semibold text-5xl lg:text-6xl block"
             >
               {v}
             </span>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { HeroSlider } from './HeroSlider';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { TickLine } from '@/components/ui/TickLine';
-import Img from "@/assets/media/Img1.webp"
+import Img from "@/assets/media/stands/ImgStand1.webp"
 
 export const Hero = () => {
   return (
@@ -14,7 +14,7 @@ export const Hero = () => {
         priority
         sizes="100vw"
         placeholder="blur"
-        className="object-cover object-center"
+        className="object-cover object-left lg:object-center"
       />
 
       <div aria-hidden="true" className="bg-fourth/25 absolute inset-0" />

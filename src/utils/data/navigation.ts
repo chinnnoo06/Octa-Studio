@@ -12,4 +12,5 @@ export const NAV_LINKS: NavLink[] = [
 export const LEGAL_LINKS: NavLink[] = [
   { label: 'Terminos y condiciones', href: '/terminos' },
   { label: 'Politica de privacidad', href: '/privacidad' },
+  { label: 'Licencia y Creditos', href: '/creditos' },
 ];

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { Marquee } from '@/components/ui/Marquee';
-import Img1 from "@/assets/media/Img2.webp"
-import Img2 from "@/assets/media/Img3.webp"
-import Img3 from "@/assets/media/Img4.webp"
+import Img1 from "@/assets/media/stands/ImgStand2.webp"
+import Img2 from "@/assets/media/stands/ImgStand3.webp"
+import Img3 from "@/assets/media/stands/ImgStand4.webp"
 
 export const HeroSlider = () => {
   return (

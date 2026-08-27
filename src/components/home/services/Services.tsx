@@ -5,11 +5,11 @@ import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { Reveal } from '@/components/ui/Reveal';
 import { ServiceCard } from './ServiceCard';
 import { SERVICES } from '@/utils/data/services';
-import Img from '@/assets/media/Img10.webp';
+import Img from '@/assets/media/stands/ImgStand7.webp';
 
 export const Services = () => {
   return (
-    <section data-section="services" className="bg-primary pt-20 lg:pt-25">
+    <section data-section="services" className="bg-primary py-20 lg:py-25">
       <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
 
         <div className="border-fourth/30 flex flex-col gap-10 border-t pt-10 lg:flex-row">

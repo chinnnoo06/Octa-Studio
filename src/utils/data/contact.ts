@@ -1,12 +1,3 @@
-/**
- * Datos de contacto de Octa Building Studio.
- *
- * Fuente única: todo lo que sea «cómo se llega a Octa» —header, footer, botón
- * flotante, página de contacto— sale de aquí. Si cambia un número se cambia en
- * este archivo y no hay que ir buscándolo por los componentes.
- */
-
-/** El mismo número atiende llamadas y WhatsApp. */
 const PHONE_DISPLAY = '33 3405 0215';
 
 /** E.164 sin separadores: es lo que necesita el marcador del móvil. */

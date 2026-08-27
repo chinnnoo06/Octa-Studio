@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { TickLine } from '@/components/ui/TickLine';
-import Img from '@/assets/media/Img11.webp';
+import Img from '@/assets/media/backgrounds/ImgBackground4.jpg';
 
 export const CtaSection = () => {
   const ref = useRef<HTMLElement>(null);
@@ -21,7 +21,7 @@ export const CtaSection = () => {
       ref={ref}
       data-section="cta"
       style={{ scale }}
-      className="relative flex min-h-[80vh] lg:min-h-screen items-center justify-center overflow-hidden py-20 lg:py-25 bg-white"
+      className="relative flex min-h-[60vh] lg:min-h-screen items-center justify-center overflow-hidden py-20 lg:py-25 bg-fourth"
     >
       <Image
         src={Img}

@@ -5,10 +5,10 @@ export const ServiceCard = ({ service }: { service: Service }) => {
   return (
     <Link
       href={service.href}
-      className="group border-fourth/30 bg-secondary/15 hover:bg-secondary flex h-full flex-col justify-between gap-10 rounded-xl border p-5 transition-colors duration-300 lg:p-10"
+      className="group border-fourth/30 bg-secondary/15 hover:bg-secondary flex h-full flex-col gap-10 rounded-xl border p-5 transition-colors duration-300 lg:p-10"
     >
       <div className="flex items-center justify-between gap-5">
-        <span className="text-secondary group-hover:text-primary text-sm font-medium transition-colors duration-300 lg:text-base">
+        <span className="text-secondary group-hover:text-primary text-sm lg:text-base font-medium transition-colors duration-300">
           {service.number}
         </span>
 
@@ -23,12 +23,14 @@ export const ServiceCard = ({ service }: { service: Service }) => {
       </div>
 
       <div className="flex flex-col gap-2.5">
-        <h3 className="text-secondary group-hover:text-primary text-lg lg:text-xl font-medium uppercase transition-colors duration-300 ">
-          {service.title}
-        </h3>
-        <p className="text-fourth/75 group-hover:text-primary/75 text-sm lg:text-base transition-colors duration-300">
-          {service.description}
-        </p>
+          <h3 className="text-secondary group-hover:text-primary min-h-14 lg:min-h-16 font-semibold text-lg lg:text-2xl uppercase transition-colors duration-300 ">
+            {service.title}
+          </h3>
+
+          <p className="text-fourth/75 group-hover:text-primary/75 text-sm lg:text-base transition-colors duration-300">
+            {service.description}
+          </p>
+
       </div>
     </Link>
   );

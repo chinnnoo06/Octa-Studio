@@ -10,7 +10,7 @@ const Row = ({ direction, duration }: { direction: 'left' | 'right'; duration: n
       {Array.from({ length: REPEATS }, (_, i) => (
         <p
           key={i}
-          className="text-secondary font-gentleman text-6xl font-normal normal-case lg:text-[7.5rem]"
+          className="text-secondary font-gentleman text-7xl lg:text-[8rem] font-normal normal-case "
         >
           {BRAND}
         </p>
@@ -21,7 +21,7 @@ const Row = ({ direction, duration }: { direction: 'left' | 'right'; duration: n
 
 export const BrandMarquee = () => {
   return (
-    <div className="w-full overflow-hidden bg-white py-20 lg:py-25">
+    <div className="bg-thrird w-full overflow-hidden py-20 lg:py-25">
       <Row direction="left" duration={24.1} />
       <Row direction="right" duration={29.9} />
     </div>
