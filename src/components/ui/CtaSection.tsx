@@ -5,25 +5,21 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { TickLine } from '@/components/ui/TickLine';
+import { zoomOnScroll } from '@/utils/motion/scroll';
 import Img from '@/assets/media/backgrounds/ImgBackground4.jpg';
 
 export const CtaSection = () => {
   const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'center center'],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 0.45], [0.5, 1]);
+  const { scrollYProgress } = useScroll({ target: ref, offset: zoomOnScroll.offset });
+  const scale = useTransform(scrollYProgress, zoomOnScroll.range, zoomOnScroll.scale);
 
   return (
-    <motion.section
-      ref={ref}
-      data-section="cta"
-      style={{ scale }}
-      className="relative flex min-h-[60vh] lg:min-h-screen items-center justify-center overflow-hidden py-20 lg:py-25 bg-fourth"
-    >
-      <Image
+    <section ref={ref} data-section="cta" className="bg-thrird">
+      <motion.div
+        style={{ scale }}
+        className="bg-fourth relative flex min-h-[60vh] items-center justify-center overflow-hidden py-20 lg:min-h-screen lg:py-25"
+      >
+        <Image
         src={Img}
         alt=""
         fill
@@ -40,7 +36,7 @@ export const CtaSection = () => {
 
           <div className="flex flex-col items-start gap-5">
 
-            <h2 className="text-primary/70 text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] xl:text-[5.5rem] font-bold uppercase leading-[1.05] tracking-[-0.02em]">
+            <h2 className="text-primary/75 text-[2.2rem] small:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-bold uppercase leading-[1.05] tracking-[-0.02em]">
               Construyendo ideas,{' '}
               <span className="text-primary">Creando experiencias</span>
             </h2>
@@ -54,6 +50,7 @@ export const CtaSection = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }

@@ -29,7 +29,7 @@ export const Hero = () => {
 
             <h1 className="text-primary/75 font-bold uppercase
                text-center md:text-end
-               text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] xl:text-[5.5rem]
+               text-[2.2rem] small:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem]
                leading-[1.2] tracking-[-0.02em]">
               Diseñamos grandes {''}<br className="hidden md:block" />
               <span className="text-primary">experiencias</span>
@@ -57,7 +57,7 @@ export const Hero = () => {
                   <span className="text-primary text-5xl font-medium">
                     20
                   </span>
-                  <span className="text-primary text-center text-xl  normal-case">
+                  <span className="text-primary text-center text-base normal-case">
                     años de montajes
                     <br />
                     nacional e internacional

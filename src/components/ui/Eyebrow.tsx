@@ -1,23 +1,12 @@
 import { EyebrowIcon } from './EyebrowIcon';
-import { cn } from '@/utils/cn';
 
-export const Eyebrow = ({ children, className, tone = 'dark', align = 'left'}: {
-  children: React.ReactNode;
-  className?: string;
-  tone?: 'dark' | 'light';
-  align?: 'left' | 'center';
-}) => {
+export const Eyebrow = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div
-      className={cn(
-        'flex items-center gap-2.5',
-        align === 'center' && 'justify-center',
-        tone === 'light' ? 'text-primary' : 'text-secondary',
-        className,
-      )}
-    >
-      <EyebrowIcon className="size-6 lg:size-8 shrink-0" />
-      <p className="font-gentleman text-4xl lg:text-5xl leading-[0.85] font-normal tracking-[0.04em] normal-case">{children}</p>
+    <div className="flex items-center gap-2.5 text-current">
+      <EyebrowIcon className="size-6 shrink-0 lg:size-8" />
+      <p className="font-gentleman text-4xl leading-[0.85] font-normal tracking-[0.04em] normal-case lg:text-5xl">
+        {children}
+      </p>
     </div>
   );
-}
+};

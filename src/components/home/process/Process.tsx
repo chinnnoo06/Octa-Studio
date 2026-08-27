@@ -1,7 +1,8 @@
 import { Eyebrow } from '@/components/ui/Eyebrow';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { Reveal } from '@/components/ui/Reveal';
-import { fadeUp } from '@/utils/motion';
+import { fadeUp } from '@/utils/motion/reveal';
 import { Step } from './Step';
 import { PROCESS_STEPS } from '@/utils/data/process';
 import { SecondaryButton } from '@/components/ui/buttons/SecondaryButton';
@@ -12,11 +13,9 @@ export const Process = () => {
 
       <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
 
-        <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-start">
-          <Eyebrow tone="light">Nuestro Proceso</Eyebrow>
-          <h2 className="text-primary/75 text-4xl leading-[1.2] font-bold tracking-[-0.02em] uppercase lg:text-5xl">
-            Así es como <span className="text-primary">trabajamos</span>
-          </h2>
+        <div className="text-primary flex flex-col items-center gap-5 text-center lg:items-start lg:text-start">
+          <Eyebrow>Nuestro Proceso</Eyebrow>
+<SectionTitle tone="light" lead="Así es como" rotating="trabajamos" />
         </div>
 
         <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3">

@@ -1,13 +1,3 @@
-/**
- * Preguntas frecuentes.
- *
- * Salen del brief, no de la imaginación: el cliente dijo que su comprador tipo
- * «llega sin idea de qué stand quiere» y que la objeción principal es
- * «desconfianza por su dinero». Cada pregunta responde a una de las dos.
- *
- * Lo único pendiente de confirmar con ellos son los plazos de la última.
- */
-
 import type { Faq } from './types';
 
 export const FAQS: Faq[] = [
@@ -42,11 +32,3 @@ export const FAQS: Faq[] = [
       'Depende de los metros cuadrados, la altura permitida, los materiales y si lleva producción audiovisual. Por eso no publicamos tarifas: después de la primera reunión te pasamos una cotización cerrada, con el desglose de qué incluye cada partida.',
   },
 ];
-
-export const FAQS_INTRO = {
-  title: 'Lo que más nos',
-  titleHighlight: 'preguntan',
-  description:
-    'Las dudas que salen en casi todas las primeras reuniones, respondidas antes de que tengas que escribirnos.',
-  ctaLabel: '¿Tienes otra pregunta?',
-} as const;

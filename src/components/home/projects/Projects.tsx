@@ -12,7 +12,7 @@ export const Projects = () => {
       <div className="mx-auto max-w-[1700px] px-5 flex flex-col lg:flex-row gap-10">
         <div className="flex flex-col gap-10 overflow-hidden">
 
-          <div className="flex flex-col items-start gap-5 max-w-3xl">
+          <div className="text-secondary flex flex-col items-start gap-5 max-w-3xl">
             <Eyebrow>Nuestros Proyectos</Eyebrow>
             <SectionTitle lead="Proyectos que hablan por" rotating="nosotros" />
           </div>

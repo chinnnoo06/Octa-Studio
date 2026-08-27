@@ -18,7 +18,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className='fixed top-0 inset-x-0 z-100 bg-secondary backdrop-blur-md border-b transition-colors duration-300 border-primary/25'
+      <header className='fixed top-0 inset-x-0 z-100 bg-secondary backdrop-blur-md border-b transition-colors duration-300 border-primary/30'
       >
 
         <div className="relative max-w-[1700px] mx-auto flex justify-between items-center w-full px-5 h-18 gap-10">

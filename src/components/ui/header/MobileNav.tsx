@@ -73,7 +73,7 @@ export const MobileNav = ({ menuVisible, toggleMenu }: MobileNavProps) => {
                 </nav>
 
                 <div className="mt-auto pt-5 border-t border-primary/30 px-5">
-                    <p className="flex items-center gap-5">
+                    <p className="flex items-center justify-center gap-2.5">
                         <span className="text-4xl font-light leading-none text-primary">
                             20
                         </span>

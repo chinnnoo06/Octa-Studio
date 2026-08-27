@@ -22,8 +22,7 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
       </div>
 
       <div className="flex flex-1 flex-col gap-2.5 p-2.5 pt-0">
-        {/* En vez del autor: cuándo se escribió y cuánto cuesta leerlo. */}
-        <p className="text-fourth/60 flex items-center gap-2.5 text-xs uppercase">
+        <p className="text-fourth/75 flex items-center gap-2.5 text-xs uppercase">
           {post.date}
           <span aria-hidden="true" className="bg-fourth/30 size-1 rounded-full" />
           <span className="flex items-center gap-1.5">
@@ -32,7 +31,7 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
           </span>
         </p>
 
-        <h3 className="text-secondary text-lg font-medium uppercase lg:text-xl">{post.title}</h3>
+        <h3 className="text-secondary text-lg font-semibold uppercase lg:text-xl">{post.title}</h3>
 
         <p className="text-fourth/75 text-sm lg:text-base">{post.excerpt}</p>
       </div>

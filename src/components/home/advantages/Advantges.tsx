@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { BrandBadge } from './BrandBadge';
+import { AdvantageFan } from './AdvantageFan';
 import { DetailStar } from './DetailStar';
-import { ADVANTAGES, ADVANTAGES_CORNER_IMAGES } from '@/utils/data/advantages';
+import { ADVANTAGES } from '@/utils/data/advantages';
 import type { StaticImageData } from 'next/image';
 import ImgMarca from "@/assets/media/brand/ImgLogo.webp"
 import ImgMontaje from '@/assets/media/stands/ImgStand8.webp';
@@ -46,8 +47,8 @@ export const Advantages = () => {
     <section data-section="advantages" className="bg-primary py-20 lg:py-25">
       <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
 
-        <div className="flex flex-col items-center gap-5">
-          <Eyebrow align="center">Nuestras Ventajas</Eyebrow>
+        <div className="text-secondary flex flex-col items-center gap-5">
+          <Eyebrow>Nuestras Ventajas</Eyebrow>
           <SectionTitle align="center" lead="20 años sin" rotating="improvisar" />
         </div>
 
@@ -81,18 +82,7 @@ export const Advantages = () => {
                 </p>
               </div>
 
-              <div className="flex shrink-0 items-center">
-                {ADVANTAGES_CORNER_IMAGES.map((img, i) => (
-                  <Image
-                    key={img.alt}
-                    src={img.src}
-                    alt={img.alt}
-                    className={`border-primary size-20 rounded-xl border-4 object-cover lg:size-24 ${
-                      i === 0 ? '-rotate-6' : i === 1 ? '-ml-6 rotate-3 z-10' : '-ml-6 -rotate-3'
-                    }`}
-                  />
-                ))}
-              </div>
+              <AdvantageFan />
             </div>
           </div>
 

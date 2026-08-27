@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
-import { accordionPanel } from '@/utils/motion';
+import { accordionPanel } from '@/utils/motion/accordion';
 import type { Faq } from '@/utils/data/types';
 
 type FaqItemProps = {
@@ -31,7 +31,7 @@ export const FaqItem = ({ item, isOpen, onToggle, id }: FaqItemProps) => {
             isOpen ? 'bg-secondary/15 rotate-180' : ''
           }`}
         >
-          <FiChevronDown className="size-4" />
+          <FiChevronDown className="size-4 lg:size-5" />
         </span>
       </button>
 

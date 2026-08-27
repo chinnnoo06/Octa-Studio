@@ -8,7 +8,8 @@ import {
   type Transition,
   type HTMLMotionProps,
 } from 'framer-motion';
-import { fadeUp, viewportOnce } from '@/utils/motion';
+import { viewportOnce } from '@/utils/motion/base';
+import { fadeUp } from '@/utils/motion/reveal';
 
 export const Reveal = ({
   children,

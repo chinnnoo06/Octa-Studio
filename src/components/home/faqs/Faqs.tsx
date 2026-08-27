@@ -4,10 +4,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { SecondaryButton } from '@/components/ui/buttons/SecondaryButton';
 import { Reveal } from '@/components/ui/Reveal';
-import { fadeUp, staggerParent } from '@/utils/motion';
-import { FAQS, FAQS_INTRO } from '@/utils/data/faqs';
+import { fadeUp, staggerParent } from '@/utils/motion/reveal';
+import { FAQS } from '@/utils/data/faqs';
 import { FaqItem } from './FaqItem';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 
@@ -22,16 +21,16 @@ export const Faqs = () => {
       <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5 lg:flex-row lg:items-start ">
 
         <div className="flex flex-col gap-10 lg:sticky lg:top-25 lg:w-2/5 lg:shrink-0">
-          <div className="flex flex-col gap-5">
+          <div className="text-secondary flex flex-col gap-5">
             <Eyebrow>Preguntas Frecuentes</Eyebrow>
-            <SectionTitle lead={FAQS_INTRO.title} rotating={FAQS_INTRO.titleHighlight} />
+            <SectionTitle lead="Lo que más nos" rotating="preguntan" />
             <p className="text-fourth/75 max-w-xl text-base lg:text-lg">
-              {FAQS_INTRO.description}
+              Las dudas que salen en casi todas las primeras reuniones, respondidas antes de que tengas que escribirnos.
             </p>
           </div>
 
           <div className="flex flex-col gap-5">
-            <p className="text-fourth/75 text-base">{FAQS_INTRO.ctaLabel}</p>
+            <p className="text-fourth/75 text-base">¿Tienes otra pregunta?</p>
             <PrimaryButton href="/contacto">Escríbenos</PrimaryButton>
           </div>
         </div>
@@ -47,7 +46,7 @@ export const Faqs = () => {
               key={item.question}
               variants={fadeUp}
               delay={i * 0.05}
-              className="border-fourth/20 border-b last:border-b-0"
+              className="border-fourth/30 border-b last:border-b-0"
             >
               <FaqItem
                 id={`faq-${i}`}

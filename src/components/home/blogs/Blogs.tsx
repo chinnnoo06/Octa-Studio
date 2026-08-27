@@ -10,7 +10,7 @@ export const Blogs = () => {
     <section data-section="blogs" className="bg-primary py-20 lg:py-25">
       <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
 
-        <div className="flex flex-col gap-5">
+        <div className="text-secondary flex flex-col gap-5">
           <Eyebrow>Nuestro Blog</Eyebrow>
           <SectionTitle lead="Lo que aprendimos" rotating="montando" />
         </div>

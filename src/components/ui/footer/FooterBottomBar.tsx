@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const FooterBottomBar = () => {
     return (
-        <div className="border-primary/25 flex flex-col items-center gap-2.5 border-t pt-10 sm:flex-row sm:justify-between">
+        <div className="border-primary/30 flex flex-col items-center gap-2.5 border-t pt-10 sm:flex-row sm:justify-between">
             <p className="text-primary/75 text-xs lg:text-sm">
                 © {new Date().getFullYear()} Octa Building Studio
             </p>

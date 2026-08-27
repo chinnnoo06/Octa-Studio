@@ -25,7 +25,7 @@ export const Odometer = ({ values, suffix }:TOdometerProps) => {
             <span
               key={`${v}-${i}`}
               aria-hidden={i > 0}
-              className="text-secondary font-semibold text-5xl lg:text-6xl block"
+              className="text-secondary font-semibold text-4xl sm:text-5xl lg:text-6xl block"
             >
               {v}
             </span>

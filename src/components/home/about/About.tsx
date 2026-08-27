@@ -7,9 +7,9 @@ import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import Img from "@/assets/media/brand/ImgLogo.webp"
 
 const BOX_VARIANT = {
-  one:   'bg-primary max-lg:rounded-xl max-lg:border lg:rounded-tl-xl lg:border-b lg:border-r border-fourth/30',
-  two:   'bg-primary sm:bg-transparent rounded-xl border lg:border-none border-fourth/30',
-  three: 'bg-primary sm:bg-transparent rounded-xl border lg:border-none border-fourth/30',
+  one:   'bg-primary sm:bg-secondary/15 max-lg:rounded-xl max-lg:border lg:rounded-t-xl border-fourth/30',
+  two:   'bg-primary sm:bg-transparent max-lg:rounded-xl max-lg:border lg:rounded-tr-xl lg:border-l border-fourth/30',
+  three: 'bg-primary sm:bg-transparent max-lg:rounded-xl max-lg:border lg:rounded-b-xl lg:border-t border-fourth/30',
   four:  'bg-primary sm:bg-secondary/15 max-lg:rounded-xl max-lg:border lg:rounded-br-xl lg:border-t lg:border-l border-fourth/30',
 } as const;
 
@@ -18,12 +18,9 @@ export const About = () => {
     <section data-section="about" className="py-20 lg:py-25 bg-thrird">
         <div className="mx-auto max-w-[1700px] px-5 flex flex-col lg:flex-row gap-10">
           <div className="flex w-full lg:w-1/2 flex-col justify-between gap-10">
-            <div className="flex flex-col gap-5">
+            <div className="text-secondary flex flex-col gap-5">
                 <Eyebrow>Sobre Octa Studio</Eyebrow>
-                <WipeHeading
-                  text="Más de 20 años convirtiendo marcas en experiencias"
-                  className="text-secondary font-bold text-4xl lg:text-5xl leading-[1.2] tracking-[-0.02em]"
-                />
+                <WipeHeading text="Más de 20 años convirtiendo marcas en experiencias" />
 
                 <p className="text-fourth/75 text-base lg:text-lg ">
                   Somos una empresa dedicada al diseño y montaje de stands, shows, eventos masivos, congresos y convenciones
@@ -49,7 +46,7 @@ export const About = () => {
               <div key={s.label} className={`w-50 sm:w-full flex flex-col items-end justify-end p-2.5 sm:p-5 lg:p-10 shrink-0 ${BOX_VARIANT[s.variant]}`}  >
                 <div className="flex flex-col items-end justify-end gap-2.5 w-full h-full">
                   <Odometer values={s.odometer} suffix={s.suffix} />
-                  <div className=" w-full flex flex-col justify-end items-end gap-2.5 text-right lg:items-end lg:text-right pt-5 lg:pt-10">
+                  <div className=" w-full flex flex-col justify-end items-end gap-2.5 text-right lg:items-end lg:text-right pt-0 sm:pt-5 lg:pt-10">
                     <p className="text-secondary font-semibold text-lg lg:text-2xl uppercase">{s.label}</p>
                     <p className="text-fourth/75 text-sm lg:text-base hidden sm:block">
                       {s.description}

@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaStar } from 'react-icons/
 import { TESTIMONIALS } from '@/utils/data/testimonials';
 
 const ARROW =
-  'cursor-pointer border-primary text-primary hover:bg-primary hover:text-secondary flex size-12 shrink-0 items-center justify-center rounded-xl border-2 transition-colors duration-300 lg:size-15';
+  'cursor-pointer border-primary text-primary hover:bg-primary hover:text-secondary flex size-10 lg:size-12 shrink-0 items-center justify-center rounded-xl border-2 transition-colors duration-300 ';
 
 export const TestimonialCarousel = () => {
   const [emblaRef, embla] = useEmblaCarousel({
@@ -44,7 +44,7 @@ export const TestimonialCarousel = () => {
 
   return (
     <div
-      className="flex flex-col items-center gap-10"
+      className="flex w-full flex-col items-center gap-10"
       role="region"
       aria-roledescription="carousel"
       aria-label="Testimonios de clientes"
@@ -99,7 +99,7 @@ export const TestimonialCarousel = () => {
                 aria-label={`Ir al testimonio ${i + 1}`}
                 aria-current={selected === i}
                 className={`size-2.5 rounded-full transition-colors duration-300 ${
-                  selected === i ? 'bg-primary' : 'bg-primary/40 hover:bg-primary/70'
+                  selected === i ? 'bg-primary' : 'bg-primary/40 hover:bg-primary/75'
                 }`}
               />
             </li>

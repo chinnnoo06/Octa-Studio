@@ -13,7 +13,7 @@ export const Services = () => {
       <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
 
         <div className="border-fourth/30 flex flex-col gap-10 border-t pt-10 lg:flex-row">
-          <div className="flex w-full flex-col gap-10 lg:w-1/2">
+          <div className="text-secondary flex w-full flex-col gap-10 lg:w-1/2">
             <Eyebrow>Nuestros Servicios</Eyebrow>
 
             <div className="overflow-hidden rounded-xl">
@@ -28,10 +28,7 @@ export const Services = () => {
           </div>
 
           <div className="border-fourth/30 flex justify-center w-full flex-col gap-5 lg:w-1/2 lg:border-l lg:pl-10">
-            <WipeHeading
-              text="Tú lo imaginas, nosotros lo montamos"
-              className="text-secondary text-4xl leading-[1.05] font-bold tracking-[-0.02em] lg:text-5xl"
-            />
+            <WipeHeading text="Tú lo imaginas, nosotros lo montamos" />
 
             <p className="text-fourth/75 text-base lg:text-lg">
               No necesitas coordinar a varios proveedores. Diseñamos, fabricamos, montamos y

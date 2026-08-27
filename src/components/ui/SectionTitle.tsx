@@ -1,65 +1,68 @@
 'use client';
 
 import { useRef } from 'react';
-import { useInView } from 'framer-motion';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { rotatorY, rotatorTransition } from '@/utils/motion/rotator';
 import { cn } from '@/utils/cn';
 
 type SectionTitleProps = {
   lead: string;
-  rotating?: string;
-  className?: string;
+  rotating: string;
+  trail?: string;
+  tone?: 'dark' | 'light';
   align?: 'left' | 'center';
-  as?: 'h1' | 'h2' | 'h3';
-  rotate?: boolean;
-  rotatingClassName?: string;
 };
 
-const LINE = 'h-10.5 lg:h-14.5';
+const LINE = 'h-[1.2em]';
 
 export const SectionTitle = ({
   lead,
   rotating,
-  className,
+  trail,
+  tone = 'dark',
   align = 'left',
-  as: Tag = 'h2',
-  rotate = true,
-  rotatingClassName,
 }: SectionTitleProps) => {
   const ref = useRef<HTMLHeadingElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0 });
+  const inView = useInView(ref, { amount: 0 });
+  const reduced = useReducedMotion();
 
-  return (
-    <Tag
-      ref={ref}
+  const light = tone === 'light';
+
+  const copia = (tenue: boolean, aria: boolean) => (
+    <span
+      aria-hidden={aria}
       className={cn(
-        'text-secondary text-4xl lg:text-5xl font-bold uppercase leading-[1.2] tracking-[-0.02em]',
-        align === 'center' && 'text-center',
-        className,
+        'flex items-center',
+        LINE,
+        tenue && (light ? 'text-primary/75' : 'text-secondary/75'),
       )}
     >
+      {rotating}
+    </span>
+  );
 
+  return (
+    <h2
+      ref={ref}
+      className={cn(
+        'text-[2rem] small:text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] font-bold uppercase leading-[1.2] tracking-[-0.02em] ',
+        light ? 'text-primary' : 'text-secondary',
+        align === 'center' && 'text-center',
+      )}
+    >
       {lead}{' '}
-      {rotating &&
-        (rotate ? (
-          <span className={cn('inline-block overflow-hidden align-bottom', LINE)}>
-            <span
-              className={cn(
-                'flex flex-col transition-transform delay-500 duration-1000 ease-out',
-                inView && '-translate-y-1/2',
-              )}
-            >
-              <span className={cn('flex items-center', LINE)}>{rotating}</span>
-              <span
-                aria-hidden="true"
-                className={cn('text-secondary/75 flex items-center', LINE, rotatingClassName)}
-              >
-                {rotating}
-              </span>
-            </span>
-          </span>
-        ) : (
-          <span className={cn('text-secondary/75', rotatingClassName)}>{rotating}</span>
-        ))}
-    </Tag>
+      <span className={cn('inline-block max-w-full overflow-hidden align-bottom', LINE)}>
+        <motion.span
+          className="flex flex-col"
+          animate={{ y: inView && !reduced ? rotatorY : '0%' }}
+          transition={rotatorTransition}
+        >
+          {copia(false, false)}
+          {copia(true, true)}
+          {copia(false, true)}
+        </motion.span>
+      </span>
+      {trail ? ` ${trail}` : ''}
+    </h2>
   );
 };
