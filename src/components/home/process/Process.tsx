@@ -2,7 +2,6 @@ import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { Reveal } from '@/components/ui/Reveal';
-import { fadeUp } from '@/utils/motion/reveal';
 import { Step } from './Step';
 import { PROCESS_STEPS } from '@/utils/data/process';
 import { SecondaryButton } from '@/components/ui/buttons/SecondaryButton';
@@ -11,7 +10,7 @@ export const Process = () => {
   return (
     <section data-section="process" className="bg-secondary overflow-x-clip py-20 lg:py-25">
 
-      <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
+      <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5 lg:px-15">
 
         <div className="text-primary flex flex-col items-center gap-5 text-center lg:items-start lg:text-start">
           <Eyebrow>Nuestro Proceso</Eyebrow>
@@ -24,7 +23,6 @@ export const Process = () => {
           ))}
 
           <Reveal
-            variants={fadeUp}
             delay={PROCESS_STEPS.length * 0.08}
             className="h-full w-75 shrink-0 snap-start sm:w-auto sm:shrink"
           >

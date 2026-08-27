@@ -14,7 +14,7 @@ export const CtaSection = () => {
   const scale = useTransform(scrollYProgress, zoomOnScroll.range, zoomOnScroll.scale);
 
   return (
-    <section ref={ref} data-section="cta" className="bg-thrird">
+    <section ref={ref} data-section="cta" className="bg-primary">
       <motion.div
         style={{ scale }}
         className="bg-fourth relative flex min-h-[60vh] items-center justify-center overflow-hidden py-20 lg:min-h-screen lg:py-25"
@@ -30,7 +30,7 @@ export const CtaSection = () => {
 
       <div aria-hidden="true" className="bg-fourth/25 absolute inset-0" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-5">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 lg:px-15">
         <div className="flex items-center gap-10">
           <TickLine className="text-primary hidden lg:flex" />
 

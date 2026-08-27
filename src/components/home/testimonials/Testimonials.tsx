@@ -1,23 +1,16 @@
-'use client';
-
-import { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { TestimonialCarousel } from './TestimonialCarousel';
-import { zoomOnScroll } from '@/utils/motion/scroll';
+import { Reveal } from '@/components/ui/Reveal';
+import { fadeBlur } from '@/utils/motion/reveal';
 import Img from '@/assets/media/backgrounds/ImgBackground3.webp';
 
 export const Testimonials = () => {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: zoomOnScroll.offset });
-  const scale = useTransform(scrollYProgress, zoomOnScroll.range, zoomOnScroll.scale);
-
   return (
-    <section ref={ref} data-section="testimonials" className="bg-primary">
-      <motion.div
-        style={{ scale }}
+    <section data-section="testimonials" className="bg-thrird">
+      <Reveal
+        variants={fadeBlur}
         className="bg-fourth relative flex min-h-[60vh] items-center justify-center overflow-hidden py-20 lg:min-h-screen lg:py-25"
       >
         <Image
@@ -31,7 +24,7 @@ export const Testimonials = () => {
 
         <div aria-hidden="true" className="bg-fourth/25 absolute inset-0" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-5">
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-5 lg:px-15">
 
           <div className="text-primary flex w-full flex-col items-center gap-5 text-center">
             <Eyebrow>Testimonios</Eyebrow>
@@ -40,7 +33,7 @@ export const Testimonials = () => {
 
           <TestimonialCarousel />
         </div>
-      </motion.div>
+      </Reveal>
     </section>
   );
 }

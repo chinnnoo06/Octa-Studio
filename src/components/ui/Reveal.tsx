@@ -1,52 +1,47 @@
 'use client';
 
 import { useRef } from 'react';
-import {
-  motion,
-  useInView,
-  type Variants,
-  type Transition,
-  type HTMLMotionProps,
-} from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { viewportOnce } from '@/utils/motion/base';
 import { fadeUp } from '@/utils/motion/reveal';
 
-export const Reveal = ({
-  children,
-  variants = fadeUp,
-  className,
-  delay,
-  as = 'div',
-  amount = viewportOnce.amount,
-  once = viewportOnce.once,
-  transition,
-}: {
+type RevealProps = {
   children: React.ReactNode;
+  /** Cualquiera de `utils/motion/reveal`. */
   variants?: Variants;
   className?: string;
   delay?: number;
-  as?: 'div' | 'section' | 'span' | 'li' | 'article' | 'header';
-  amount?: number | 'some' | 'all';
-  once?: boolean;
-  transition?: Transition;
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once, amount });
+};
 
-  const Tag = motion[as] as React.ComponentType<
-    HTMLMotionProps<'div'> & { ref?: React.Ref<HTMLDivElement> }
-  >;
+export const Reveal = ({ children, variants = fadeUp, className, delay }: RevealProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, viewportOnce);
 
   return (
-    <Tag
+    <motion.div
       ref={ref}
       className={className}
       variants={variants}
       initial="hidden"
       animate={inView ? 'show' : 'hidden'}
-      transition={delay ? { delay, ...transition } : transition}
+      transition={delay ? { delay } : undefined}
     >
       {children}
-    </Tag>
+    </motion.div>
   );
-}
+};
+
+/** Igual, pero anima al montar en vez de esperar al scroll. */
+export const RevealOnLoad = ({ children, variants = fadeUp, className, delay }: RevealProps) => {
+  return (
+    <motion.div
+      className={className}
+      variants={variants}
+      initial="hidden"
+      animate="show"
+      transition={delay ? { delay } : undefined}
+    >
+      {children}
+    </motion.div>
+  );
+};

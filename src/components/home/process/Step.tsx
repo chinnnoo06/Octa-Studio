@@ -1,12 +1,10 @@
 import Image from 'next/image';
 import { Reveal } from '@/components/ui/Reveal';
-import { fadeUp } from '@/utils/motion/reveal';
 import type { ProcessStep } from '@/utils/data/types';
 
 export const Step = ({ step, index }: { step: ProcessStep; index: number }) => {
   return (
     <Reveal
-      variants={fadeUp}
       delay={index * 0.08}
       className="w-75 shrink-0 snap-start sm:w-auto sm:shrink"
     >

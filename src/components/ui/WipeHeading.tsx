@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion
 import { cn } from '@/utils/cn';
 
 const START = 0.2;
-const END = 0.65;
+const END = 0.5;
 
 const OVERLAP = 1.6;
 

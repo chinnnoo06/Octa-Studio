@@ -14,7 +14,7 @@ export const Footer = () => {
 
       <div aria-hidden="true" className="bg-fourth/25 absolute inset-0" />
 
-      <div className="relative z-10 mx-auto flex max-w-[1700px] flex-col gap-10 px-5 lg:gap-15">
+      <div className="relative z-10 mx-auto flex max-w-[1700px] flex-col gap-10 px-5 lg:px-15 lg:gap-15">
         <FooterBrand />
 
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-3 lg:gap-20">

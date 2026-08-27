@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { Reveal } from '@/components/ui/Reveal';
-import { fadeUp, staggerParent } from '@/utils/motion/reveal';
+import { staggerParent } from '@/utils/motion/reveal';
 import { FAQS } from '@/utils/data/faqs';
 import { FaqItem } from './FaqItem';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
@@ -18,7 +18,7 @@ export const Faqs = () => {
 
   return (
     <section data-section="faqs" className="bg-thrird py-20 lg:py-25">
-      <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5 lg:flex-row lg:items-start ">
+      <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5 lg:px-15 lg:flex-row lg:items-start ">
 
         <div className="flex flex-col gap-10 lg:sticky lg:top-25 lg:w-2/5 lg:shrink-0">
           <div className="text-secondary flex flex-col gap-5">
@@ -44,7 +44,6 @@ export const Faqs = () => {
           {FAQS.map((item, i) => (
             <Reveal
               key={item.question}
-              variants={fadeUp}
               delay={i * 0.05}
               className="border-fourth/30 border-b last:border-b-0"
             >

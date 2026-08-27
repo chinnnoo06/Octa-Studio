@@ -5,18 +5,19 @@ import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { Reveal } from '@/components/ui/Reveal';
 import { ServiceCard } from './ServiceCard';
 import { SERVICES } from '@/utils/data/services';
+import { fadeUpScale } from '@/utils/motion/reveal';
 import Img from '@/assets/media/stands/ImgStand7.webp';
 
 export const Services = () => {
   return (
     <section data-section="services" className="bg-primary py-20 lg:py-25">
-      <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5">
+      <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-5 lg:px-15">
 
         <div className="border-fourth/30 flex flex-col gap-10 border-t pt-10 lg:flex-row">
           <div className="text-secondary flex w-full flex-col gap-10 lg:w-1/2">
             <Eyebrow>Nuestros Servicios</Eyebrow>
 
-            <div className="overflow-hidden rounded-xl">
+            <Reveal variants={fadeUpScale} className="overflow-hidden rounded-xl">
               <Image
                 src={Img}
                 alt="Montaje de un stand en feria"
@@ -24,7 +25,7 @@ export const Services = () => {
                 placeholder="blur"
                 className="h-75 w-full object-cover lg:h-110"
               />
-            </div>
+            </Reveal>
           </div>
 
           <div className="border-fourth/30 flex justify-center w-full flex-col gap-5 lg:w-1/2 lg:border-l lg:pl-10">

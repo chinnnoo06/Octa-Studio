@@ -4,7 +4,9 @@ import { STATS } from '@/utils/data/about';
 import { Odometer } from './Odometer';
 import { WipeHeading } from '../../ui/WipeHeading';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
-import Img from "@/assets/media/brand/ImgLogo.webp"
+import { Reveal } from '@/components/ui/Reveal';
+import { fadeUpScale } from '@/utils/motion/reveal';
+import Img from "@/assets/media/stands/ImgStand8.webp"
 
 const BOX_VARIANT = {
   one:   'bg-primary sm:bg-secondary/15 max-lg:rounded-xl max-lg:border lg:rounded-t-xl border-fourth/30',
@@ -16,7 +18,7 @@ const BOX_VARIANT = {
 export const About = () => {
   return (
     <section data-section="about" className="py-20 lg:py-25 bg-thrird">
-        <div className="mx-auto max-w-[1700px] px-5 flex flex-col lg:flex-row gap-10">
+        <div className="mx-auto max-w-[1700px] px-5 lg:px-15 flex flex-col lg:flex-row gap-10">
           <div className="flex w-full lg:w-1/2 flex-col justify-between gap-10">
             <div className="text-secondary flex flex-col gap-5">
                 <Eyebrow>Sobre Octa Studio</Eyebrow>
@@ -30,15 +32,15 @@ export const About = () => {
                 <PrimaryButton href='/nosotros'>Conoce Octa Studio</PrimaryButton>
             </div>
 
-            <div className="rounded-xl overflow-hidden bg-white w-full">
+            <Reveal variants={fadeUpScale} className="rounded-xl overflow-hidden bg-white w-full">
               <Image
                 src={Img}
                 alt="Imagen del logo de Octa Studio"
                 width={630}
                 height={425}
-                className="h-100 lg:h-110 w-full object-contain"
+                className="h-100 lg:h-110 w-full object-cover"
               />
-            </div>
+            </Reveal>
           </div>
 
           <div className="w-full lg:w-1/2 pb-5 sm:pb-0 flex overflow-x-auto sm:overflow-x-hidden sm:grid sm:grid-cols-2 gap-5 lg:gap-0">
