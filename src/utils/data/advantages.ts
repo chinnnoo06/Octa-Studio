@@ -1,22 +1,26 @@
-/**
- * Contenido del bento de Advantages y del badge rotatorio.
- */
-
-import type { Project } from './types';
+import ImgObra1 from '@/assets/media/Img2.webp';
+import ImgObra2 from '@/assets/media/Img3.webp';
+import ImgObra3 from '@/assets/media/Img4.webp';
 
 export const ADVANTAGES_BADGE_TEXTS = [
-  'Bold Designs',
-  'Stark Designs',
-  'Nexo Designs',
-  'Prime Designs',
-  'Aura Designs',
+  'Stands',
+  'Expos',
+  'Congresos',
+  'Eventos',
+  'Showrooms',
 ] as const;
 
 export const ADVANTAGES = {
-  leftBottomTitle: 'Unique Design asthetic',   // errata original
-  centerTitle: 'Proven Work and Trusted Reputation',
-  centerCounter: { odometer: ['350','349','348','347','346','345','344','343','342','341'], suffix: '+' },
-  centerCounterLabel: 'Project Launched',
-  rightTopTitle: 'Client-Focused Approach',
-  rightBottomTitle: 'Attention to details',
+  leftBottomTitle: 'Montaje y desmontaje con equipo propio',
+  centerTitle: 'Cobertura en todo México y parte de Estados Unidos',
+  centerCounter: { odometer: ['0', '9', '8', '7', '6', '5', '4', '3', '2', '1'] },
+  centerCounterLabel: 'Viáticos dentro de México',
+  rightTopTitle: 'Cada stand, diseñado desde cero',
+  rightBottomTitle: 'Trato directo, sin intermediarios',
 } as const;
+
+export const ADVANTAGES_CORNER_IMAGES = [
+  { src: ImgObra1, alt: 'Stand montado por Octa en feria' },
+  { src: ImgObra2, alt: 'Montaje de estructura en recinto' },
+  { src: ImgObra3, alt: 'Stand iluminado durante un evento' },
+] as const;

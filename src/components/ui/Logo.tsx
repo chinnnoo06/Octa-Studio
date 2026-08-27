@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Img from "@/assets/media/logo.png"
+import Img from "@/assets/media/White-Logo.webp"
 
 export const Logo = () => {
     return (

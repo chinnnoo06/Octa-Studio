@@ -1,0 +1,65 @@
+import Image from 'next/image';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { STATS } from '@/utils/data/about';
+import { Odometer } from './Odometer';
+import { WipeHeading } from '../../ui/WipeHeading';
+import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
+import Img from "@/assets/media/Logo-Icons.webp"
+
+const BOX_VARIANT = {
+  one:   'bg-primary max-lg:rounded-xl max-lg:border lg:rounded-tl-xl lg:border-b lg:border-r border-fourth/30',
+  two:   'bg-primary sm:bg-transparent rounded-xl border lg:border-none border-fourth/30',
+  three: 'bg-primary sm:bg-transparent rounded-xl border lg:border-none border-fourth/30',
+  four:  'bg-primary sm:bg-secondary/15 max-lg:rounded-xl max-lg:border lg:rounded-br-xl lg:border-t lg:border-l border-fourth/30',
+} as const;
+
+export const About = () => {
+  return (
+    <section data-section="about" className="py-20 lg:py-25 bg-thrird">
+        <div className="mx-auto max-w-[1700px] px-5 flex flex-col lg:flex-row gap-10">
+          <div className="flex w-full lg:w-1/2 flex-col justify-between gap-10">
+            <div className="flex flex-col gap-5">
+                <Eyebrow>Sobre Octa Studio</Eyebrow>
+                <WipeHeading
+                  text="Más de 20 años convirtiendo marcas en experiencias"
+                  className="text-secondary font-bold text-4xl lg:text-5xl leading-[1.2] tracking-[-0.02em]"
+                />
+
+                <p className="text-fourth/75 text-base lg:text-lg ">
+                  Somos una empresa dedicada al diseño y montaje de stands, shows, eventos masivos, congresos y convenciones
+                  a nivel nacional e internacional. Acompañamos cada proyecto desde la primera idea hasta el desmontaje.
+                </p>
+                
+                <PrimaryButton href='/nosotros'>Conoce Octa Studio</PrimaryButton>
+            </div>
+
+            <div className="rounded-xl overflow-hidden bg-white w-full">
+              <Image
+                src={Img}
+                alt="Imagen del logo de Octa Studio"
+                width={630}
+                height={425}
+                className="h-100 lg:h-110 w-full object-contain"
+              />
+            </div>
+          </div>
+
+          <div className="w-full lg:w-1/2 pb-2.5 sm:pb-0 flex overflow-x-auto sm:overflow-x-hidden sm:grid sm:grid-cols-2 gap-5 lg:gap-0">
+            {STATS.map((s) => (
+              <div key={s.label} className={`w-50 sm:w-full flex flex-col items-end justify-end p-2.5 sm:p-5 lg:p-10 shrink-0 ${BOX_VARIANT[s.variant]}`}  >
+                <div className="flex flex-col items-end justify-between gap-2.5 w-full h-full">
+                  <Odometer values={s.odometer} suffix={s.suffix} />
+                  <div className="w-full flex flex-col justify-end items-end gap-2.5 text-right lg:items-end lg:text-right min-h-10 sm:min-h-20">
+                    <p className="text-secondary font-medium text-lg lg:text-xl uppercase">{s.label}</p>
+                    <p className="text-fourth/75 text-sm lg:text-base hidden sm:block">
+                      {s.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+    </section>
+  );
+}

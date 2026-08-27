@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
-import { Container } from '@/components/ui/Container';
 
 export const metadata: Metadata = {
-  title: 'Blogs',
+  title: 'Blog',
 };
 
+// Pendiente de contenido. La ruta existe para que el menu no de 404.
 export default function BlogsPage() {
   return (
     <main className="pt-18">
-      <Container className="py-section">
-        <h1 className="text-h1 font-heading text-ink">Blogs</h1>
-      </Container>
+      <div className="mx-auto max-w-[1700px] px-5 py-20 lg:py-25">
+        <h1 className="text-secondary text-4xl font-bold uppercase lg:text-5xl">Blog</h1>
+      </div>
     </main>
   );
 }

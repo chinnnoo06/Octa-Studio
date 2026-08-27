@@ -17,7 +17,7 @@ export const Eyebrow = ({ children, className, tone = 'dark', align = 'left'}: {
       )}
     >
       <EyebrowIcon className="size-6 lg:size-8 shrink-0" />
-      <p className="font-display text-3xl lg:text-4xl leading-[0.85] font-normal tracking-[0.04em] normal-case">{children}</p>
+      <p className="font-gentleman text-4xl lg:text-5xl leading-[0.85] font-normal tracking-[0.04em] normal-case">{children}</p>
     </div>
   );
 }

@@ -1,13 +1,14 @@
 import { Hero } from '@/components/home/hero/Hero';
-import { About } from '@/components/home/about';
-import { Projects } from '@/components/home/projects';
-import { Process } from '@/components/home/process';
-import { Services } from '@/components/home/services';
-import { DesignCta, Offers } from '@/components/home/designcta';
-import { Advantages } from '@/components/home/advantages';
-import { Products } from '@/components/home/products';
-import { Testimonials } from '@/components/home/testimonials';
-import { Blogs } from '@/components/home/blogs';
+import { About } from '@/components/home/about/About';
+import { Projects } from '@/components/home/projects/Projects';
+import { Process } from '@/components/home/process/Process';
+import { Services } from '@/components/home/services/Services';
+import { CtaSection } from '@/components/ui/CtaSection';
+import { Advantages } from '@/components/home/advantages/Advantges';
+import { Testimonials } from '@/components/home/testimonials/Testimonials';
+import { Faqs } from '@/components/home/faqs/Faqs';
+import { Blogs } from '@/components/home/blogs/Blogs';
+import { BrandMarquee } from '@/components/ui/BrandMarquee';
 
 export default function HomePage() {
   return (
@@ -17,11 +18,11 @@ export default function HomePage() {
       <Projects />
       <Process />
       <Services />
-      <DesignCta />
-      <Offers />
+      <BrandMarquee />
+      <CtaSection />
       <Advantages />
-      <Products />
       <Testimonials />
+      <Faqs />
       <Blogs />
     </main>
   );

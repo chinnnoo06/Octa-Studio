@@ -31,8 +31,7 @@ export const WipeHeading = ({
 
   return (
     <div ref={ref} className="relative overflow-hidden">
-      <h3 className={className}>{text}</h3>
-      {/* Las franjas solo existen en ≥992px, igual que en el original */}
+      <h2 className={className}>{text}</h2>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 tab:hidden">
         {Array.from({ length: STRIPES }, (_, i) => (
           <Stripe key={i} index={i} progress={scrollYProgress} />

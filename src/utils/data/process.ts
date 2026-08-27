@@ -1,49 +1,44 @@
-/**
- * Los 5 pasos de la sección Process.
- */
-
 import type { ProcessStep } from './types';
+import ImgStep1 from "@/assets/media/Img5.webp"
+import ImgStep2 from "@/assets/media/Img6.webp"
+import ImgStep3 from "@/assets/media/Img7.webp"
+import ImgStep4 from "@/assets/media/Img8.webp"
+import ImgStep5 from "@/assets/media/Img9.webp"
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
-    step: 'Step 01',
-    title: 'Discovery',
-    description: 'We start by understanding your style, needs, and vision for the space.',
-    image: '/images/pages/home/step-01-discovery.webp',
-    alt: 'Official item',
-    hasConnector: true,
+    step: 'Paso 01',
+    title: 'Atención y briefing',
+    description: 'Escuchamos tu espacio, tus productos y tu presupuesto.',
+    img: ImgStep1,
+    alt: 'Reunión de briefing con el cliente',
   },
   {
-    step: 'Step 02',
-    title: 'Concept Design',
-    description: 'Our team creates mood boards and design ideas that capture your aesthetic.',
-    image: '/images/pages/home/step-02-concept.webp',
-    alt: 'Official item',
-    hasConnector: true,
+    step: 'Paso 02',
+    title: 'Diseño y render',
+    description: 'Te mostramos tu stand en render antes de fabricarlo.',
+    img: ImgStep2,
+    alt: 'Render tridimensional de un stand',
   },
   {
-    step: 'Step 03',
-    title: 'Planning',
-    description: 'Every detail is refined — from layout to materials — for perfect balance and function',
-    image: '/images/pages/home/step-03-desktop.webp',
-    imageMobile: '/images/pages/home/step-03-mobile.webp',
-    alt: 'Official item',
-    hasConnector: true,
+    step: 'Paso 03',
+    title: 'Fabricación',
+    description: 'Producimos cada pieza en nuestro taller.',
+    img: ImgStep3,
+    alt: 'Fabricación de estructuras en taller',
   },
   {
-    step: 'Step 04',
-    title: 'Execution',
-    description: 'We bring the design to life with precision, care, and expert craftsmanship.',
-    image: '/images/pages/home/step-04-execution.webp',
-    alt: 'Official item',
-    hasConnector: false,
+    step: 'Paso 04',
+    title: 'Montaje',
+    description: 'Armamos todo en el recinto, listo para recibir visitantes.',
+    img: ImgStep4,
+    alt: 'Equipo montando un stand en el recinto',
   },
   {
-    step: 'Step 05',
-    title: ' Final Touch', // ← espacio inicial intencionado
-    description: 'A complete review and styling ensure your space feels truly finished and personal.',
-    image: '/images/pages/home/step-05-final-touch.webp',
-    alt: 'Official item',
-    hasConnector: false,
+    step: 'Paso 05',
+    title: 'Desmontaje',
+    description: 'Retiramos todo al cerrar el evento. Tú no te ocupas de nada.',
+    img: ImgStep5,
+    alt: 'Desmontaje de stand al finalizar el evento',
   },
 ];

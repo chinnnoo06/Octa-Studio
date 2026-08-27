@@ -1,155 +1,131 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { SocialIcon } from '@/components/ui/SocialIcon';
-import { FOOTER, FOOTER_LINKS, SOCIAL_LINKS } from '@/lib/home-data';
+import { FaPhone, FaWhatsapp, FaEnvelope } from 'react-icons/fa6';
+import type { IconType } from 'react-icons';
+import { CONTACT } from '@/utils/data/contact';
+import { NAV_LINKS, LEGAL_LINKS } from '@/utils/data/navigation';
+import { NewsletterForm } from '@/components/home/blogs/NewsletterForm';
+import Logo from '@/assets/media/White-Logo.webp';
+
+
+const ContactRow = ({ icon: Icon, label, value, href,
+}: {
+  icon: IconType;
+  label: string;
+  value: string;
+  href: string;
+}) => {
+  return (
+    <li>
+      <a href={href} className="group flex items-center gap-4">
+        <span
+          aria-hidden="true"
+          className="border-primary/30 text-primary group-hover:bg-primary group-hover:text-secondary group-hover:border-primary flex size-11 shrink-0 items-center justify-center rounded-full border transition-colors duration-300"
+        >
+          <Icon className="size-4" />
+        </span>
+
+        <span className="flex min-w-0 flex-col">
+          <span className="text-primary/60 text-xs uppercase">{label}</span>
+          <span className="text-primary group-hover:text-primary/75 truncate text-base transition-colors duration-300">
+            {value}
+          </span>
+        </span>
+      </a>
+    </li>
+  );
+};
 
 export const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [sent, setSent] = useState(false);
-
   return (
-    <footer
-      data-section="footer"
-      className="relative isolate overflow-hidden bg-[#090909] pt-section pb-5"
-      style={{
-        backgroundImage: 'url(/images/pages/home/footer-bg.webp)',
-        backgroundSize: 'contain',
-        backgroundPosition: '0%',
-      }}
-    >
-      <div className="container-livinor">
-        <div className="flex min-h-[550px] flex-col justify-between gap-10 tab:min-h-[520px] land:min-h-0 land:gap-[30px]">
-          {/* ── Fila superior ───────────────────────────────────────────── */}
-          <div className="flex items-end justify-between gap-10 tab:items-start land:flex-col land:gap-[30px]">
-            {/* Columna izquierda */}
-            <div className="flex min-h-[360px] w-full max-w-[635px] flex-col justify-between gap-10 land:min-h-0 land:max-w-none land:gap-5">
-              <div className="flex flex-col gap-10 land:gap-5">
-                <Image
-                  src="/images/shared/logo-footer.png"
-                  alt="Livinor Nav Image"
-                  width={218}
-                  height={72}
-                  className="h-[72px] w-auto self-start"
-                />
-                <a
-                  href={`mailto:${FOOTER.email.trim()}`}
-                  className="text-paper font-heading text-mail block leading-[var(--lh-mail)] font-semibold"
-                >
-                  {FOOTER.email.trim()}
-                </a>
-              </div>
+    <footer data-section="footer" className="bg-secondary py-10">
+      <div className="mx-auto flex max-w-[1700px] flex-col gap-15 px-5">
 
-              <form
-                className="relative w-full max-w-[635px]"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-              >
-                <label htmlFor="footer-email" className="sr-only">
-                  {FOOTER.form.placeholder}
-                </label>
-                <input
-                  id="footer-email"
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={FOOTER.form.placeholder}
-                  className="text-paper placeholder:text-faint font-body text-caption h-[70px] w-full rounded-[8px] bg-[#2a2a2a] pr-[180px] pl-6 outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-                />
-                <button
-                  type="submit"
-                  className="text-paper border-paper/70 font-body text-body rounded-pill absolute top-1/2 right-2.5 h-[50px] -translate-y-1/2 border bg-black/60 px-7 leading-none transition-colors duration-300 hover:bg-white hover:text-black"
-                >
-                  {FOOTER.form.submit}
-                </button>
-                <p aria-live="polite" className="sr-only">
-                  {sent ? FOOTER.form.success : ''}
-                </p>
-              </form>
-            </div>
+        <div className="flex flex-col gap-5 lg:flex-row lg:justify-between">
 
-            {/* Columna derecha */}
-            <div className="flex w-full max-w-[850px] flex-col gap-[50px] tab:gap-10 land:gap-[30px]">
-              <div className="flex flex-wrap items-center justify-between gap-[30px] tab:gap-5">
-                <h2 className="text-paper font-heading text-h6 w-full uppercase">
-                  {FOOTER.taglineFirst}
-                  <span className="text-card">{FOOTER.taglineSpan}</span>
-                </h2>
+          {/* ── Marca y alta al boletín ──────────────────────────────── */}
+          <div className="flex w-full flex-col gap-10 lg:max-w-150">
+            <Image
+              src={Logo}
+              alt="Octa Building Studio"
+              className="h-12 w-auto self-start object-contain lg:h-16"
+            />
 
-                <ul className="flex items-center gap-5 tab:gap-2.5">
-                  {SOCIAL_LINKS.map((s) => {
-                    const Icon = SocialIcon[s.icon];
-                    return (
-                      <li key={s.icon}>
-                        <a
-                          href={s.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={s.icon}
-                          className="border-paper text-paper hover:bg-yellow hover:border-yellow hover:text-ink flex size-[75px] items-center justify-center rounded-full border bg-black transition-colors duration-300 tab:size-[50px] land:size-10"
-                        >
-                          <Icon className="size-7 tab:size-5" aria-hidden="true" />
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+            <div className="flex flex-col gap-2.5">
+              <p className="text-primary/75 text-base lg:text-lg">
+                Déjanos tu correo y te avisamos de los montajes que vamos terminando.
+              </p>
 
-              <div className="rounded-tile flex w-full items-center justify-center bg-dark px-5 py-[50px] tab:justify-start tab:py-10 land:justify-center land:py-[30px]">
-                <ul className="flex w-full flex-wrap items-center justify-between gap-x-8 gap-y-3">
-                  <li className="w-full">
-                    <p className="text-yellow font-heading text-h6 uppercase">
-                      {FOOTER.quickLinksTitle}
-                    </p>
-                  </li>
-                  {FOOTER_LINKS.map((l) => (
-                    <li key={l.label}>
-                      <Link
-                        href={l.href}
-                        className="text-paper font-body text-body hover:text-yellow transition-colors duration-300"
-                      >
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <NewsletterForm />
             </div>
           </div>
 
-          {/* ── Barra inferior ──────────────────────────────────────────── */}
-          <div className="flex flex-col gap-[45px] land:gap-[30px]">
-            <div className="border-paper/15 flex items-center justify-between gap-10 border-t pt-8 land:flex-col land:items-center land:gap-[15px]">
-              <p className="text-paper font-body text-body">
-                {FOOTER.copyright}{' '}
-                <a
-                  href={FOOTER.copyrightLink.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-yellow"
-                >
-                  {FOOTER.copyrightLink.label}
-                </a>
-              </p>
-              <p className="text-paper font-body text-body">
-                {FOOTER.poweredBy}{' '}
-                <a
-                  href={FOOTER.poweredByLink.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-yellow"
-                >
-                  {FOOTER.poweredByLink.label}
-                </a>
-              </p>
-            </div>
+          {/* ── Navegación ───────────────────────────────────────────── */}
+          <div className="flex flex-col gap-5">
+            <p className="text-primary text-lg font-medium uppercase lg:text-xl">Navegación</p>
+
+            <ul className="flex flex-col gap-2.5">
+              {NAV_LINKS.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-primary/75 hover:text-primary w-fit text-base transition-colors duration-300"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          {/* ── Contacto ─────────────────────────────────────────────── */}
+          <div className="flex flex-col gap-5">
+            <p className="text-primary text-lg font-medium uppercase lg:text-xl">Contacto</p>
+
+            <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+              <ContactRow
+                icon={FaPhone}
+                label="Teléfono"
+                value={CONTACT.phone.display}
+                href={CONTACT.phone.href}
+              />
+              <ContactRow
+                icon={FaWhatsapp}
+                label="WhatsApp"
+                value={CONTACT.whatsapp.display}
+                href={CONTACT.whatsapp.url}
+              />
+              {CONTACT.emails.map((m) => (
+                <ContactRow
+                  key={m.address}
+                  icon={FaEnvelope}
+                  label={m.label}
+                  value={m.address}
+                  href={m.href}
+                />
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* ── Barra inferior ─────────────────────────────────────────── */}
+        <div className="border-primary/20 flex flex-col items-center gap-2.5 border-t pt-10 sm:flex-row sm:justify-between">
+          <p className="text-primary/60 text-sm">
+            © {new Date().getFullYear()} Octa Building Studio
+          </p>
+
+          <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5">
+            {LEGAL_LINKS.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="text-primary/60 hover:text-primary text-sm transition-colors duration-300"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>

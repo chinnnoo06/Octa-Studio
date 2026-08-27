@@ -3,19 +3,18 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-export const Odometer = ({
-  values,
-  suffix,
-}: {
+type TOdometerProps = {
   values: readonly string[];
   suffix?: string;
-}) => {
+}
+
+export const Odometer = ({ values, suffix }:TOdometerProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });
 
   return (
     <div ref={ref} className="flex items-end">
-      <div data-odometer className="h-[66px] overflow-hidden tab:h-[30px] land:h-[25px]">
+      <div data-odometer className="h-10 lg:h-12 overflow-hidden">
         <motion.div
           className="flex flex-col"
           initial={{ y: '-90%' }}
@@ -26,7 +25,7 @@ export const Odometer = ({
             <span
               key={`${v}-${i}`}
               aria-hidden={i > 0}
-              className="text-secondary font-text text-h4 block h-[66px] leading-[66px] tab:h-[30px] tab:leading-[30px] land:h-[25px] land:leading-[25px]"
+              className="text-secondary font-medium text-4xl lg:text-5xl block"
             >
               {v}
             </span>
@@ -34,7 +33,7 @@ export const Odometer = ({
         </motion.div>
       </div>
       {suffix ? (
-        <span className="text-secondary font-heading text-h4 leading-[66px] tab:leading-[30px] land:leading-[25px]">
+        <span className="text-secondary font-medium text-4xl lg:text-5xl block h-10 lg:h-12">
           {suffix}
         </span>
       ) : null}

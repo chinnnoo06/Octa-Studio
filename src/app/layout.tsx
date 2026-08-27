@@ -1,18 +1,13 @@
 import type { Metadata } from 'next';
-import { Sora, Inter, Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import { Footer } from '@/components/ui/footer/Footer';
 import './globals.css';
 import { Header } from '@/components/ui/header/Header';
 import { WhatsAppButton } from '@/components/ui/buttons/WhatsAppButton';
 
-const sora = Sora({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-sora',
-  display: 'swap',
-});
-
+/** La base de todo el sitio. `--font-sans` de `globals.css` apunta aquí, y de
+ *  ahí sale la fuente del documento entero sin escribir ninguna clase. */
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
@@ -20,20 +15,11 @@ const inter = Inter({
   display: 'swap',
 });
 
-
-/* Cuerpo de texto de Octa. */
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
-  display: 'swap',
-});
-
-const hirondelles = localFont({
-  src: '../assets/fonts/Hirondelles des Alpes.ttf',
+const gentleman = localFont({
+  src: '../assets/fonts/Gentleman on the Rainbow.ttf',
   weight: '400',
   style: 'normal',
-  variable: '--font-hirondelles',
+  variable: '--font-gentleman-local',
   display: 'swap',
 });
 
@@ -60,10 +46,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
-      className={`${sora.variable} ${inter.variable} ${hirondelles.variable} ${poppins.variable}`}
+      lang="es"
+      className={`${inter.variable} ${gentleman.variable}`}
     >
-      <body className="bg-primary text-ink font-body antialiased">
+      <body className="bg-primary text-fourth antialiased">
         <Header />
         {children}
         <Footer />

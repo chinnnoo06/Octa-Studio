@@ -1,37 +1,36 @@
 /**
- * Contenido de la sección Services y los textos del marquee.
+ * Contenido de la sección Services de la home.
  */
 
 import type { Service } from './types';
 
-export const SERVICES_HEADING =
-  'From interiors to lighting, we craft spaces that reflect your personality and purpose';
-
 export const SERVICES: Service[] = [
   {
-    title: 'Lighting Solutions',
-    description: 'We craft stylish, functional interiors that reflect your taste and enhance everyday living. Our designs combine creativity and practicality to transform every corner of your home.',
-    href: '/services/lighting-solutions',
-    icon: '/images/pages/home/icon-lighting.svg',
-    iconAlt: 'Box Shape Image',
+    number: '01',
+    title: 'Stands y ferias',
+    description:
+      'Diseñamos y fabricamos stands a medida, desde módulos compactos hasta islas de gran formato. Nos encargamos del montaje y del desmontaje en el recinto.',
+    href: '/servicios/stands',
   },
   {
-    title: 'Space Planning',
-    description: 'Our team optimizes layouts to make every corner of your space purposeful and visually balanced. We ensure each arrangement enhances both comfort and aesthetic appeal.',
-    href: '/services/space-planning',
-    icon: '/images/pages/home/icon-space.svg',
-    iconAlt: 'Icon in a cubic form',
+    number: '02',
+    title: 'Eventos masivos y shows',
+    description:
+      'Escenarios, estructuras, audio, iluminación y video para eventos de alto aforo. Coordinamos proveedores y tiempos para que todo llegue listo el día del show.',
+    href: '/servicios/eventos',
   },
   {
-    title: 'Furniture Styling',
-    description: 'From statement pieces to subtle accents, we curate furniture that completes your home’s look. Every selection is chosen to harmonize style, function, and personality.',
-    href: '/services/furniture-styling',
-    icon: '/images/pages/home/icon-furniture.svg',
-    iconAlt: 'Icon Liike Dimond Shape',
+    number: '03',
+    title: 'Congresos y convenciones',
+    description:
+      'Salas, señalética, escenografía y zonas de registro para encuentros corporativos. Una imagen coherente en cada espacio del recinto.',
+    href: '/servicios/congresos',
+  },
+  {
+    number: '04',
+    title: 'Montaje y logística',
+    description:
+      'Transporte, almacenaje y equipo de montaje propio a nivel nacional e internacional. Un solo interlocutor de principio a fin.',
+    href: '/servicios/montaje',
   },
 ];
-
-/** marquee 2 filas: 5 grupos arriba, 4 abajo, direcciones opuestas */
-export const SERVICES_MARQUEE = ['Renovation', 'Planning', 'Styling'] as const;
-export const SERVICES_MARQUEE_TOP_GROUPS = 5;
-export const SERVICES_MARQUEE_BOTTOM_GROUPS = 4;

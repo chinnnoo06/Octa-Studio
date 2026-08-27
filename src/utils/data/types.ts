@@ -1,6 +1,4 @@
-/**
- * Tipos compartidos por los datos de la home.
- */
+import type { StaticImageData } from 'next/image';
 
 export type NavLink = { label: string; href: string };
 export type MegaMenuColumn = { title: string; links: NavLink[]; noWrap?: boolean };
@@ -16,29 +14,28 @@ export type Stat = {
 };
 
 export type Project = {
+  /** Marca del expositor, leida del propio stand. */
   name: string;
-  year: string;
+  /** Sector del expositor. Ocupa el sitio del año, que el cliente no nos dio. */
+  sector: string;
   href: string;
-  image: string;
-  alt: string;              // "" en las 4
+  image: StaticImageData;
+  alt: string;
 };
-
 export type ProcessStep = {
-  step: string;             // "Step 01"
-  title: string;            // ojo: step 05 empieza por espacio
+  step: string;         
+  title: string;          
   description: string;
-  image: string;
-  imageMobile?: string;     // solo step 03
-  alt: string;              // "Official item"
-  hasConnector: boolean;    // steps 1-3 en desktop
+  img: StaticImageData;
+  alt: string;          
 };
 
 export type Service = {
+  /** ordinal que se pinta en la tarjeta: '01', '02'… */
+  number: string;
   title: string;
   description: string;
   href: string;
-  icon: string;
-  iconAlt: string;
 };
 
 export type BentoTile = {
@@ -60,21 +57,25 @@ export type Product = {
 export type Testimonial = {
   quote: string;
   name: string;
-  role: string;
-  image: string;
-  alt: string;
-  rating: number;           // 5 en los 4
+  /** De 0 a 5; se pinta con estrellas. */
+  rating: number;
 };
 
 export type BlogPost = {
   title: string;
+  /** Ya formateada para leer; el orden lo da la posicion en el array. */
   date: string;
+  /** Tema. Se pinta como etiqueta sobre la foto. */
+  category: string;
+  /** Sustituye al autor: al lector le sirve mas saber cuanto le va a costar. */
+  readingTime: string;
+  excerpt: string;
   href: string;
-  image: string;
+  image: StaticImageData;
   alt: string;
-  author: string;
-  authorImage: string;
-  authorAlt: string;
-  /** fila 1 = 'image-left', fila 2 = 'image-right' */
-  layout: 'image-left' | 'image-right';
+};
+
+export type Faq = {
+  question: string;
+  answer: string;
 };

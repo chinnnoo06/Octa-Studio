@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { donePages } from '@/lib/page-registry';
+import { donePages } from '@/utils/page-registry';
 
 const BASE = 'https://example.com';
 

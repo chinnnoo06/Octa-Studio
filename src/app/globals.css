@@ -1,217 +1,23 @@
 @import "tailwindcss";
 
-
-@custom-variant tab (@media (max-width: 991px));
-@custom-variant land (@media (max-width: 767px));
-@custom-variant mob (@media (max-width: 479px));
-
-:root {
-  --fs-big: 300px;
-  --fs-hero: 130px;
-  --fs-display: 124px;
-  --fs-h1: 96px;
-  --fs-h2: 72px;
-  --fs-h3: 56px;
-  --fs-h4: 40px;
-  --fs-h5: 32px;
-  --fs-h6: 24px;
-  --fs-body: 16px;
-  --fs-mail: 76px; /* one-off: el email gigante del footer */
-  --lh-mail: 1.18;
-  --rotator-h: 85px; /* ventana del rotador de títulos (.h2-counter-wrap) */
-
-  --gap-bigsection: 150px;
-  --gap-section: 100px;
-  --gap-layout: 80px;
-  --gap-container: 60px;
+html,
+body {
+  overflow-x: clip;
 }
 
-@media (max-width: 991px) {
-  :root {
-    --fs-big: 180px;
-    --fs-hero: 52px;
-    --fs-display: 52px;
-    --fs-h1: 42px;
-    --fs-h2: 32px;
-    --fs-h3: 28px;
-    --fs-h4: 24px;
-    --fs-h5: 22px;
-    --fs-h6: 20px;
-    --fs-mail: var(--fs-display);
-    --lh-mail: 1.12;
-    --rotator-h: 36px;
-    --gap-bigsection: 80px;
-    --gap-section: 80px;
-    --gap-layout: 60px;
-    --gap-container: 40px;
-  }
-}
-
-@media (max-width: 767px) {
-  :root {
-    --fs-big: 100px;
-    --fs-hero: 42px;
-    --fs-display: 42px;
-    --fs-h1: 32px;
-    --fs-h2: 28px;
-    --fs-h3: 24px;
-    --fs-h4: 22px;
-    --fs-h5: 20px;
-    --fs-h6: 18px;
-    --rotator-h: 30px;
-    --gap-bigsection: 60px;
-    --gap-section: 60px;
-    --gap-layout: 40px;
-    --gap-container: 30px;
-  }
-}
-
-@media (max-width: 479px) {
-  :root {
-    --fs-big: 75px;
-    --fs-hero: 38px;
-    --fs-display: 38px;
-    --fs-h1: 28px;
-    --fs-h2: 26px;
-    --fs-h3: 24px;
-    --fs-h4: 22px;
-    --fs-h5: 20px;
-    --fs-h6: 18px;
-    --rotator-h: 28px;
-    --gap-bigsection: 40px;
-    --gap-section: 40px;
-    --gap-layout: 30px;
-    --gap-container: 20px;
-  }
-}
 
 @theme inline {
-  --color-page: #fef8f0; 
-  --color-card: #fae9ce;
-  --color-beige: #f1dfc2; 
-  --color-yellow: #ffd900; 
-  --color-ink: #000000;
-  --color-paragraph: #575757;
-  --color-muted: #8e8e8e;
-  --color-dark: #191919;
-  --color-faint: #d7d7d7; 
-  --color-paper: #ffffff; 
 
-  /*REALES*/
-  --color-primary: #ffffff; /* --white */
-  --color-secondary: #18608C; /* --Blue */
+  --color-primary: #ffffff; 
+  --color-secondary: #18608C; 
   --color-thrird: #f2f2f2;
-  /* Texto largo. Es el azul de marca llevado casi al negro: en pantalla lee
-     como negro pero pertenece a la familia, y da ~15:1 sobre blanco sin el
-     halo duro del #000. El azul marca la estructura, este carga la lectura. */
-  --color-fourth: #12222C;
+  --color-fourth: #000000;
 
-
-  /* --- Familias --- */
-  --font-heading: var(--font-sora), Sora, ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
 
+  --font-gentleman: var(--font-gentleman-local), ui-serif, Georgia, cursive;
 
-  /* Fuentes propias: `font-display` para títulos, `font-text` para el resto. */
-  --font-display: var(--font-hirondelles), ui-serif, Georgia, serif;
-  --font-text: var(--font-poppins), Poppins, ui-sans-serif, system-ui, sans-serif;
-
-
-  --text-display: var(--fs-display);
-  --text-display--line-height: 1.1;
-  --text-display--font-weight: 600;
-
-  --text-big: var(--fs-big);
-  --text-big--line-height: 1.1;
-
-  --text-mail: var(--fs-mail);
-  --text-mail--line-height: var(--lh-mail);
-  --text-mail--font-weight: 600;
-
-  --text-h1: var(--fs-h1);
-  --text-h1--line-height: 1.12;
-  --text-h1--font-weight: 600;
-
-  --text-h2: var(--fs-h2);
-  --text-h2--line-height: 1.14;
-  --text-h2--font-weight: 600;
-
-  --text-h3: var(--fs-h3);
-  --text-h3--line-height: 1.18;
-  --text-h3--font-weight: 600;
-
-  --text-h4: var(--fs-h4);
-  --text-h4--line-height: 1.2;
-  --text-h4--font-weight: 600;
-
-  --text-h5: var(--fs-h5);
-  --text-h5--line-height: 1.25;
-  --text-h5--font-weight: 600;
-
-  --text-h6: var(--fs-h6);
-  --text-h6--line-height: 1.3;
-  --text-h6--font-weight: 600;
-
-  --text-body: var(--fs-body);
-  --text-body--line-height: 1.5;
-  --text-body--font-weight: 400;
-
-  --text-caption: 14px;
-  --text-caption--line-height: 1.4286;
-
-  --text-badge: 11px;
-  --text-badge--line-height: 1.6364;
-  --text-badge--font-weight: 700;
-
-  /* --- Spacing con nombre (--_gap---* del original) ---
-     Apuntan a las vars de arriba, así `py-section` cambia solo por breakpoint. */
-  --spacing-bigsection: var(--gap-bigsection);
-  --spacing-section: var(--gap-section);
-  --spacing-layout: var(--gap-layout);
-  --spacing-container: var(--gap-container);
-
-  /* --- Radios observados --- */
-  --radius-card: 12px;
-  --radius-tile: 10px;
-  --radius-pill: 50px;
-
-  /* --- Easing --- */
   --ease-brand: cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-@utility container-livinor {
-  width: 100%;
-  max-width: 1820px;
-  margin-inline: auto;
-  padding-inline: var(--gap-container);
-}
-
-/* ============================================================================
-   BASE
-   ========================================================================== */
-@layer base {
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body {
-    background-color: var(--color-page);
-    color: var(--color-paragraph);
-    font-family: var(--font-body);
-    font-size: var(--fs-body);
-    line-height: 1.5;
-  }
-
-
-  .no-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 @keyframes mark-pop-a {
@@ -254,64 +60,6 @@
 
 .mark-animated > path:nth-child(2) {
   animation-name: mark-pop-b;
-}
-
-@keyframes corner-in-1 {
-  0%,
-  21% {
-    transform: translateX(350px);
-  }
-  42%,
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes corner-in-2 {
-  0% {
-    transform: translateX(196px);
-  }
-  21%,
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes corner-in-3 {
-  0%,
-  42% {
-    transform: translateX(196px);
-  }
-  62%,
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.corner-cycle > *:nth-child(1) {
-  animation: corner-in-1 3.6s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-}
-.corner-cycle > *:nth-child(2) {
-  animation: corner-in-2 3.6s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-}
-.corner-cycle > *:nth-child(3) {
-  animation: corner-in-3 3.6s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-}
-
-/* En <=767 el original congela este bloque. Medido en vivo: la traslación de
-   las tres fotos se queda en 0 durante todo el ciclo, así que ahí no hay
-   animación ninguna. Lo que sí cambia es que cada foto gira -30° por su cuenta;
-   sumados a los -20° del wrap dan los -50° del móvil. Ese giro extra es lo que
-   compacta el racimo: a solo -20° los desplazamientos de -153px se quedan casi
-   horizontales y el grupo se sale de una caja de 250px de ancho. */
-@media (max-width: 767px) {
-  /* `:nth-child(n)` selecciona lo mismo que `> *` pero iguala la especificidad
-     de las tres reglas de arriba. Sin él la media query pierde y la animación
-     sigue corriendo aquí, aunque el giro sí se aplique (esa parte no compite). */
-  .corner-cycle > *:nth-child(n) {
-    animation: none;
-    rotate: -30deg;
-  }
 }
 
 @keyframes marquee-left {
@@ -374,14 +122,8 @@
   }
 
   .marquee-track,
-  .spin-slow,
-  .corner-cycle > * {
+  .spin-slow {
     animation: none !important;
-  }
-
-  /* Sin animación, las fotos se quedan en su sitio en vez de fuera de cuadro. */
-  .corner-cycle > * {
-    transform: none !important;
   }
 
   /* El icono vuelve a su estado base, que ya es visible. */

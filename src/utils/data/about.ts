@@ -14,30 +14,29 @@ export const ABOUT = {
 
 export const STATS: Stat[] = [
   {
-    odometer: ['2014','2013','2012','2011','2010','2010','2009','2008','2007','2006'],
-    label: 'establishment',
-    description: 'Over a decade of transforming spaces',
+    odometer: ['20', '19', '18', '17', '16', '15', '14', '13', '12', '11'],
+    label: 'Años de experiencia',
+    description: 'Dos décadas diseñando y montando en todo México',
     variant: 'one',
   },
   {
-    odometer: ['350','349','348','347','346','345','344','343','342','341'],
+    odometer: ['500', '480', '460', '440', '420', '400', '380', '360', '340', '320'],
     suffix: '+',
-    label: 'Projects finished',
-    description: 'Homes to offices, we deliver excellence',
+    label: 'Stands montados',
+    description: 'De espacios compactos a montajes de gran formato',
     variant: 'two',
   },
   {
-    odometer: ['200','199','198','197','196','195','194','193','192','191'],
+    odometer: ['300', '290', '280', '270', '260', '250', '240', '230', '220', '210'],
     suffix: '+',
-    label: 'Happy Clients',
-    description: 'People who love our designs',
+    label: 'Marcas atendidas',
+    description: 'Empresas nacionales, internacionales y expositoras',
     variant: 'three',
   },
   {
-    odometer: ['25','24','23','22','21','20','19','18','17','16'],
-    suffix: '+',
-    label: 'Ongoing Projects',
-    description: 'Homes to offices, we deliver excellence',
+    odometer: ['3', '2', '1', '9', '8', '7', '6', '5', '4', '3'],
+    label: 'Países de operación',
+    description: 'México, Estados Unidos y clientes de Asia y Sudamérica',
     variant: 'four',
   },
 ];

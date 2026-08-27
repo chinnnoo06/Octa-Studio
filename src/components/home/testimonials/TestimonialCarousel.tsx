@@ -1,37 +1,12 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
-import { TESTIMONIALS } from '@/lib/home-data';
+import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaStar } from 'react-icons/fa6';
+import { TESTIMONIALS } from '@/utils/data/testimonials';
 
-/**
- * Carrusel de testimonios (`.slider.w-slider`).
- *
- * Configuración verificada en vivo sobre el original:
- *  - **4 slides**, `loop: true`, transición 500ms `ease`, 1 slide visible
- *  - **SIN autoplay**: el `data-delay="4000"` está en el DOM pero es inerte
- *    porque `data-autoplay="false"` (comprobado: tras 6s el slide no cambia)
- *  - **Los dots nunca se ven**: `.slide-nav { display: none }` está en el CSS
- *    base, en todos los breakpoints. Solo hay flechas.
- *  - Flechas 60×60, `border: 3px solid #fff`, fondo transparente, y con radios
- *    distintos entre sí: **10px la izquierda y 12px la derecha**.
- *    Responsive: 50×50 (≤991) · 40×40 con top 20% (≤767) · 30×30 con radius 6
- *    y `top: 100%` (≤479), es decir **debajo** del slider.
- */
-const Chevron = ({ dir }: { dir: 'left' | 'right' }) => {
-  return (
-    <svg width="25" height="30" viewBox="0 0 25 30" fill="none" aria-hidden="true">
-      <path
-        d={dir === 'left' ? 'M17 4 7 15l10 11' : 'M8 4l10 11L8 26'}
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+const ARROW =
+  'cursor-pointer border-primary text-primary hover:bg-primary hover:text-secondary flex size-12 shrink-0 items-center justify-center rounded-xl border-2 transition-colors duration-300 lg:size-15';
 
 export const TestimonialCarousel = () => {
   const [emblaRef, embla] = useEmblaCarousel({
@@ -67,19 +42,16 @@ export const TestimonialCarousel = () => {
     }
   };
 
-  const arrowBase =
-    'absolute top-1/2 z-[3] flex size-[60px] -translate-y-1/2 items-center justify-center border-[3px] border-white bg-transparent text-white transition-colors duration-300 hover:bg-white hover:text-black tab:size-[50px] land:top-[20%] land:size-10 mob:top-full mob:size-[30px] mob:-translate-y-0 mob:rounded-[6px]';
-
   return (
     <div
-      className="relative"
+      className="flex flex-col items-center gap-10"
       role="region"
       aria-roledescription="carousel"
       aria-label="Testimonios de clientes"
       tabIndex={0}
       onKeyDown={onKeyDown}
     >
-      <div ref={emblaRef} className="overflow-hidden">
+      <div ref={emblaRef} className="w-full overflow-hidden">
         <div className="flex">
           {TESTIMONIALS.map((t, i) => (
             <div
@@ -90,60 +62,56 @@ export const TestimonialCarousel = () => {
               aria-label={`${i + 1} de ${TESTIMONIALS.length}`}
               aria-hidden={selected !== i}
             >
-              <div className="flex min-h-[400px] flex-col items-center gap-layout">
-                <div className="flex max-w-[1165px] flex-col items-center gap-10">
-                  <div className="flex h-5 items-center gap-1" aria-label={`${t.rating} de 5`}>
-                    {Array.from({ length: t.rating }, (_, s) => (
-                      <svg key={s} width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
-                        <path
-                          d="M10 0l2.6 6.6L20 7.3l-5.4 4.8 1.7 7.2L10 15.6 3.7 19.3l1.7-7.2L0 7.3l7.4-.7L10 0Z"
-                          fill="#ffd900"
-                        />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-paper font-body text-body text-center land:hidden">
-                    {t.quote}
-                  </p>
+              {/* Sin `px-*`: el margen lateral ya lo pone el contenedor de la
+                  sección. Si se repite aquí, el testimonio queda 20px más
+                  adentro que el eyebrow y el título que tiene encima. */}
+              <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 text-center">
+                <FaQuoteLeft aria-hidden="true" className="text-primary/40 size-8 lg:size-10" />
+
+                <p className="text-primary text-base text-balance lg:text-lg">
+                  {t.quote}
+                </p>
+
+                <div className="flex items-center gap-1.5" aria-label={`${t.rating} de 5`}>
+                  {Array.from({ length: t.rating }, (_, s) => (
+                    <FaStar key={s} aria-hidden="true" className="text-primary size-4 lg:size-5" />
+                  ))}
                 </div>
 
-                <div className="flex max-w-[260px] flex-col items-center gap-5">
-                  <div className="rounded-card overflow-hidden">
-                    <Image
-                      src={t.image}
-                      alt={t.alt}
-                      width={260}
-                      height={190}
-                      className="h-[190px] w-[260px] object-cover"
-                    />
-                  </div>
-                  <div className="flex h-[65px] flex-col items-center gap-2.5">
-                    <p className="text-paper font-heading text-h6 uppercase">{t.name}</p>
-                    <p className="text-yellow font-body text-body">{t.role}</p>
-                  </div>
-                </div>
+                <p className="text-primary text-lg font-medium uppercase lg:text-xl">
+                  {t.name}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={prev}
-        aria-label="Testimonio anterior"
-        className={`${arrowBase} left-0 rounded-[10px]`}
-      >
-        <Chevron dir="left" />
-      </button>
-      <button
-        type="button"
-        onClick={next}
-        aria-label="Testimonio siguiente"
-        className={`${arrowBase} right-0 rounded-card`}
-      >
-        <Chevron dir="right" />
-      </button>
+      <div className="flex items-center gap-5">
+        <button type="button" onClick={prev} aria-label="Testimonio anterior" className={ARROW}>
+          <FaChevronLeft aria-hidden="true" className="size-4 lg:size-5" />
+        </button>
+
+        <ul className="flex items-center gap-2.5">
+          {TESTIMONIALS.map((t, i) => (
+            <li key={t.name}>
+              <button
+                type="button"
+                onClick={() => embla?.scrollTo(i)}
+                aria-label={`Ir al testimonio ${i + 1}`}
+                aria-current={selected === i}
+                className={`size-2.5 rounded-full transition-colors duration-300 ${
+                  selected === i ? 'bg-primary' : 'bg-primary/40 hover:bg-primary/70'
+                }`}
+              />
+            </li>
+          ))}
+        </ul>
+
+        <button type="button" onClick={next} aria-label="Testimonio siguiente" className={ARROW}>
+          <FaChevronRight aria-hidden="true" className="size-4 lg:size-5" />
+        </button>
+      </div>
     </div>
   );
 }
