@@ -27,19 +27,19 @@ export const Hero = () => {
         <div className="mt-20 flex flex-col justify-between gap-20 md:min-h-135 lg:min-h-200">
 
           {/* ── Bloque superior ───────────────────────────────────────────── */}
-          <div className="mx-auto flex w-full max-w-[1700px] flex-col items-center gap-10 lg:gap-20 px-5 lg:px-15 md:flex-row md:items-start md:justify-start">
+          <div className="mx-auto flex w-full max-w-[1700px] flex-col items-center gap-10 lg:gap-20 px-5 lg:px-15 md:flex-row">
 
             <RevealOnLoad variants={fadeBlur}>
               <h1 className="text-primary/75 font-bold uppercase
                text-center md:text-end
-               text-[2.2rem] small:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem]
+               text-[2.2rem] small:text-[2.75rem] md:text-[3rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem]
                leading-[1.2] tracking-[-0.02em]">
               Diseñamos grandes {''}<br className="hidden md:block" />
                 <span className="text-primary">experiencias</span>
               </h1>
             </RevealOnLoad>
 
-            <div className="flex w-full flex-col items-center gap-5 md:w-auto md:flex-row">
+            <div className="flex w-full flex-col items-center gap-5 md:justify-end md:flex-1 md:flex-row lg:flex-none lg:w-auto ">
               <RevealOnLoad
                 variants={fadeBlur}
                 delay={0.15}

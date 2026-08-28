@@ -17,7 +17,7 @@ export const BrandBadge = () => {
   const duracion = total * DURACION_POR_ETIQUETA;
 
   return (
-    <div className="relative flex size-40 items-center justify-center lg:size-55">
+    <div className="relative flex size-50 items-center justify-center lg:size-55">
       <DotRing
         className="spin-slow text-secondary size-full"
         style={{ ['--spin-duration' as string]: '10s' }}

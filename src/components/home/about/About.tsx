@@ -43,7 +43,7 @@ export const About = () => {
             </Reveal>
           </div>
 
-          <div className="w-full lg:w-1/2 pb-5 sm:pb-0 flex overflow-x-auto sm:overflow-x-hidden sm:grid sm:grid-cols-2 gap-5 lg:gap-0">
+          <div className="w-full lg:w-1/2 pb-5 sm:pb-0 flex overflow-x-auto overflow-y-hidden sm:overflow-x-hidden sm:grid sm:grid-cols-2 gap-5 lg:gap-0">
             {STATS.map((s) => (
               <div key={s.label} className={`w-50 sm:w-full flex flex-col items-end justify-end p-2.5 sm:p-5 lg:p-10 shrink-0 ${BOX_VARIANT[s.variant]}`}  >
                 <div className="flex flex-col items-end justify-end gap-2.5 w-full h-full">

@@ -35,7 +35,7 @@ export const Process = () => {
             <SectionTitle tone="light" lead="Así es como" rotating="trabajamos" />
           </div>
 
-          <div className="flex w-full gap-5 overflow-x-auto pb-5 md:flex-col md:items-center md:overflow-visible md:pb-0 xl:gap-3">
+          <div className="flex w-full gap-5 overflow-x-auto overflow-y-hidden pb-5 md:flex-col md:items-center md:overflow-visible md:pb-0 xl:gap-3">
 
             <div className="contents md:mx-auto md:block md:w-[calc(50%-0.625rem)] xl:w-full">
               <div className={TARJETA}>

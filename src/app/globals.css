@@ -6,7 +6,7 @@ body {
 }
 
 @theme inline {
-  --breakpoint-small: 380px;
+  --breakpoint-small: 400px;
 
   --color-primary: #ffffff; 
   --color-secondary: #18608C; 

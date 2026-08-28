@@ -58,7 +58,7 @@ export const Advantages = () => {
           <SectionTitle align="center" lead="20 años sin" rotating="improvisar" />
         </div>
 
-        <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4">
+        <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden pb-5 sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4">
 
           {/* ── Fila 1 ─────────────────────────────────────────────────── */}
           <Reveal className={`border-fourth/30 bg-primary flex min-h-70 items-center justify-center rounded-xl border p-5 ${TILE}`}>

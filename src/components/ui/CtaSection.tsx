@@ -36,7 +36,7 @@ export const CtaSection = () => {
 
           <div className="flex flex-col items-start gap-5">
 
-            <h2 className="text-primary/75 text-[2.2rem] small:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-bold uppercase leading-[1.05] tracking-[-0.02em]">
+            <h2 className="text-primary/75 text-[2.2rem] small:text-[2.75rem] md:text-[3rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem] font-bold uppercase leading-[1.05] tracking-[-0.02em]">
               Construyendo ideas,{' '}
               <span className="text-primary">Creando experiencias</span>
             </h2>
