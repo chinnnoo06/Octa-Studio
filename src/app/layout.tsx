@@ -25,19 +25,22 @@ const gentleman = localFont({
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
-  title: 'Octa Studio - Organizador de eventos, Compras y ventas minoristas',
+  title: 'Octa Studio | Diseño y montaje de stands para expos y eventos',
   description:
-    'Discover Livinor — a modern Webflow Ecommerce Website Template designed for stylish furniture and decor brands. Showcase elegant pieces, elevate everyday spaces.',
+    'Diseñamos, fabricamos, montamos y desmontamos stands para ferias, congresos y eventos masivos. 20 años de experiencia en Guadalajara, Monterrey, CDMX y todo México.',
   openGraph: {
-    title: 'Octa Studio - Organizador de eventos, Compras y ventas minoristas',
+    title: 'Octa Studio | Diseño y montaje de stands para expos y eventos',
     description:
-      'Discover Livinor — a modern Webflow Ecommerce Website Template designed for stylish furniture and decor brands. Showcase elegant pieces, elevate everyday spaces.',
+      'Construyendo ideas, creando experiencias. Diseño, fabricación, montaje y desmontaje de stands a nivel nacional e internacional.',
     type: 'website',
-    locale: 'en_US',
+    locale: 'es_MX',
+    siteName: 'Octa Studio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Octa Studio - Organizador de eventos, Compras y ventas minoristas',
+    title: 'Octa Studio | Diseño y montaje de stands para expos y eventos',
+    description:
+      'Construyendo ideas, creando experiencias. 20 años diseñando y montando stands en todo México.',
   },
 };
 
