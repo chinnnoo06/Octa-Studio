@@ -49,7 +49,7 @@ export const About = () => {
                 <div className="flex flex-col items-end justify-end gap-2.5 w-full h-full">
                   <Odometer values={s.odometer} suffix={s.suffix} />
                   <div className=" w-full flex flex-col justify-end items-end gap-2.5 text-right lg:items-end lg:text-right pt-0 sm:pt-5 lg:pt-10">
-                    <p className="text-secondary font-semibold text-lg lg:text-2xl uppercase">{s.label}</p>
+                    <p className="text-secondary font-semibold text-xl lg:text-2xl uppercase">{s.label}</p>
                     <p className="text-fourth/75 text-sm lg:text-base hidden sm:block">
                       {s.description}
                     </p>

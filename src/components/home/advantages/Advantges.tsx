@@ -40,7 +40,7 @@ const PhotoTile = ({
       <div aria-hidden="true" className="bg-fourth/50 absolute inset-0" />
       <div className="relative z-10 flex flex-col gap-5">
         {children}
-        <h3 className="text-primary max-w-70 text-lg font-semibold uppercase lg:text-xl">
+        <h3 className="text-primary max-w-90 text-xl lg:text-2xl font-semibold uppercase">
           {title}
         </h3>
       </div>
@@ -80,7 +80,7 @@ export const Advantages = () => {
             delay={0.16}
             className={`border-fourth/30 bg-secondary/15 flex min-h-70 flex-col justify-between gap-5 rounded-xl border p-5 sm:col-span-2 ${TILE}`}
           >
-            <h3 className="text-secondary max-w-90 text-lg lg:text-xl font-semibold uppercase ">
+            <h3 className="text-secondary max-w-90 font-semibold text-xl lg:text-2xl uppercase ">
               {ADVANTAGES.centerTitle}
             </h3>
 

@@ -31,7 +31,7 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
           </span>
         </p>
 
-        <h3 className="text-secondary text-lg font-semibold uppercase lg:text-xl">{post.title}</h3>
+        <h3 className="text-secondary text-xl font-semibold uppercase lg:text-2xl">{post.title}</h3>
 
         <p className="text-fourth/75 text-sm lg:text-base">{post.excerpt}</p>
       </div>

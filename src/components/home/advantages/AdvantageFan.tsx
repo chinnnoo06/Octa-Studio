@@ -6,9 +6,9 @@ import { ADVANTAGES_CORNER_IMAGES } from '@/utils/data/advantages';
 import { fanKeyframes, fanTransition } from '@/utils/motion/fan';
 
 const FAN = [
-  { rotate: -6, className: '' },
-  { rotate: 3, className: '-ml-6 z-10' },
-  { rotate: -3, className: '-ml-6' },
+  { rotate: -12, className: '' },
+  { rotate: 7, className: '-ml-10 z-10 lg:-ml-12' },
+  { rotate: -5, className: '-ml-10 lg:-ml-12' },
 ];
 
 export const AdvantageFan = () => {
@@ -25,7 +25,7 @@ export const AdvantageFan = () => {
           <Image
             src={img.src}
             alt={img.alt}
-            className="border-primary size-20 rounded-xl border-4 object-cover lg:size-24"
+            className="border-primary size-28 lg:size-35 rounded-xl border-4 object-cover "
           />
         </motion.div>
       ))}

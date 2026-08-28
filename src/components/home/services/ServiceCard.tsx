@@ -22,7 +22,7 @@ export const ServiceCard = ({ service }: { service: Service }) => {
       </div>
 
       <div className="flex flex-col gap-2.5">
-          <h3 className="text-secondary group-hover:text-primary min-h-14 lg:min-h-16 font-semibold text-lg lg:text-2xl uppercase transition-colors duration-300 ">
+          <h3 className="text-secondary group-hover:text-primary min-h-14 lg:min-h-16 font-semibold text-xl lg:text-2xl uppercase transition-colors duration-300 ">
             {service.title}
           </h3>
 

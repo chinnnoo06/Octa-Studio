@@ -29,10 +29,10 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     >
 
       <div className="bg-secondary/15 group-hover:bg-secondary flex w-12 shrink-0 flex-col items-center justify-between gap-5 py-5 transition-colors duration-300 lg:w-16">
-        <h3 className="text-secondary rotate-180 text-lg lg:text-xl font-semibold uppercase transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
+        <h3 className="text-secondary rotate-180  font-semibold text-xl lg:text-2xl uppercase transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
           {project.name}
         </h3>
-        <p className="text-secondary rotate-180 text-lg lg:text-xl font-semibold uppercase transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
+        <p className="text-secondary rotate-180  font-semibold text-xl lg:text-2xl uppercase transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
           {project.sector}
         </p>
       </div>

@@ -2,12 +2,12 @@ import type { Transition } from 'framer-motion';
 import { EASE_BRAND } from './base';
 
 
-const CYCLE = 8; // segundos de la vuelta completa
+const CYCLE = 4; // segundos de la vuelta completa
 const PRE = 0.2; // respiro antes de la primera
-const MOVE = 0.8; // lo que tarda una en entrar o salir
+const MOVE = 0.6; // lo que tarda una en entrar o salir
 const GAP = 0.2; // separación entre una y la siguiente
-const HOLD = 0.6; // con todas a la vista
-const TAIL = 1.6; // hueco vacío antes de repetir
+const HOLD = 1.2; // con todas a la vista
+const TAIL = 0.05; // hueco vacío antes de repetir
 
 export const fanKeyframes = {
   opacity: [0, 0, 1, 1, 0, 0],
