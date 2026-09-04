@@ -12,11 +12,6 @@ export const FAQS: Faq[] = [
       'Sí. Antes de tocar un solo material te entregamos el render en tres dimensiones, y se ajusta las veces que haga falta hasta que lo apruebes. La fabricación no arranca hasta ese momento.',
   },
   {
-    question: '¿Cobran viáticos por desplazarse?',
-    answer:
-      'Dentro de México no. Traslados, hospedaje y dietas del equipo de montaje van incluidos, sea cual sea la ciudad. Para proyectos fuera del país se cotiza aparte y lo verás desglosado.',
-  },
-  {
     question: '¿En qué ciudades trabajan?',
     answer:
       'En todo México, con más presencia en Guadalajara, Monterrey y Ciudad de México. También montamos en parte de Estados Unidos, y hemos trabajado para marcas de Brasil, Colombia y China.',

@@ -36,8 +36,8 @@ export const About = () => {
               <Image
                 src={Img}
                 alt="Imagen del logo de Octa Studio"
-                width={630}
-                height={425}
+                sizes="(min-width: 1820px) 770px, (min-width: 1024px) calc(50vw - 80px), calc(100vw - 40px)"
+                quality={90}
                 className="h-100 lg:h-110 w-full object-cover"
               />
             </Reveal>

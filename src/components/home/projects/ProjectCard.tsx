@@ -29,10 +29,10 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     >
 
       <div className="bg-secondary/15 group-hover:bg-secondary flex w-12 shrink-0 flex-col items-center justify-between gap-5 py-5 transition-colors duration-300 lg:w-16">
-        <h3 className="text-secondary rotate-180  font-semibold text-xl lg:text-2xl uppercase transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
+        <h3 className="font-gentleman text-secondary rotate-180 font-semibold text-3xl lg:text-4xl leading-[0.85] font-normal tracking-[0.04em] normal-case uppercase transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
           {project.name}
         </h3>
-        <p className="text-secondary rotate-180  font-semibold text-xl lg:text-2xl uppercase transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
+        <p className="font-gentleman text-secondary rotate-180 font-semibold text-3xl lg:text-4xl leading-[0.85] font-normal tracking-[0.04em] normal-case uppercase transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
           {project.sector}
         </p>
       </div>
@@ -41,8 +41,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         <Image
           src={project.image}
           alt={`Proyecto ${project.name}, ${project.sector}`}
-          width={555}
-          height={800}
+          sizes="(min-width: 1820px) 706px, (min-width: 1024px) calc(50vw - 144px), (min-width: 768px) calc(50vw - 88px), calc(100vw - 88px)"
           className="ease-brand h-100 sm:h-130 lg:h-170 w-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <span aria-hidden="true" className="absolute inset-0 bg-black/30" />

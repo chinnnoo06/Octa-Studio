@@ -4,6 +4,9 @@ import Img1 from "@/assets/media/stands/ImgStand2.webp"
 import Img2 from "@/assets/media/stands/ImgStand3.webp"
 import Img3 from "@/assets/media/stands/ImgStand4.webp"
 
+/** El hueco es fijo en cada corte: 126, 140, 240 y 350px ya sin el `border-5`. */
+const SLIDE_SIZES = '(min-width: 1024px) 350px, (min-width: 768px) 240px, (min-width: 640px) 140px, 126px';
+
 export const HeroSlider = () => {
   return (
     <Marquee duration={19.7} direction="left" gap={0} pauseOnHover={false}>
@@ -11,8 +14,7 @@ export const HeroSlider = () => {
         <Image
           src={Img1}
           alt="Montaje de stand"
-          width={348}
-          height={390}
+          sizes={SLIDE_SIZES}
           className="size-full object-cover"
           priority
         />
@@ -22,8 +24,7 @@ export const HeroSlider = () => {
         <Image
           src={Img2}
           alt=""
-          width={348}
-          height={390}
+          sizes={SLIDE_SIZES}
           className="size-full object-cover"
         />
       </div>
@@ -32,8 +33,7 @@ export const HeroSlider = () => {
         <Image
           src={Img3}
           alt=""
-          width={348}
-          height={390}
+          sizes={SLIDE_SIZES}
           className="size-full object-cover"
         />
       </div>

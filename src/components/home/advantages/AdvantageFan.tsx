@@ -25,6 +25,7 @@ export const AdvantageFan = () => {
           <Image
             src={img.src}
             alt={img.alt}
+            sizes="(min-width: 1024px) 140px, 112px"
             className="border-primary size-28 lg:size-35 rounded-xl border-4 object-cover "
           />
         </motion.div>

@@ -14,6 +14,9 @@ import ImgTrato from '@/assets/media/stands/ImgStand2.webp';
 
 const TILE_SIZES = '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw';
 
+/** El tile de montaje ocupa `col-span-2`: el doble de ancho que los demás. */
+const WIDE_TILE_SIZES = '(min-width: 1024px) 50vw, 100vw';
+
 const TILE = 'w-75 shrink-0 snap-start sm:w-auto sm:shrink';
 
 const PhotoTile = ({
@@ -23,6 +26,8 @@ const PhotoTile = ({
   className,
   delay,
   children,
+  sizes = TILE_SIZES,
+  quality,
 }: {
   src: StaticImageData;
   alt: string;
@@ -30,13 +35,15 @@ const PhotoTile = ({
   className?: string;
   delay?: number;
   children?: React.ReactNode;
+  sizes?: string;
+  quality?: number;
 }) => {
   return (
     <Reveal
       delay={delay}
       className={`relative flex flex-col justify-end overflow-hidden rounded-xl p-5 ${TILE} ${className}`}
     >
-      <Image src={src} alt={alt} fill sizes={TILE_SIZES} className="object-cover" />
+      <Image src={src} alt={alt} fill sizes={sizes} quality={quality} className="object-cover" />
       <div aria-hidden="true" className="bg-fourth/50 absolute inset-0" />
       <div className="relative z-10 flex flex-col gap-5">
         {children}
@@ -72,6 +79,7 @@ export const Advantages = () => {
             <Image
               src={ImgMarca}
               alt="Logotipo de Octa Building Studio"
+              sizes="(min-width: 1024px) 300px, 220px"
               className="h-full w-full object-contain"
             />
           </Reveal>
@@ -105,6 +113,8 @@ export const Advantages = () => {
             title={ADVANTAGES.leftBottomTitle}
             className="min-h-100 sm:col-span-2"
             delay={0.24}
+            sizes={WIDE_TILE_SIZES}
+            quality={90}
           />
 
           <PhotoTile

@@ -1,11 +1,5 @@
 import type { NextConfig } from 'next';
 
-/**
- * Headers de seguridad por defecto. Un clon visual estático no necesita
- * relajarlos: todos los assets están descargados y servidos desde /public.
- * Si una página futura enlazara a un CDN externo, se añade ese dominio
- * concreto — nunca `*` ni `'unsafe-eval'`.
- */
 const isDev = process.env.NODE_ENV === 'development';
 
 const securityHeaders = [
@@ -36,15 +30,13 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  // El badge de dev se superpone al contenido y contaminaría las capturas
-  // que usa el loop de comparación visual.
   devIndicators: false,
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }];
   },
   images: {
-    // Todos los assets son locales; no hay remotePatterns.
     formats: ['image/avif', 'image/webp'],
+    qualities: [75, 90],
   },
 };
 

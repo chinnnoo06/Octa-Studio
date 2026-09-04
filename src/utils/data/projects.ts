@@ -21,14 +21,14 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Toyo Kasei',
-    sector: 'Industrial',
+    sector: 'Ferretera',
     href: '/proyectos',
     image: ImgToyoKasei,
     alt: 'Stand de Toyo Kasei con maquinaria de flejado y panelado azul',
   },
   {
     name: 'PCP',
-    sector: 'Industrial',
+    sector: 'Ferretera',
     href: '/proyectos',
     image: ImgPcp,
     alt: 'Stand de PCP con mostrador iluminado y exhibidores de válvulas',

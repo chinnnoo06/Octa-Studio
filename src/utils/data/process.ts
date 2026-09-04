@@ -3,7 +3,7 @@ import ImgStep1 from "@/assets/media/stock/ImgStock1.webp"
 import ImgStep2 from "@/assets/media/renders/ImgRender1.webp"
 import ImgStep3 from "@/assets/media/stands/ImgStand5.webp"
 import ImgStep4 from "@/assets/media/stands/ImgStand6.webp"
-import ImgStep5 from "@/assets/media/renders/ImgRender2.webp"
+import ImgStep5 from "@/assets/media/stands/ImgStand11.webp"
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {

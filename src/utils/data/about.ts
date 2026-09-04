@@ -1,7 +1,3 @@
-/**
- * Contenido de la sección About, incluidas las 4 stats con sus odómetros.
- */
-
 import type { Stat } from './types';
 
 export const ABOUT = {

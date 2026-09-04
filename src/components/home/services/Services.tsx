@@ -6,7 +6,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { ServiceCard } from './ServiceCard';
 import { SERVICES } from '@/utils/data/services';
 import { fadeUpScale } from '@/utils/motion/reveal';
-import Img from '@/assets/media/stands/ImgStand7.webp';
+import Img from '@/assets/media/stands/ImgStand12.webp';
 
 export const Services = () => {
   return (
@@ -21,9 +21,9 @@ export const Services = () => {
               <Image
                 src={Img}
                 alt="Montaje de un stand en feria"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                placeholder="blur"
-                className="h-75 w-full object-cover lg:h-110"
+                sizes="(min-width: 1820px) 770px, (min-width: 1024px) calc(50vw - 80px), calc(100vw - 40px)"
+                quality={90}
+                className="h-100 lg:h-110 w-full object-cover"
               />
             </Reveal>
           </div>

@@ -1,9 +1,9 @@
-const PHONE_DISPLAY = '33 3405 0215';
+const PHONE_DISPLAY = '33 4493 4790';
 
-/** E.164 sin separadores: es lo que necesita el marcador del móvil. */
-const PHONE_E164 = '+523334050215';
+const PHONE_E164 = '+523344934790';
 
-/** Para `wa.me`: código de país + número, sin `+`, espacios ni guiones. */
+const WHATSAPP_DISPLAY = '33 3405 0215';
+
 const WHATSAPP_NUMBER = '523334050215';
 
 const WHATSAPP_MESSAGE = 'Hola, me interesa cotizar un proyecto con Octa Building Studio.';
@@ -21,7 +21,7 @@ export const CONTACT = {
   },
 
   whatsapp: {
-    display: PHONE_DISPLAY,
+    display: WHATSAPP_DISPLAY,
     number: WHATSAPP_NUMBER,
     message: WHATSAPP_MESSAGE,
     url: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
