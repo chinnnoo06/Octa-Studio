@@ -76,7 +76,7 @@ export const TestimonialCarousel = () => {
                   ))}
                 </div>
 
-                <p className="text-primary text-xl font-semibold uppercase lg:text-2xl">
+                <p className="text-primary font-gentleman text-4xl lg:text-5xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
                   {t.name}
                 </p>
               </div>

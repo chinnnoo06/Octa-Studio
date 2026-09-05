@@ -94,7 +94,7 @@ export const Advantages = () => {
 
             <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-end sm:justify-between">
               <div className="flex max-w-90 flex-col gap-2.5">
-                <p className="text-secondary text-3xl leading-none font-bold uppercase lg:text-4xl">
+                <p className="text-secondary font-gentleman text-7xl lg:text-8xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
                   {ADVANTAGES.centerClaim}
                 </p>
                 <p className="text-fourth/75 text-sm lg:text-base">

@@ -41,7 +41,7 @@ export const Step = ({
 
       <div className="flex w-full flex-col gap-[30px] sm:grid sm:grid-cols-2 sm:items-center sm:justify-items-start sm:gap-5 md:flex md:flex-col xl:max-w-[380px] xl:gap-[50px]">
         <div className="flex w-full flex-col gap-5">
-          <p className="text-primary/75 flex h-6 items-center gap-[15px] text-base leading-none">
+          <p className="text-primary/75 font-gentleman flex items-center gap-[15px] text-3xl lg:text-4xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
             <span aria-hidden="true" className="bg-primary/75 size-2 shrink-0 rounded-full" />
             {step.step}
           </p>
@@ -57,10 +57,10 @@ export const Step = ({
         </div>
 
         <div className="flex h-full w-full flex-col gap-5 sm:justify-between sm:gap-[30px] md:justify-start md:gap-2.5 xl:max-w-[285px]">
-          <h3 className="text-primary text-xl lg:text-2xl leading-[23.4px] font-semibold uppercase  md:leading-[26px] xl:leading-[31.2px]">
+          <h3 className="text-primary text-xl lg:text-2xl font-semibold uppercase">
             {step.title}
           </h3>
-          <p className="text-primary/75 text-sm lg:text-base leading-6">{step.description}</p>
+          <p className="text-primary/75 text-sm lg:text-base">{step.description}</p>
         </div>
       </div>
     </Reveal>

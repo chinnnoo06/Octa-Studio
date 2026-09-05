@@ -25,7 +25,7 @@ export const Odometer = ({ values, suffix }:TOdometerProps) => {
             <span
               key={`${v}-${i}`}
               aria-hidden={i > 0}
-              className="text-secondary font-semibold text-4xl sm:text-5xl lg:text-6xl block"
+              className="text-secondary font-semibold text-5xl lg:text-6xl block"
             >
               {v}
             </span>
@@ -33,7 +33,7 @@ export const Odometer = ({ values, suffix }:TOdometerProps) => {
         </motion.div>
       </div>
       {suffix ? (
-        <span className="text-secondary font-medium text-4xl lg:text-5xl block h-10 lg:h-12">
+        <span className="text-secondary font-medium text-5xl lg:text-6xl block h-11 lg:h-13">
           {suffix}
         </span>
       ) : null}

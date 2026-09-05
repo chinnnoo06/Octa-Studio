@@ -50,10 +50,10 @@ export const Hero = () => {
                 <ul role="list" className="flex flex-col gap-5">
                   {['Stands y ferias', 'Eventos masivos', 'Congresos', 'Activaciones'].map((item, i) => (
                     <li key={item} className="flex items-baseline gap-2.5">
-                      <span className="text-primary text-sm lg:text-base">
+                      <span className="text-primary font-gentleman text-2xl lg:text-3xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <span className="text-primary text-base lg:text-lg ">
+                      <span className="text-primary font-gentleman text-4xl lg:text-5xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
                         {item}
                       </span>
                     </li>
@@ -67,7 +67,7 @@ export const Hero = () => {
                   <span className="text-primary text-5xl font-medium">
                     20
                   </span>
-                  <span className="text-primary text-center text-base normal-case">
+                  <span className="text-primary font-gentleman text-center text-5xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
                     años de montajes
                     <br />
                     nacional e internacional
@@ -78,17 +78,16 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* ── Bloque inferior ───────────────────────────────────────────── */}
           <div className="mx-auto flex w-full max-w-[2000px] items-end justify-between gap-10">
 
-            <div className="hidden max-w-120 items-center gap-5 md:flex md:ml-[max(0px,calc((100%-1700px)/2))] px-5 lg:px-15">
+            <div className="hidden max-w-150 items-center gap-5 md:flex md:ml-[max(0px,calc((100%-1700px)/2))] px-5 lg:px-15">
               <TickLine className="hidden lg:flex text-primary mb-10" />
               <div className="flex flex-col justify-between gap-10 mb-10 lg:min-h-60">
                 <p className="flex items-center gap-5">
-                  <span className="text-primary text-7xl font-medium">
+                  <span className="text-primary text-5xl lg:text-6xl font-medium">
                     20
                   </span>
-                  <span className="text-primary text-lg ">
+                  <span className="text-primary font-gentleman text-5xl lg:text-6xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
                     años de montajes
                     <br />
                     nacional e internacional

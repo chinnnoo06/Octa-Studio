@@ -41,9 +41,12 @@ export const CtaSection = () => {
               <span className="text-primary">Creando experiencias</span>
             </h2>
 
+            <p className="text-primary font-gentleman text-4xl lg:text-5xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
+              Desde el primer boceto hasta el desmontaje.
+            </p>
+
             <p className="text-primary/75 max-w-2xl text-base lg:text-lg">
-               Desde el primer boceto hasta el desmontaje. Escríbenos y te
-              acompañamos en todo el proceso.
+              Escríbenos y te acompañamos en todo el proceso.
             </p>
 
             <PrimaryButton href="/contacto">Hablemos ahora</PrimaryButton>

@@ -9,7 +9,7 @@ export const ServiceCard = ({ service }: { service: Service }) => {
       className="group border-fourth/30 bg-secondary/15 hover:bg-secondary flex h-full flex-col gap-10 rounded-xl border p-5 transition-colors duration-300 lg:p-10"
     >
       <div className="flex items-center justify-between gap-5">
-        <span className="text-secondary group-hover:text-primary text-sm lg:text-base font-medium transition-colors duration-300">
+        <span className="text-secondary group-hover:text-primary font-gentleman text-3xl lg:text-4xl leading-[0.6] font-normal tracking-[0.04em] normal-case transition-colors duration-300">
           {service.number}
         </span>
 

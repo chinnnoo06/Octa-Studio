@@ -30,7 +30,9 @@ export const Faqs = () => {
           </div>
 
           <div className="flex flex-col gap-5">
-            <p className="text-fourth/75 text-base">¿Tienes otra pregunta?</p>
+            <p className="text-secondary font-gentleman text-4xl lg:text-5xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
+              ¿Tienes otra pregunta?
+            </p>
             <PrimaryButton href="/contacto">Escríbenos</PrimaryButton>
           </div>
         </div>
