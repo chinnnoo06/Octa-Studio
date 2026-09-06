@@ -34,7 +34,7 @@ export const BrandBadge = () => {
             <span
               key={`${t}-${i}`}
               aria-hidden={i > 0}
-              className="text-secondary font-gentleman text-4xl lg:text-6xl leading-[0.85] font-normal tracking-[0.04em] normal-case flex h-7 shrink-0 items-center justify-center lg:h-12 "
+              className="text-secondary font-gentleman text-4xl lg:text-6xl leading-[0.7] font-normal tracking-[0.04em] normal-case flex h-7 shrink-0 items-center justify-center lg:h-12 "
             >
               {t}
             </span>

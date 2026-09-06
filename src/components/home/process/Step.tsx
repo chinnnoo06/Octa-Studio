@@ -41,7 +41,7 @@ export const Step = ({
 
       <div className="flex w-full flex-col gap-[30px] sm:grid sm:grid-cols-2 sm:items-center sm:justify-items-start sm:gap-5 md:flex md:flex-col xl:max-w-[380px] xl:gap-[50px]">
         <div className="flex w-full flex-col gap-5">
-          <p className="text-primary/75 font-gentleman flex items-center gap-[15px] text-3xl lg:text-4xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
+          <p className="text-primary/75 font-gentleman flex items-center gap-[15px] text-3xl lg:text-4xl leading-[0.7] font-normal tracking-[0.04em] normal-case">
             <span aria-hidden="true" className="bg-primary/75 size-2 shrink-0 rounded-full" />
             {step.step}
           </p>

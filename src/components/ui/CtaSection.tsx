@@ -41,7 +41,7 @@ export const CtaSection = () => {
               <span className="text-primary">Creando experiencias</span>
             </h2>
 
-            <p className="text-primary font-gentleman text-4xl lg:text-5xl leading-[0.6] font-normal tracking-[0.04em] normal-case">
+            <p className="text-primary font-gentleman text-4xl lg:text-5xl leading-[0.7] font-normal tracking-[0.04em] normal-case">
               Desde el primer boceto hasta el desmontaje.
             </p>
 

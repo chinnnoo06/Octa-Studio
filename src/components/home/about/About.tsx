@@ -45,11 +45,11 @@ export const About = () => {
 
           <div className="w-full lg:w-1/2 pb-5 sm:pb-0 flex overflow-x-auto overflow-y-hidden sm:overflow-x-hidden sm:grid sm:grid-cols-2 gap-5 lg:gap-0">
             {STATS.map((s) => (
-              <div key={s.label} className={`w-50 sm:w-full flex flex-col items-end justify-end p-2.5 sm:p-5 lg:p-10 shrink-0 ${BOX_VARIANT[s.variant]}`}  >
+              <div key={s.label} className={`w-60 sm:w-full flex flex-col items-end justify-end p-2.5 sm:p-5 lg:p-10 shrink-0 ${BOX_VARIANT[s.variant]}`}  >
                 <div className="flex flex-col items-end justify-end gap-2.5 w-full h-full">
                   <Odometer values={s.odometer} suffix={s.suffix} />
                   <div className=" w-full flex flex-col justify-end items-end gap-2.5 text-right lg:items-end lg:text-right pt-0 sm:pt-5 lg:pt-10">
-                    <p className="text-secondary font-gentleman text-5xl lg:text-6xl leading-[0.6] font-normal tracking-[0.04em] normal-case">{s.label}</p>
+                    <p className="text-secondary font-gentleman text-5xl lg:text-6xl leading-[0.7] font-normal tracking-[0.04em] normal-case">{s.label}</p>
                     <p className="text-fourth/75 text-sm lg:text-base hidden sm:block">
                       {s.description}
                     </p>
