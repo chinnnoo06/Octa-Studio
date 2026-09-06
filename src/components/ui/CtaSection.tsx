@@ -36,10 +36,10 @@ export const CtaSection = () => {
 
           <div className="flex flex-col items-start gap-5">
 
-            <h className="text-primary/75 text-[2.5rem] small:text-[2.75rem] md:text-[3rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem] font-bold uppercase leading-[1.05] tracking-[-0.02em]">
+            <h2 className="text-primary/75 text-[2.15rem] small:text-[2.75rem] md:text-[3rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem] font-bold uppercase leading-[1.05] tracking-[-0.02em]">
               Construyendo ideas,{' '}
               <span className="text-primary">Creando experiencias</span>
-            </h>
+            </h2>
 
             <p className="text-primary font-gentleman text-4xl lg:text-5xl leading-[0.7] font-normal tracking-[0.04em] normal-case">
               Desde el primer boceto hasta el desmontaje.
