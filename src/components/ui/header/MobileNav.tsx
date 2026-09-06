@@ -22,7 +22,6 @@ export const MobileNav = ({ menuVisible, toggleMenu }: MobileNavProps) => {
                 }`}
         >
 
-            {/* Misma superficie que el header: cristal oscuro con el texto en blanco. */}
             <div className="absolute inset-0 bg-secondary backdrop-blur-md" />
 
             <div
@@ -77,7 +76,7 @@ export const MobileNav = ({ menuVisible, toggleMenu }: MobileNavProps) => {
                         <span className="text-4xl font-light leading-none text-primary">
                             20
                         </span>
-                        <span className="text-[0.6875rem] uppercase leading-tight tracking-[0.15em] text-primary">
+                        <span className="text-primary font-gentleman text-3xl leading-[0.7] font-normal tracking-[0.04em] normal-case">
                             años de montajes
                             <br />
                             nacional e internacional

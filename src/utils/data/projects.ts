@@ -27,7 +27,7 @@ export const PROJECTS: Project[] = [
     alt: 'Stand de Toyo Kasei con maquinaria de flejado y panelado azul',
   },
   {
-    name: 'PCP',
+    name: 'Pcp',
     sector: 'Ferretera',
     href: '/proyectos',
     image: ImgPcp,

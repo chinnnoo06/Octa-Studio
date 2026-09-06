@@ -23,7 +23,7 @@ export const BrandBadge = () => {
         style={{ ['--spin-duration' as string]: '10s' }}
       />
 
-      <div className="absolute inset-0 m-auto flex h-14 w-32 items-start overflow-hidden lg:h-24 lg:w-40">
+      <div className="absolute inset-0 m-auto flex h-20 w-32 items-start overflow-hidden lg:h-24 lg:w-40">
         <motion.div
           className="flex w-full flex-col"
           initial={{ y: 0 }}
@@ -34,7 +34,7 @@ export const BrandBadge = () => {
             <span
               key={`${t}-${i}`}
               aria-hidden={i > 0}
-              className="text-secondary font-gentleman text-4xl lg:text-6xl leading-[0.7] font-normal tracking-[0.04em] normal-case flex h-7 shrink-0 items-center justify-center lg:h-12 "
+              className="text-secondary font-gentleman text-5xl lg:text-6xl leading-[0.7] font-normal tracking-[0.04em] normal-case flex h-10 shrink-0 items-center justify-center lg:h-12"
             >
               {t}
             </span>

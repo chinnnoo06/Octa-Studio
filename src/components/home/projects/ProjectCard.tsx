@@ -28,7 +28,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
       className="group relative flex overflow-hidden rounded-xl"
     >
 
-      <div className="bg-secondary/15 group-hover:bg-secondary flex w-12 shrink-0 flex-col items-center justify-between gap-5 py-5 transition-colors duration-300 lg:w-16">
+      <div className="bg-secondary/15 group-hover:bg-secondary flex w-14 lg:w-16 shrink-0 flex-col items-center justify-between gap-5 py-5 transition-colors duration-300">
         <h3 className="font-gentleman text-secondary rotate-180 text-5xl lg:text-6xl leading-[0.7] font-normal tracking-[0.04em] normal-case transition-colors duration-300 group-hover:text-white [writing-mode:vertical-rl]">
           {project.name}
         </h3>

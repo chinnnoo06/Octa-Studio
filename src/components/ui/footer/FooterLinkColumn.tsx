@@ -17,7 +17,7 @@ export const FooterLinkColumn = ({
 }) => {
   return (
     <div className={`mx-auto flex w-fit max-w-full flex-col items-center gap-5 text-center ${ALIGN[align]}`}>
-      <p className="text-primary text-lg font-medium uppercase lg:text-xl">{title}</p>
+      <p className="text-primary font-gentleman text-5xl lg:text-6xl leading-[0.7] font-normal tracking-[0.04em] normal-case">{title}</p>
 
       <ul className="flex flex-col items-center gap-2.5">
         {links.map((l) => (
