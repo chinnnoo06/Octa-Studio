@@ -32,7 +32,7 @@ export const Hero = () => {
             <RevealOnLoad variants={fadeBlur}>
               <h1 className="text-primary/75 font-bold uppercase
                text-center md:text-end
-               text-[2.2rem] small:text-[2.75rem] md:text-[3rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem]
+               text-[2.5rem] small:text-[2.75rem] md:text-[3rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem]
                leading-[1.2] tracking-[-0.02em]">
               Diseñamos grandes {''}<br className="hidden md:block" />
                 <span className="text-primary">experiencias</span>
