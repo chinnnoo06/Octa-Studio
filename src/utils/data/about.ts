@@ -1,14 +1,6 @@
-import type { Stat } from './types';
+import type { TStat } from '@/types/content';
 
-export const ABOUT = {
-  eyebrow: 'About Us',
-  heading: 'From homes to offices, we bring your vision to life. Our results speak for themselves',
-  cta: { label: 'Want Design', href: '/contact' },
-  slotText: 'Slots are available',
-  image: { src: '/images/pages/home/about-office.webp', alt: 'Smart Office' },
-} as const;
-
-export const STATS: Stat[] = [
+export const STATS: TStat[] = [
   {
     odometer: ['20', '19', '18', '17', '16', '15', '14', '13', '12', '11'],
     suffix: '+',
@@ -27,13 +19,14 @@ export const STATS: Stat[] = [
     odometer: ['300', '290', '280', '270', '260', '250', '240', '230', '220', '210'],
     suffix: '+',
     label: 'Marcas atendidas',
-    description: 'Empresas nacionales, internacionales y expositoras',
+    description: 'Empresas expositoras nacionales como internacionales',
     variant: 'three',
   },
   {
-    odometer: ['3', '2', '1', '9', '8', '7', '6', '5', '4', '3'],
+    odometer: ['7', '4', '5', '6', '7', '8', '9', '1', '2', '7'],
+    suffix: '+',
     label: 'Países de operación',
-    description: 'México, Estados Unidos y clientes de Asia y Sudamérica',
+    description: 'México, Estados Unidos y clientes de Asia y Sudamérica, etc',
     variant: 'four',
   },
 ];

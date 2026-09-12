@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { PrimaryButton } from '@/components/ui/buttons/PrimaryButton';
 import { TickLine } from '@/components/ui/TickLine';
 import { zoomOnScroll } from '@/utils/motion/scroll';
-import Img from '@/assets/media/backgrounds/ImgBackground4.jpg';
+import Img from '@/assets/media/backgrounds/ImgBackground4.webp';
 
 export const CtaSection = () => {
   const ref = useRef<HTMLElement>(null);

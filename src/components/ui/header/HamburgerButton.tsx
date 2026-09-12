@@ -1,10 +1,10 @@
-type HamburgerButtonProps = {
+type THamburgerButtonProps = {
   open: boolean;
   toggleMenu: () => void
   ref?: React.Ref<HTMLButtonElement>
 };
 
-export const HamburgerButton = ({ open, toggleMenu, ref }: HamburgerButtonProps) => {
+export const HamburgerButton = ({ open, toggleMenu, ref }: THamburgerButtonProps) => {
   return (
     <button
       ref={ref}

@@ -1,6 +1,6 @@
-import type { Testimonial } from './types';
+import type { TTestimonial } from '@/types/content';
 
-export const TESTIMONIALS: Testimonial[] = [
+export const TESTIMONIALS: TTestimonial[] = [
   {
     quote:
       '“They blended style and comfort effortlessly. Their attention to detail turned our home into a place we love waking up to.”',

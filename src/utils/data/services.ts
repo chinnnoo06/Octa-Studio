@@ -2,9 +2,9 @@
  * Contenido de la sección Services de la home.
  */
 
-import type { Service } from './types';
+import type { TService } from '@/types/content';
 
-export const SERVICES: Service[] = [
+export const SERVICES: TService[] = [
   {
     number: '01',
     title: 'Stands y ferias',

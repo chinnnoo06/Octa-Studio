@@ -5,7 +5,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { rotatorY, rotatorTransition } from '@/utils/motion/rotator';
 import { cn } from '@/utils/cn';
 
-type SectionTitleProps = {
+type TSectionTitleProps = {
   lead: string;
   rotating: string;
   trail?: string;
@@ -15,13 +15,7 @@ type SectionTitleProps = {
 
 const LINE = 'h-[1.2em]';
 
-export const SectionTitle = ({
-  lead,
-  rotating,
-  trail,
-  tone = 'dark',
-  align = 'left',
-}: SectionTitleProps) => {
+export const SectionTitle = ({ lead, rotating, trail, tone = 'dark', align = 'left' }: TSectionTitleProps) => {
   const ref = useRef<HTMLHeadingElement>(null);
   const inView = useInView(ref, { amount: 0 });
   const reduced = useReducedMotion();

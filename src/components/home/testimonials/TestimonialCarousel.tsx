@@ -99,7 +99,7 @@ export const TestimonialCarousel = () => {
                 aria-label={`Ir al testimonio ${i + 1}`}
                 aria-current={selected === i}
                 className={`size-2.5 rounded-full transition-colors duration-300 ${
-                  selected === i ? 'bg-primary' : 'bg-primary/40 hover:bg-primary/75'
+                  selected === i ? 'bg-primary' : 'bg-primary/30 hover:bg-primary/75'
                 }`}
               />
             </li>

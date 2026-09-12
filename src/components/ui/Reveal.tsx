@@ -5,7 +5,7 @@ import { motion, useInView, type Variants } from 'framer-motion';
 import { viewportOnce } from '@/utils/motion/base';
 import { fadeUp } from '@/utils/motion/reveal';
 
-type RevealProps = {
+type TRevealProps = {
   children: React.ReactNode;
   /** Cualquiera de `utils/motion/reveal`. */
   variants?: Variants;
@@ -13,7 +13,7 @@ type RevealProps = {
   delay?: number;
 };
 
-export const Reveal = ({ children, variants = fadeUp, className, delay }: RevealProps) => {
+export const Reveal = ({ children, variants = fadeUp, className, delay }: TRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, viewportOnce);
 
@@ -32,7 +32,7 @@ export const Reveal = ({ children, variants = fadeUp, className, delay }: Reveal
 };
 
 /** Igual, pero anima al montar en vez de esperar al scroll. */
-export const RevealOnLoad = ({ children, variants = fadeUp, className, delay }: RevealProps) => {
+export const RevealOnLoad = ({ children, variants = fadeUp, className, delay }: TRevealProps) => {
   return (
     <motion.div
       className={className}

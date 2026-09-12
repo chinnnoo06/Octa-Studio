@@ -1,9 +1,9 @@
-import type { BlogPost } from './types';
+import type { TBlogPost } from '@/types/content';
 import Img1 from '@/assets/media/renders/ImgRender1.webp';
 import Img2 from '@/assets/media/stands/ImgStand5.webp';
 import Img3 from '@/assets/media/stands/ImgStand6.webp';
 
-export const BLOG_POSTS: BlogPost[] = [
+export const BLOG_POSTS: TBlogPost[] = [
   {
     title: 'Cómo elegir el tamaño de tu stand según el presupuesto',
     date: '12 de agosto de 2026',

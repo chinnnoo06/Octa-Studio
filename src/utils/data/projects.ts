@@ -1,10 +1,10 @@
-import type { Project } from './types';
+import type { TProject } from '@/types/content';
 import ImgAgrokorita from '@/assets/media/stands/ImgStand9.webp';
 import ImgTemisa from '@/assets/media/stands/ImgStand10.webp';
 import ImgToyoKasei from '@/assets/media/stands/ImgStand4.webp';
 import ImgPcp from '@/assets/media/stands/ImgStand8.webp';
 
-export const PROJECTS: Project[] = [
+export const PROJECTS: TProject[] = [
   {
     name: 'Agrokorita',
     sector: 'Agro',

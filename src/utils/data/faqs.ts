@@ -1,6 +1,6 @@
-import type { Faq } from './types';
+import type { TFaq } from '@/types/content';
 
-export const FAQS: Faq[] = [
+export const FAQS: TFaq[] = [
   {
     question: 'No sé qué stand necesito. ¿Pueden ayudarme?',
     answer:

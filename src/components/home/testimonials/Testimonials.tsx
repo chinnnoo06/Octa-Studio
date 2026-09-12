@@ -28,7 +28,7 @@ export const Testimonials = () => {
 
           <div className="text-primary flex w-full flex-col items-center gap-5 text-center">
             <Eyebrow>Testimonios</Eyebrow>
-            <SectionTitle tone="light" align="center" lead="Lo dicen" rotating="ellos" trail="no nosotros" />
+            <SectionTitle tone="light" align="center" lead="Lo que nuestros clientes dicen de" rotating="nosotros"/>
           </div>
 
           <TestimonialCarousel />

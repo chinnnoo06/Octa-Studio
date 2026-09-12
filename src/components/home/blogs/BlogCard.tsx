@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaRegClock } from 'react-icons/fa6';
-import type { BlogPost } from '@/utils/data/types';
+import type { TBlogPost } from '@/types/content';
 
-export const BlogCard = ({ post }: { post: BlogPost }) => {
+export const BlogCard = ({ post }: { post: TBlogPost }) => {
   return (
     <Link
       href={post.href}

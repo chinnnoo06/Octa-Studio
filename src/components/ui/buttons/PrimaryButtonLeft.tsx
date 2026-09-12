@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { HiArrowUpLeft } from 'react-icons/hi2';
-import { TButtonProps } from './types/Buttons.ypes';
+import { TButtonProps } from './types/Buttons.types';
 
 export const PrimaryButtonLeft = ({ href, children }: TButtonProps) => {
   const isExternal = /^https?:\/\//.test(href);
@@ -18,7 +18,7 @@ export const PrimaryButtonLeft = ({ href, children }: TButtonProps) => {
         aria-hidden="true"
         className="border-secondary bg-secondary text-primary group-hover:bg-primary group-hover:text-secondary md:bg-primary md:text-secondary ease-brand inline-flex shrink-0 items-center justify-center rounded-full border p-3.5 opacity-100 transition-all duration-300 md:-mr-14 lg:-mr-14.5 md:scale-75 md:opacity-0 md:group-hover:mr-0 md:group-hover:scale-100 md:group-hover:opacity-100"
       >
-        <HiArrowUpLeft className="h-4 w-4 stroke-1 lg:h-4.5 lg:w-4.5" />
+        <HiArrowUpLeft className="size-4 lg:size-4.5 stroke-1" />
       </span>
 
       <span className="border-secondary bg-secondary text-primary group-hover:text-secondary group-hover:bg-primary inline-flex items-center justify-center rounded-full border px-6 py-2.5 text-sm font-medium transition-colors duration-300 lg:text-base">

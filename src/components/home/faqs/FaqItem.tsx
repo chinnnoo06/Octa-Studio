@@ -3,16 +3,16 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
 import { accordionPanel } from '@/utils/motion/accordion';
-import type { Faq } from '@/utils/data/types';
+import type { TFaq } from '@/types/content';
 
-type FaqItemProps = {
-  item: Faq;
+type TFaqItemProps = {
+  item: TFaq;
   isOpen: boolean;
   onToggle: () => void;
   id: string;
 };
 
-export const FaqItem = ({ item, isOpen, onToggle, id }: FaqItemProps) => {
+export const FaqItem = ({ item, isOpen, onToggle, id }: TFaqItemProps) => {
   return (
     <>
       <button

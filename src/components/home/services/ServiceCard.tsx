@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { HiArrowUpRight } from 'react-icons/hi2';
-import type { Service } from '@/utils/data/types';
+import type { TService } from '@/types/content';
 
-export const ServiceCard = ({ service }: { service: Service }) => {
+export const ServiceCard = ({ service }: { service: TService }) => {
   return (
     <Link
       href={service.href}
@@ -15,20 +15,21 @@ export const ServiceCard = ({ service }: { service: Service }) => {
 
         <span
           aria-hidden="true"
-          className="border-secondary text-secondary group-hover:border-primary group-hover:text-primary flex size-10 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 lg:size-12"
+          className="border-secondary text-secondary group-hover:border-primary group-hover:text-primary flex h-10 shrink-0 items-center justify-center gap-2 rounded-full border px-4 transition-colors duration-300 lg:h-12 lg:px-5"
         >
-          <HiArrowUpRight aria-hidden="true" className="size-4 stroke-1 lg:size-5" />
+          <span className="text-sm lg:text-base font-medium">Ver más</span>
+          <HiArrowUpRight aria-hidden="true" className="size-4 lg:size-4.5 stroke-1" />
         </span>
       </div>
 
       <div className="flex flex-col gap-2.5">
-          <h3 className="text-secondary group-hover:text-primary font-gentleman text-5xl lg:text-6xl p-1.5 leading-[0.7] font-normal tracking-[0.04em] normal-case transition-colors duration-300">
-            {service.title}
-          </h3>
+        <h3 className="text-secondary group-hover:text-primary font-gentleman text-5xl lg:text-6xl p-1.5 leading-[0.7] font-normal tracking-[0.04em] normal-case transition-colors duration-300">
+          {service.title}
+        </h3>
 
-          <p className="text-fourth/75 group-hover:text-primary/75 text-sm lg:text-base transition-colors duration-300">
-            {service.description}
-          </p>
+        <p className="text-fourth/75 group-hover:text-primary/75 text-sm lg:text-base transition-colors duration-300">
+          {service.description}
+        </p>
 
       </div>
     </Link>

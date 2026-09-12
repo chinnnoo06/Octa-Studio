@@ -29,12 +29,12 @@ export const Services = () => {
           </div>
 
           <div className="border-fourth/30 flex justify-center w-full flex-col gap-5 lg:w-1/2 lg:border-l lg:pl-10">
-            <WipeHeading text="Tú lo imaginas, nosotros lo montamos" />
+            <WipeHeading text="Tú lo imaginas, nosotros lo creamos" />
 
             <p className="text-fourth/75 text-base lg:text-lg">
-              No necesitas coordinar a varios proveedores. Diseñamos, fabricamos, montamos y
-              desmontamos con el mismo equipo, desde la primera reunión hasta que cierra el
-              evento.
+              No necesitas coordinar a varios proveedores. Diseñamos, fabricamos y producimos
+              tu proyecto con el mismo equipo, desde la primera reunión hasta que cierra el
+              evento, también tenemos otros servicios.
             </p>
 
             <PrimaryButton href="/servicios">Ver todo lo que hacemos</PrimaryButton>

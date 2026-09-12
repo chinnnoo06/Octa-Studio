@@ -1,11 +1,12 @@
-import type { ProcessStep } from './types';
+import type { TProcessStep } from '@/types/content';
 import ImgStep1 from "@/assets/media/stock/ImgStock1.webp"
 import ImgStep2 from "@/assets/media/renders/ImgRender1.webp"
 import ImgStep3 from "@/assets/media/stands/ImgStand5.webp"
 import ImgStep4 from "@/assets/media/stands/ImgStand6.webp"
-import ImgStep5 from "@/assets/media/stands/ImgStand11.webp"
+import ImgStep5 from "@/assets/media/stands/ImgStand16.webp"
+import ImgStep6 from "@/assets/media/stands/ImgStand11.webp"
 
-export const PROCESS_STEPS: ProcessStep[] = [
+export const PROCESS_STEPS: TProcessStep[] = [
   {
     step: 'Paso 01',
     title: 'Atención y briefing',
@@ -36,9 +37,16 @@ export const PROCESS_STEPS: ProcessStep[] = [
   },
   {
     step: 'Paso 05',
+    title: 'Disfruta tu evento',
+    description: 'Tú atiendes a tus clientes; nosotros seguimos pendientes por si algo hace falta.',
+    img: ImgStep5,
+    alt: 'Stand terminado e iluminado durante la feria',
+  },
+  {
+    step: 'Paso 06',
     title: 'Desmontaje',
     description: 'Retiramos todo al cerrar el evento. Tú no te ocupas de nada.',
-    img: ImgStep5,
+    img: ImgStep6,
     alt: 'Desmontaje de stand al finalizar el evento',
   },
 ];
