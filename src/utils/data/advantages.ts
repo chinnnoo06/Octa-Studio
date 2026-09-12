@@ -1,5 +1,5 @@
 import ImgObra1 from '@/assets/media/stands/ImgStand13.webp';
-import ImgObra2 from '@/assets/media/stands/ImgStand7.webp';
+import ImgObra2 from '@/assets/media/stands/ImgStand6.webp';
 import ImgObra3 from '@/assets/media/stands/ImgStand1.webp';
 
 export const ADVANTAGES_BADGE_TEXTS = [
